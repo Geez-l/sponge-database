@@ -6,7 +6,6 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    useLocation,
 } from 'react-router-dom';
 
 // import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -17,7 +16,6 @@ import Home from './components/home';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(0);
 
     useEffect(() => {
         const timer = setTimeout(() => {
