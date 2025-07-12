@@ -1,0 +1,73 @@
+/* Home component styles */
+.home-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-bg {
+    flex: 1;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-text {
+    text-align: center;
+    padding: 2rem;
+}
+
+.search-container {
+    padding: 2rem;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: white;
+    min-width: 150px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-success {
+    color: white;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+    color: white;
+    background-color: #dc3545;
+    border-color: #dc3545;
+} 
