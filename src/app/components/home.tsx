@@ -33,9 +33,11 @@ const Home = () => {
                 Color Dropdown
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item href='#/action-1'>A</Dropdown.Item>
-                <Dropdown.Item href='#/action-2'>B</Dropdown.Item>
-                <Dropdown.Item href='#/action-3'>C</Dropdown.Item>
+                <Dropdown.Item href='#/action-1'>Black</Dropdown.Item>
+                <Dropdown.Item href='#/action-2'>Grey</Dropdown.Item>
+                <Dropdown.Item href='#/action-3'>Blue-Green</Dropdown.Item>
+                <Dropdown.Item href='#/action-3'>Red-Brown</Dropdown.Item>
+                
 
             </Dropdown.Menu>
          </Dropdown>
