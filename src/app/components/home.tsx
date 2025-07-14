@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card';
 import '../css/home.css';
 import '../css/variable.css';
 
+
 // Dropdown options
 // const dropdownColor = ['Filter 1', 'Filter 2', 'Filter 3', 'Filter 4'];
 // const dropdownLocation = ['Location 1', 'Location 2', 'Location 3', 'Location 4'];
