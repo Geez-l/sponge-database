@@ -7,7 +7,7 @@
 
 .home-bg {
     flex: 1;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,20 +20,25 @@
 
 .search-container {
     padding: 2rem;
+    /* flex-direction: column; */
     background-color: white;
-    border-top: 1px solid #dee2e6;
+    /* border-top: 1px solid #dee2e6; */
+    /* border-color: black; */
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    min-height: 900px;
+    flex-direction: row;
+
 }
 
 .dropdown {
     padding: 0.5rem;
-    border: 1px solid #ced4da;
+    /* border: 1px solid #ced4da; */
     border-radius: 0.25rem;
-    background-color: white;
+    /* background-color: white; */
     min-width: 150px;
 }
 
