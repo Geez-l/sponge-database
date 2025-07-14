@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from "react";
 import {
     BrowserRouter as Router,
@@ -9,6 +8,8 @@ import {
 
 // MAIN PAGES
 import Home from './components/home';
+import Result from './components/result';
+import ResultDetails from './components/resultDetails';
 
 export default function Page() {
     const [loading, setLoading] = useState(true);
@@ -29,6 +30,23 @@ export default function Page() {
             <Routes>
                 <Route path='/' element={<Home/>} />
             </Routes>
+
+            {/* Navs to sample list */}
+            <Routes>
+                <Route path='/' element={<Result selectedColor={""} selectedFunctionalForm={""} sponges={[]}/>} />
+            </Routes>
+
+            <Routes>
+                <Route path='/' element={<ResultDetails/>} />
+            </Routes>
+
+            {/* <Routes>
+                <Route path='/' element={<FAQs/>} />
+            </Routes> */}
+
+              {/* <Routes>
+                <Route path='/' element={<About us/>} />
+            </Routes> */}
         </Router>
     );
 }
