@@ -1,31 +1,33 @@
 import Nav from 'react-bootstrap/Nav';
+import Link from 'next/link';
 
 const Navigation = () => {
-    const handleSelect = (eventKey)
     return(
-        <Nav variant='pills' activeKey='1' onSelect={handleSelect}>
+        <Nav variant='pills'>
             <Nav.Item>
-                <Nav.Link eventKey='1' href='#/home'>
+                <Nav.Link as={Link} href='/'>
                 Home
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey='2' href='#/list'>
-                Sample List
+                <Nav.Link as={Link} href='/'>
+                Result
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey='3' href='#/faq'>
+                <Nav.Link as={Link} href='/'>
                 FAQs
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey='4' href='about'>
+                <Nav.Link as={Link} href='about'>
                     About Us
                 </Nav.Link>
             </Nav.Item>
         </Nav>
 
         
-    )
-}
+    );
+};
+
+export default Navigation;
