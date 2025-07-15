@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export function useSpongeFilters() {
   const [selectedColor, setSelectedColor] = useState('Color Dropdown');
   const [selectedFunctionalForm, setSelectedFunctionalForm] = useState('Functional Form Dropdown');
+  const [selectedClassification, setSelectedClassification] = useState('Classification')
   const [sponges, setSponges] = useState([]);
   const [colors, setColors] = useState([]);
   const [functionalForms, setFunctionalForms] = useState([]);
@@ -93,6 +94,11 @@ export function useSpongeFilters() {
   const handleFunctionalFormSelect = (form) => {
     setSelectedFunctionalForm(form);
   };
+
+  const handleClassification = (classification) => {
+    setSelectedClassification(classification);
+  };
+  
 
   const handleReset = () => {
     setSelectedColor('Color Dropdown');

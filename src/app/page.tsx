@@ -45,7 +45,7 @@ export default function Page() {
 
   return (
     <div>
-      <Navigation onPageChange={setCurrentPage} />
+      <Navigation/>
       {renderPage()}
     </div>
   );
