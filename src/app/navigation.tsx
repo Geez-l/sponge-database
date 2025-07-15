@@ -1,13 +1,9 @@
+'use client';
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
-import '../css/navigation.css';
+import './css/navigation.css'
 
-import Result from '../components/result';
-import Home from '../components/home';
-import About from '../components/about';
-import FAQ from '../components/faq';
-import ResultDetails from "./resultDetails";
 
 
 const Navigation = () => {
@@ -25,10 +21,10 @@ const Navigation = () => {
 
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="nav-links-right">
-                        <Nav.Link as={Link} href="/" active={pathname === '/'}>Home</Nav.Link>
-                        <Nav.Link as={Link} href="/result" active={pathname === '/result'} >Sample List</Nav.Link>
-                        <Nav.Link as={Link} href="/faq" active={pathname === '/faq'}>FAQs</Nav.Link>
-                        <Nav.Link as={Link} href="/about" active={pathname === '/about'}>About Us</Nav.Link>
+                    <Link href="/" className={pathname === '/' ? 'active' : ''}>Home</Link>
+                    <Link href="/result" className={pathname === '/result' ? 'active' : ''}>Sample List</Link>
+                    <Link href="/faq" className={pathname === '/faq' ? 'active' : ''}>FAQ</Link>
+                    <Link href="/about" className={pathname === '/about' ? 'active' : ''}>About</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

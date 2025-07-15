@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Sponge {
@@ -14,25 +13,18 @@ interface Sponge {
   date_collected?: string;
 }
 
-interface ResultProps {
-  selectedColor: string;
-  selectedFunctionalForm: string;
-  sponges: Sponge[];
-}
+export default function ResultPage() {
+  const selectedColor = 'All';
+  const selectedFunctionalForm = 'All';
+  const sponges: Sponge[] = []; // No data yet
 
-const Result: React.FC<ResultProps> = ({ selectedColor, selectedFunctionalForm, sponges }) => {
   return (
     <div>
-      {/* Criteria Summary */}
       <main className='result-header'>
         <div className='top-container'>
           <strong>Selected Filters:</strong> Color = {selectedColor}, Functional Form = {selectedFunctionalForm}
         </div>
       </main>
-
-    
-
-      {/* Results Table */}
       <main className='result-table'>
         <div className='res-tab'>
           <h5>Results</h5>
@@ -65,7 +57,9 @@ const Result: React.FC<ResultProps> = ({ selectedColor, selectedFunctionalForm, 
                 ))
               ) : (
                 <tr>
-                  <td colSpan={7} style={{ textAlign: 'center' }}>No results found</td>
+                  <td colSpan={7} style={{ textAlign: 'center' }}>
+                    No results found
+                  </td>
                 </tr>
               )}
             </tbody>
@@ -74,6 +68,4 @@ const Result: React.FC<ResultProps> = ({ selectedColor, selectedFunctionalForm, 
       </main>
     </div>
   );
-};
-
-export default Result;
+}
