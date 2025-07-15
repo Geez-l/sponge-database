@@ -37,11 +37,10 @@ const Home = () => {
   return (
     <div>
       <main className="home-content">
-        <div>
+        {/* banner image for bg */}
           <div className="home-bg">
             <div className="home-text"></div>
           </div>
-        </div>
         <Card className="card">
           <div className="search-container">
 
@@ -81,7 +80,7 @@ const Home = () => {
               </Dropdown.Menu>
             </Dropdown>
 
-            {/* Buttons here*/}
+            {/* Buttons */}
             <div className="resetButton">
               <button className="btn btn-outline-danger" onClick={handleReset}>
                 Reset
