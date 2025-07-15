@@ -118,23 +118,10 @@
     border-color: #dc3545;
 }
 
-/* Remove any gray lines or borders from the main container */
+
 .home-content > div:last-child {
     border: none !important;
     background: transparent !important;
-}
-
-/* Results Section Styles */
-.results-container {
-    padding: 2rem;
-    margin-top: 2rem;
-}
-
-.loading {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
-    color: #666;
 }
 
 .sponge-grid {
@@ -143,33 +130,3 @@
     gap: 1.5rem;
     margin-top: 1rem;
 }
-
-.sponge-card {
-    background: white;
-    border: 1px solid #e1e5e9;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.sponge-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.sponge-card h4 {
-    color: #333;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #28a745;
-    padding-bottom: 0.5rem;
-}
-
-.sponge-card p {
-    margin: 0.5rem 0;
-    color: #666;
-}
-
-.sponge-card strong {
-    color: #333;
-} 
