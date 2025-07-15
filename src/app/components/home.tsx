@@ -81,7 +81,7 @@ const Home = () => {
               </Dropdown.Menu>
             </Dropdown>
 
-            {/* Buttons */}
+            {/* Buttons here*/}
             <div className="resetButton">
               <button className="btn btn-outline-danger" onClick={handleReset}>
                 Reset
