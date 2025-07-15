@@ -13,13 +13,13 @@ import ResultDetails from "./resultDetails";
 const Navigation = () => {
     const pathname = usePathname();
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar fixed="top" bg="light" expand="lg">
             <Container fluid>
                 <Navbar.Brand as={Link} href="/" className="nav-brand">
                     {/* Sponge Logo & Title */}
                     <div className="nav-logo" aria-label="Sponge Logo" role="img" />
                     {/* Sponge guide in new line */}
-                    <p className="nav-title">The Philippine Sponge Guide</p>
+                    {/* <p className="nav-title">The Philippine Sponge Guide</p> */}
                 </Navbar.Brand>
                 <Navbar.Toggle />
 
