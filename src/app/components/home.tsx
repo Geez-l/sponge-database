@@ -234,9 +234,27 @@ const Home = () => {
          </Row>
           </div>
         </Card>
+        <div className='banner-msg'>
+          <h1>DIVE IN AND DISCOVER</h1>
+          <h2> The gateway to the Philippine Marine Sponges</h2>
         </div>
+        </div>
+
       </main>
+
+      <div className='home-bottom'>
+        <Card>
+          <div className='search-db-text'>
+            <h1> How to Search Our Database</h1>
+            <h3>text text text</h3>
+          </div>
+        </Card>
+      </div>
+      {/* Add another card here */}
+      {/* Follow the logic in dropdowns, 1 row that encloses columns
+      row{col col col } */}
     </div>
+    
   );
 };
 

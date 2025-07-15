@@ -37,6 +37,8 @@
     background-size: cover;
     z-index: 1;
     pointer-events: none;
+    justify-content: flex-start;
+    gap: 2rem;
 }
 
 .home-text {
@@ -128,4 +130,9 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
+}
+
+.banner-msg {
+    align-items: flex-start;
+    margin-left: 3rem;
 }
