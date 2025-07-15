@@ -1,34 +1,54 @@
 'use client';
-
-import React, { useState, useEffect } from "react";
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-} from 'react-router-dom';
-
-// MAIN PAGES
+import { useState } from 'react';
+import Navigation from './components/navigation';
 import Home from './components/home';
+import Result from './components/result';
+import FAQ from './components/faq';
+import About from './components/about';
+import { useSpongeFilters } from './hooks/useSpongeFilters';
 
 export default function Page() {
-    const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState('home');
+  const {
+    selectedColor,
+    selectedFunctionalForm,
+    sponges,
+    colors,
+    functionalForms,
+    loading,
+    handleColorSelect,
+    handleFunctionalFormSelect,
+    handleReset,
+    handleSubmit,
+  } = useSpongeFilters();
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (loading) {
-        return <div>Loading...</div>;
+  const renderPage = () => {
+    switch(currentPage) {
+      case 'home': 
+        return <Home />;
+      case 'result': 
+        return (
+          <Result 
+            selectedColor={selectedColor} 
+            selectedFunctionalForm={selectedFunctionalForm} 
+            sponges={sponges || []} 
+          />
+        );
+      case 'faq': 
+        return <FAQ />;
+      case 'about': 
+        return <About />;
+      default: 
+        return <Home />;
     }
+  };
 
-    return (
-        <Router>
-            <Routes>
-                <Route path='/' element={<Home/>} />
-            </Routes>
-        </Router>
-    );
+  return (
+    <div>
+      <Navigation onPageChange={setCurrentPage} />
+      {renderPage()}
+    </div>
+  );
 }
+
+
