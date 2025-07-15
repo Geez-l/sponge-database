@@ -4,12 +4,20 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import '../css/home.css';
 import '../css/variable.css';
 
 import { useSpongeFilters } from '../hooks/useSpongeFilters';
+import { useRouter } from 'next/navigation';
 
+
+/* HOME resources
+1) Dropdowns: https://react-bootstrap.netlify.app/docs/components/dropdowns/
+2) Cards [texts below the home]: https://react-bootstrap.netlify.app/docs/components/cards
+ */
 const Home = () => {
+  const router = useRouter();
   const {
     selectedColor,
     selectedFunctionalForm,
@@ -20,6 +28,11 @@ const Home = () => {
     handleReset,
     handleSubmit,
   } = useSpongeFilters();
+
+  const handleSubmitAndNavigate = () => {
+    handleSubmit();
+    router.push('/result');
+  };
 
   return (
     <div>
@@ -75,7 +88,7 @@ const Home = () => {
               </button>
             </div>
             <div className="submitButton">
-              <button className="btn btn-success" onClick={handleSubmit}>
+              <button className="btn btn-success" onClick={handleSubmitAndNavigate}>
                 Submit
               </button>
             </div>
