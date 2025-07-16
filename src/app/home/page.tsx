@@ -12,8 +12,8 @@ import '../css/variable.css';
 
 import { useSpongeFilters } from '../hooks/useSpongeFilters';
 import { useRouter } from 'next/navigation';
-import { Button, FormControl } from 'react-bootstrap';
-import { FaSearch} from 'react-icons/fa';
+import { Button } from 'react-bootstrap';
+import { FaSearch } from 'react-icons/fa';
 
 
 
@@ -67,23 +67,25 @@ const Home = () => {
         <Card className="sponge-card">
           <div className="search-container">
 
-            <form className="d-flex w-100 justify-content-center mb-3"
-             onSubmit={e => { e.preventDefault(); }}>
-            <FormControl
-            type='Search'
-            placeholder='Enter keywords'
-            className='searchKeyword'
-            aria-label='Search'
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-            />
-              {/* Button*/}
-            <Button 
-            type='submit'
-            className='search-icon'
+            <form
+              className="search-bar-wrapper"
+              onSubmit={e => {
+                e.preventDefault();
+                
+              }}
             >
-              <FaSearch/>
-            </Button>
+              <div className="search-bar search-bar-left-icon">
+             
+                
+                <input
+                  type="text"
+                  placeholder="Enter keyword"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="search-input"
+                />
+               
+              </div>
             </form>
 
             <div className='advancedSearch'>
@@ -241,6 +243,7 @@ const Home = () => {
         </div>
 
       </main>
+      
 
       <div className='home-bottom'>
         <Card>

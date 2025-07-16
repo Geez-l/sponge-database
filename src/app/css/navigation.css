@@ -83,3 +83,8 @@
 .nav-links-right .nav-link:hover {
   color: #FFC64C;
 }
+
+.nav-link.active {
+  border-bottom: 4px solid #48ACBBBF;
+  font-weight: 60px;
+}
