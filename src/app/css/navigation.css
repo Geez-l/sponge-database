@@ -37,9 +37,15 @@
 }
 
 .nav-logo {
+<<<<<<< Updated upstream
   width: 200px;
   height: 100px;
   margin-right: 10px;
+=======
+  width: 641.66px;
+  height: 189px;
+  margin-right: 0.5rem;
+>>>>>>> Stashed changes
   background-image: url('/assets/home/logo-text.svg');
   background-size: contain;
   background-repeat: no-repeat;
