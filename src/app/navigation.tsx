@@ -1,35 +1,44 @@
 'use client';
-import { Navbar, Nav, Container } from "react-bootstrap";
-import Link from "next/link";
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import './css/navigation.css'
-
-
+import './css/navigation.css';
 
 const Navigation = () => {
-    const pathname = usePathname();
-    return (
-        <Navbar fixed="top" bg="light" expand="lg">
-            <Container fluid>
-                <Navbar.Brand as={Link} href="/" className="nav-brand">
-                    {/* Sponge Logo & Title */}
-                    <div className="nav-logo" aria-label="Sponge Logo" role="img" />
-                    {/* Sponge guide in new line */}
-                    {/* <p className="nav-title">The Philippine Sponge Guide</p> */}
-                </Navbar.Brand>
-                <Navbar.Toggle />
+  const pathname = usePathname();
 
-                <Navbar.Collapse className="justify-content-end">
-                    <Nav className="nav-links-right">
-                    <Link href="/" className={pathname === '/' ? 'active' : ''}>Home</Link>
-                    <Link href="/result" className={pathname === '/result' ? 'active' : ''}>Sample List</Link>
-                    <Link href="/faq" className={pathname === '/faq' ? 'active' : ''}>FAQ</Link>
-                    <Link href="/about" className={pathname === '/about' ? 'active' : ''}>About</Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    );
+  return (
+    <header className="header">
+      <Navbar expand="lg" className="px-3">
+        <Container fluid>
+          {/* Brand Section */}
+          <Navbar.Brand as={Link} href="/" className="nav-brand d-flex align-items-center">
+            <div className="nav-logo" aria-label="Sponge Logo" role="img" />
+            {/* Optional title below logo */}
+            {/* <div className="nav-title">The Philippine Sponge Guide</div> */}
+          </Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav" className="justify-content-end">
+            <Nav className="nav-links-right">
+              <Link href="/" className={`nav-link ${pathname === '/' ? 'active' : ''}`}>
+                Home
+              </Link>
+              <Link href="/result" className={`nav-link ${pathname === '/result' ? 'active' : ''}`}>
+                Sample List
+              </Link>
+              <Link href="/faq" className={`nav-link ${pathname === '/faq' ? 'active' : ''}`}>
+                FAQ
+              </Link>
+              <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>
+                About
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </header>
+  );
 };
 
 export default Navigation;

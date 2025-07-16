@@ -1,45 +1,84 @@
-/* bootstrap: https://getbootstrap.com/docs/5.3/utilities/background/
- */
+/* =======================
+   General Header Styling
+========================== */
+.header {
+  width: 100%;
+  background-color: #fff;
+  color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  box-sizing: border-box;
+  box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+}
+
+/* Gradient bar on top */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, 	#118282D9, #48ACBBBF, #5CBDCAA6, #5CBDCAA6);
+  z-index: 1001;
+}
+
+/* =======================
+     Logo / Branding
+========================== */
 .nav-brand {
-  min-height: 20%;
-  /* font-size: 8.25rem; */
   display: flex;
   align-items: center;
   font-weight: bold;
   font-size: 1.9rem;
-  /* color: #ffff; */
-  
 }
 
 .nav-logo {
   width: 200px;
-  height: 120px;
-  margin-right: 0.5rem;
+  height: 100px;
+  margin-right: 10px;
   background-image: url('/assets/home/logo-text.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  display: inline-block;
+}
+
+/* Responsive logo for smaller screens */
+@media (max-width: 768px) {
+  .nav-logo {
+    width: 150px;
+    height: 80px;
+  }
 }
 
 .nav-title {
   font-family: 'Courier New', Courier, monospace;
   font-size: 2.4rem;
-  margin-bottom: 5px;
-  
+  margin-bottom: 0;
 }
 
-/* .nav-logo {
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  width: 100px;
-  height: 100px;
-} */
-
+/* =======================
+      Navigation Links
+========================== */
 .nav-links-right {
-  font-size: 1.25rem;
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-} 
+}
+
+.nav-links-right .nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links-right .nav-link:hover {
+  color: #e7b82b;
+}
