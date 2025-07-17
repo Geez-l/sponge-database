@@ -47,13 +47,16 @@
     padding: 2rem;
 }
 
+/* === Sponge Card === */
 .sponge-card {
     position: relative;
     /* background: rgba(72, 172, 187, 0.75); */
     margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid #48ACBB;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 3rem; /* increased padding */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     z-index: 2;
@@ -61,108 +64,101 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 60%; /* much wider container */
+    min-height: 60%; /* increased height */
+    transform: translate(13%); /* centered */
 }
-
-.search-bar-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 2rem;
+  
+  /* === Search Container === */
+  .search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* === Search Bar === */
+  .search-bar-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 2rem 0;
+    /* padding-left: 200px;  */
 }
 
 .search-bar-left-icon {
   position: relative;
-  width: 100%;
-  max-width: 340px;
-  /* background: #fff; */
-  /* border-radius: 2rem; */
-  /* box-shadow: 0 2px 12px rgba(0,0,0,0.07); */
+  width: 1200px;
+  height: 100px;
+  background: #fff;
+  border-radius: 20rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  transform: translateX(20%);
 }
 
-.search-icon-left {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #48ACBB; /* blue */
-  font-size: 1.5rem;
+.search-icon {
+  position: relative;
+  right: 1rem;
+  transform: translateX(-90%);
+  color: #48ACBB; 
+  font-size: 3rem;
   pointer-events: none;
   z-index: 2;
-  /* background: none !important; */
-  /* border: none !important; */
-  /* box-shadow: none !important; */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  height: 100%;
+  padding: 2rem 3rem 2rem 8rem;
   border: none;
   border-radius: 2rem;
-  background: white;
-  font-size: 1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  background: transparent;
+  font-size: 2.5rem;
   outline: none;
-  /* transition: box-shadow 0.2s; */
+  transition: box-shadow 0.2s;
+  box-shadow: none !important;
 }
 
-.search-input:focus {
-  outline: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+.search-input::placeholder {
+  font-size: 2.5rem !important; 
+  color: #888; 
 }
-
-.dropdown {
-    padding: 0.5rem;
-    /* border: 1px solid #ced4da; */
-    border-radius: 0.25rem;
-    /* background-color: white; */
-    min-width: 150px;
-}
-
-.btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 1.5;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-}
-
-.btn-success {
-    color: white;
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.btn-success:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-}
-
-.btn-outline-danger {
-    color: #dc3545;
-    border-color: #dc3545;
-    background-color: transparent;
-}
-
-.btn-outline-danger:hover {
-    color: white;
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.sponge-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  
+  /* === Advanced Search Label === */
+  .advancedSearch h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+  
+  /* === Dropdowns === */
+  .dropdown {
+    min-width: 100%;
+  }
+  
+  /* === Submit + Reset Buttons === */
+  .submit-button {
+    width: 100%;
+    justify-content: center;
     margin-top: 1rem;
-}
-
-.banner-msg {
-    align-items: flex-start;
+  }
+  
+  .resetButton,
+  .submitButton {
+    text-align: center;
+  }
+  
+  /* === Banner Message === */
+  .banner-msg {
     margin-left: 3rem;
-}
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+  
