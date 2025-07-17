@@ -69,7 +69,7 @@ export default function ResultPage() {
               // handleSubmitAndNavigate();
             }}
           >
-            <div className="search-bar-left-icon">
+            <div className="search-bar-left-icon d-flex flex-row-reverse">
               <FaSearch className="search-icon" />
               <input
                 type="text"
