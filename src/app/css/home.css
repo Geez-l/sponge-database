@@ -1,8 +1,9 @@
 /* Home component styles */
 .home-content {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .home-bg {
@@ -12,7 +13,7 @@
     background-image: url('/assets/home/home_banner.png');
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,8 +66,10 @@
     align-items: center;
     justify-content: center;
     width: 60%; /* much wider container */
-    min-height: 60%; /* increased height */
-    transform: translate(13%); /* centered */
+    height: 50%; 
+    transform: translate(40,-10%);
+    right: -11%;
+    top: -10%;
 }
   
   /* === Search Container === */
@@ -133,9 +136,10 @@
   
   /* === Advanced Search Label === */
   .advancedSearch h1 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.9rem;
+    /* margin-bottom: 5rem; */
     color: #444;
+    align-self: center;
   }
   
   /* === Dropdowns === */
@@ -157,8 +161,56 @@
   
   /* === Banner Message === */
   .banner-msg {
+    position: relative;
+    /* transform: translate(30%, 60%);  */
+    top: 30%;
+    right: 70%;
+    margin-top: 2rem; 
     margin-left: 3rem;
     color: white;
-    text-shadow: 1px 1px 2px black;
+    z-index: 3;
+    /* display: flex; */
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+.home-bottom {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.search-db-card {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-db-text {
+    text-align: center;
+    padding: 1rem;
+}
+
+.search-db-text h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    z-index: 3;
+}
+
+.search-db-text h3 {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 1rem;
+    z-index: 3;
+}
+
+.search-db-text {
+    color: red !important;
+    background: yellow !important;
+    font-size: 2rem !important;
   }
   
