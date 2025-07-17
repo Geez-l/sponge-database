@@ -25,7 +25,7 @@ const Navigation = () => {
                 Home
               </Link>
               <Link href="/result" className={`nav-link ${pathname === '/result' ? 'active' : ''}`}>
-                Sample List
+                OTU List
               </Link>
               <Link href="/faq" className={`nav-link ${pathname === '/faq' ? 'active' : ''}`}>
                 FAQ
