@@ -65,8 +65,10 @@
     align-items: center;
     justify-content: center;
     width: 60%; /* much wider container */
-    min-height: 60%; /* increased height */
-    transform: translate(13%); /* centered */
+    height: 50%; 
+    transform: translate(40,-10%);
+    right: -11%;
+    top: -10%;
 }
   
   /* === Search Container === */
@@ -157,8 +159,16 @@
   
   /* === Banner Message === */
   .banner-msg {
+    position: relative;
+    /* transform: translate(30%, 60%);  */
+    top: 30%;
+    right: 70%;
+    margin-top: 2rem; 
     margin-left: 3rem;
     color: white;
-    text-shadow: 1px 1px 2px black;
+    z-index: 3;
+    /* display: flex; */
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   

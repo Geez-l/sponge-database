@@ -232,13 +232,12 @@ const Home = () => {
             </Row>
           </div>
         </Card>
-        <div className='banner-msg'>
+        </div>
+      </main>
+      <div className='banner-msg'>
           <h1>DIVE IN AND DISCOVER</h1>
           <h2> The gateway to the Philippine Marine Sponges</h2>
         </div>
-        </div>
-
-      </main>
       
 
       <div className='home-bottom'>
