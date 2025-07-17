@@ -1,6 +1,5 @@
 /* Home component styles */
 .home-content {
-    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -13,7 +12,6 @@
     background-image: url('/assets/home/home_banner.png');
     background-repeat: no-repeat;
     background-size: cover;
-    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,13 +49,12 @@
 /* === Sponge Card === */
 .sponge-card {
     position: relative;
-    /* background: rgba(72, 172, 187, 0.75); */
     margin-top: 10rem;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid #48ACBB;
     border-radius: 8px;
-    padding: 3rem; /* increased padding */
+    padding: 3rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     z-index: 2;
@@ -65,152 +62,129 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%; /* much wider container */
-    height: 50%; 
-    transform: translate(40,-10%);
+    width: 60%;
+    height: auto;
     right: -11%;
     top: -10%;
 }
-  
-  /* === Search Container === */
-  .search-container {
+
+/* === Search Container === */
+.search-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  /* === Search Bar === */
-  .search-bar-wrapper {
+}
+
+/* === Search Bar === */
+.search-bar-wrapper {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     margin: 2rem 0;
-    /* padding-left: 200px;  */
 }
 
 .search-bar-left-icon {
-  position: relative;
-  width: 1200px;
-  height: 100px;
-  background: #fff;
-  border-radius: 20rem;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  transform: translateX(20%);
+    position: relative;
+    width: 1200px;
+    height: 100px;
+    background: #fff;
+    border-radius: 20rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    transform: translateX(20%);
 }
 
 .search-icon {
-  position: relative;
-  right: 1rem;
-  transform: translateX(-90%);
-  color: #48ACBB; 
-  font-size: 3rem;
-  pointer-events: none;
-  z-index: 2;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
+    position: relative;
+    right: 1rem;
+    transform: translateX(-90%);
+    color: #48ACBB; 
+    font-size: 3rem;
+    pointer-events: none;
+    z-index: 2;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .search-input {
-  width: 100%;
-  height: 100%;
-  padding: 2rem 3rem 2rem 8rem;
-  border: none;
-  border-radius: 2rem;
-  background: transparent;
-  font-size: 2.5rem;
-  outline: none;
-  transition: box-shadow 0.2s;
-  box-shadow: none !important;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 3rem 2rem 8rem;
+    border: none;
+    border-radius: 2rem;
+    background: transparent;
+    font-size: 2.5rem;
+    outline: none;
+    transition: box-shadow 0.2s;
+    box-shadow: none !important;
 }
 
 .search-input::placeholder {
-  font-size: 2.5rem !important; 
-  color: #888; 
+    font-size: 2.5rem !important; 
+    color: #888; 
 }
-  
-  /* === Advanced Search Label === */
-  .advancedSearch h1 {
+
+/* === Advanced Search Label === */
+.advancedSearch h1 {
     font-size: 1.9rem;
-    /* margin-bottom: 5rem; */
     color: #444;
     align-self: center;
-  }
-  
-  /* === Dropdowns === */
-  .dropdown {
+}
+
+/* === Dropdowns === */
+.dropdown {
     min-width: 100%;
-  }
-  
-  /* === Submit + Reset Buttons === */
-  .submit-button {
+}
+
+/* === Submit + Reset Buttons === */
+.submit-button {
     width: 100%;
     justify-content: center;
     margin-top: 1rem;
-  }
-  
-  .resetButton,
-  .submitButton {
+}
+
+.resetButton,
+.submitButton {
     text-align: center;
-  }
-  
-  /* === Banner Message === */
-  .banner-msg {
+}
+
+/* === Banner Message === */
+.banner-msg {
     position: relative;
-    /* transform: translate(30%, 60%);  */
     top: 30%;
     right: 70%;
     margin-top: 2rem; 
     margin-left: 3rem;
     color: white;
     z-index: 3;
-    /* display: flex; */
     justify-content: flex-start;
     align-items: flex-start;
-  }
-  
-.home-bottom {
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.6); 
 }
 
+/* === How to Search the Database Card === */
 .search-db-card {
     padding: 2rem;
-    margin: 2rem auto;
+    margin: 4rem auto 2rem auto;
     max-width: 1000px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    position: relative;
+    display: block;
 }
 
-.search-db-text {
-    text-align: center;
-    padding: 1rem;
+.search-db-text h1, .search-db-text h3 {
+    color: black;
 }
 
-.search-db-text h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1rem;
-    z-index: 3;
+/* === Ensure Visibility === */
+.search-db-card {
+    opacity: 1;
+    visibility: visible;
 }
-
-.search-db-text h3 {
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.6;
-    margin-top: 1rem;
-    z-index: 3;
-}
-
-.search-db-text {
-    color: red !important;
-    background: yellow !important;
-    font-size: 2rem !important;
-  }
-  
