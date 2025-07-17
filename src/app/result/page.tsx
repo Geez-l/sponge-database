@@ -63,8 +63,30 @@ export default function ResultPage() {
                     No results found
                   </td>
                 </tr>
+              // temporary example data
               )}
+              
+              <tr>
+                  <td>32</td>
+                  <td>yellow</td>
+                  <td>encrusting</td>
+                  <td>thickly-encrusting</td>
+                  <td>opaque</td>
+                  <td>Batangas</td>
+                  <td>2023-04-26</td>
+              </tr>
+
+              <tr>
+                  <td>36</td>
+                  <td>yellow</td>
+                  <td>composite-massive</td>
+                  <td>lobate, spherical-bulbous</td>
+                  <td>opaque</td>
+                  <td>Bolinao</td>
+                  <td>2023-04-26</td>
+              </tr>
             </tbody>
+
           </Table>
         </div>
       </main>
