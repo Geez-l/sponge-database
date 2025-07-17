@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 
+import HomeCards from '../components/homeCards'; 
 
 
 /* HOME resources
@@ -238,28 +239,7 @@ const Home = () => {
         </div>
       </div>
       </main>
-      <div className='home-bottom'>
-        <Card className='search-db-card'>
-          <Card.Body>
-            <div className='search-db-text'>
-              <h1>How to Search Our Database</h1>
-              <h1>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
-        </h1>
-      </div>
-    </Card.Body>
-  </Card>
-</div>
-
-      {/* Add another card here */}
-      {/* Follow the logic in dropdowns, 1 row that encloses columns
-      row{col col col } */}
+      <HomeCards />
     </div>
     
   );
