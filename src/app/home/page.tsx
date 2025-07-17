@@ -236,6 +236,7 @@ const Home = () => {
         <div className='banner-msg'>
           <h1>DIVE IN AND DISCOVER</h1>
           <h2> The gateway to the Philippine Marine Sponges</h2>
+          <h3>hello world</h3>
         </div>
       </div>
       </main>

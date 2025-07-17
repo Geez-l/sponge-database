@@ -2,6 +2,8 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/variable.css';
+import '../css/results.css';
 
 interface Sponge {
   otu_id: string;
@@ -27,10 +29,10 @@ export default function ResultPage() {
       </main>
       <main className='result-table'>
         <div className='res-tab'>
-          <h5>Results</h5>
+          <h5>Results for &quot;insert query&quot;</h5>
         </div>
         <div className='result-container'>
-          <Table striped bordered hover responsive="sm">
+          <Table className="main-table" striped bordered hover responsive="sm">
             <thead>
               <tr>
                 <th>OTU No.</th>

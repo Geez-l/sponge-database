@@ -1,0 +1,48 @@
+
+/* === Result Header === */
+
+.result-header {
+    margin-top: 3rem;
+    padding: 0 3rem;
+}
+
+
+.res-tab {
+    padding: 0 2rem;
+    margin-top: 1rem;
+}
+
+/*== Table ===*/
+
+.result-table {
+    padding: 0 4rem;
+}
+
+.main-table {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*== format Table Headers Only ==*/
+
+.main-table thead th {
+  background-color: #4A8EBB;  
+  color: white;              
+  text-align: center;        
+}
+
+.main-table tbody td {
+  color: #000000;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+
+
+/*=== Page Numbers ===*/
+
