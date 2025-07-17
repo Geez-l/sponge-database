@@ -88,21 +88,21 @@
 
 .search-bar-left-icon {
     position: relative;
-    width: 1200px;
-    height: 100px;
+    width: 1000px;
+    height: 75px;
     background: #fff;
     border-radius: 20rem;
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     margin: 0 auto;
-    transform: translateX(20%);
+    /*transform: translateX(20%);*/
 }
 
 .search-icon {
     position: relative;
     right: 1rem;
-    transform: translateX(-90%);
+    transform: translateX(1350%);
     color: #48ACBB; 
     font-size: 3rem;
     pointer-events: none;
@@ -119,14 +119,14 @@
     border: none;
     border-radius: 2rem;
     background: transparent;
-    font-size: 2.5rem;
+    font-size: 1rem;
     outline: none;
     transition: box-shadow 0.2s;
     box-shadow: none !important;
 }
 
 .search-input::placeholder {
-    font-size: 2.5rem !important; 
+    font-size: 1.5rem !important; 
     color: #888; 
 }
 

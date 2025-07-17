@@ -10,10 +10,15 @@
   .header-sample {
     border-top: none !important;
     /* transform: translateY(-110%); */
-    background-color: #7fffd4;
+    background-color: #48ACBB;
+    color:#ffffff;
     width: 100%;
     min-width: 70%;
-    transform: translateY(-70%);
+    /*transform: translateY(-60%);*/
+    padding-top: 7rem;
+    padding-bottom: 3rem; 
+    margin-top: -6rem;
+    position: relative;
   }
 
   .otu, .list {
@@ -60,23 +65,46 @@
   
   /* Actual search input */
   .search-input {
-    padding: 15px 58px;
+    padding: 15px 55px;
     background: #ffffff;
     border-radius: 40px;
-    font-size: 1.25rem;
+    font-size: 1.00rem;
+    margin-right: 2rem;
+    border-color:#ffffff;
   }
 
   .top-container {
-    margin-top: none;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 2rem 4rem;
+
   }
   
   .res-tab {
-    margin-top: none;
+    margin-top: 0;
+    padding: 1rem 4rem;
   }
   
   .result-container {
-    margin-top: none;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding: 0 4rem;
   }
   
+.result-container thead th {
+    background-color: #4A8EBB;  
+    color: white;              
+    text-align: center;
+}
 
+.result-container tbody td {
+    color: #000000;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
+}
  
