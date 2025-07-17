@@ -38,9 +38,9 @@
 }
 
 .nav-logo {
-  width: 378px;
-  height: 170px;
-  margin-right: 10px;
+  width: 380px;
+  height: 180px;
+  margin-right: 0.5rem;
   background-image: url('/assets/home/Logo-with-text-trimmed.svg');
   background-size: contain;
   background-repeat: no-repeat;
