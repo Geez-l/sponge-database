@@ -45,7 +45,7 @@ const mockData: Sponge[] = [
 
 export default function ResultPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  // const router = useRouter();
+  const router = useRouter();
   // const { handleSubmit } = useSpongeFilters();
 
   const selectedColor = 'All';
@@ -61,34 +61,38 @@ export default function ResultPage() {
     <div>
       <main className='result-header mt-5 pt-5'>
         <div className='header-sample pt-5'>
-          <h1>Sample List</h1>
-          <form
-            className="search-bar-wrapper"
-            onSubmit={e => {
-              e.preventDefault();
-              // handleSubmitAndNavigate();
-            }}
-          >
-            <div className="search-bar-left-icon d-flex flex-row-reverse">
-              <FaSearch className="search-icon" />
-              <input
-                type="text"
-                placeholder="Enter keyword"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input ps-5"
-              />
-            </div>
-          </form>
+          {/* <p className="text-center">OTU List</p> */}
+          <h1>
+            <span className='otu'>OTU</span> <span className='list'>List</span>
+          </h1>
+          <div className="container-fluid d-flex justify-content-end ">
+            <form
+              className="search-bar-wrapper"
+              onSubmit={e => {
+                e.preventDefault();
+                // handleSubmitAndNavigate();
+              }}
+            >
+              <div className="search-bar-left-icon">
+                <FaSearch className="search-icon" />
+                <input
+                  type="text"
+                  placeholder="Enter keyword"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="search-input"
+                />
+              </div>
+            </form>
+          </div>
         </div>
-        <div className='top-container mt-50 pt-50'>
-          <strong>Selected Filters:</strong> Color = {selectedColor}, Functional Form = {selectedFunctionalForm}
+        <div className='top-container mt-1 '>
+          <p className='text-sm-start'><strong>Selected Filters:</strong></p> Color = {selectedColor}, Functional Form = {selectedFunctionalForm}
         </div>
       </main>
       <main className='result-table mt-5 pt-5'>
         <div className='res-tab mt-5 pt-5'>
           <h5>Results</h5>
-          {/* Search Form */}
           
         </div>
         <div className='result-container'>
@@ -108,7 +112,10 @@ export default function ResultPage() {
             <tbody>
               {sponges.length > 0 ? (
                 sponges.map((sponge, index) => (
-                  <tr key={index}>
+                  <tr key={index}
+                  style={{cursor:'pointer'}}
+                  onClick={() => router.push(`/resultDetails`)}
+                  >
                     <td>{sponge.otu_id}</td>
                     <td>{sponge.color}</td>
                     <td>{sponge.functional_form}</td>
