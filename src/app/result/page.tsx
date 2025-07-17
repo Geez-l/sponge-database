@@ -91,7 +91,7 @@ export default function ResultPage() {
         </div>
       </main>
       <main className='result-table mt-5 pt-5'>
-        <div className='res-tab mt-5 pt-5'>
+        <div className='res-tab'>
           <h5>Results</h5>
           
         </div>
@@ -142,6 +142,7 @@ export default function ResultPage() {
                   <td>thickly-encrusting</td>
                   <td>opaque</td>
                   <td>Batangas</td>
+                  <td>3</td>
                   <td>2023-04-26</td>
               </tr>
 
@@ -152,6 +153,7 @@ export default function ResultPage() {
                   <td>lobate, spherical-bulbous</td>
                   <td>opaque</td>
                   <td>Bolinao</td>
+                  <td>4</td>
                   <td>2023-04-26</td>
               </tr>
             </tbody>
