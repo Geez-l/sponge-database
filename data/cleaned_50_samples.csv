@@ -1,0 +1,51 @@
+﻿otu_id,date_collected,location_name,site_name,depth,dive_no,initials,name,sample_code,barcode_sequences
+1,2023-03-07,bolinao,balingasay,23.9,1,cc,Cecilia Conaco,not-collected,unknown
+2,2023-03-09,bolinao,balingasay,16.2,1,cc,Cecilia Conaco,not-collected,unknown
+3,2023-03-30,bolinao,arnedo,26.2,1,cc,Cecilia Conaco,11cc,unknown
+4,2023-03-30,bolinao,arnedo,29.9,1,cc,Cecilia Conaco,2cc,unknown
+5,2023-03-07,bolinao,balingasay,27.7,1,cc,Cecilia Conaco,not-collected,unknown
+6,2023-03-07,bolinao,balingasay,20.5,1,cc,Cecilia Conaco,not-collected,unknown
+7,2023-03-30,bolinao,arnedo,31.9,1,cc,Cecilia Conaco,not-collected,unknown
+8,2023-03-07,bolinao,balingasay,16,1,cc,Cecilia Conaco,not-collected,unknown
+10,2023-03-03,bolinao,lucero,8.6,1,cc,Cecilia Conaco,not-collected,unknown
+12,2023-03-28,bolinao,arnedo,28.4,1,mc,Marielle Carungay,not-collected,unknown
+13,2023-03-07,bolinao,balingasay,24.5,1,cc,Cecilia Conaco,not-collected,unknown
+14,2023-04-12,bolinao,arnedo,10,1,mc,Marielle Carungay,69,unknown
+15,2023-03-09,bolinao,balingasay,16.2,1,cc,Cecilia Conaco,not-collected,unknown
+16,2023-04-12,bolinao,arnedo,10,1,mc,Marielle Carungay,not-collected,unknown
+17,2023-03-07,bolinao,balingasay,19.3,1,cc,Cecilia Conaco,not-collected,unknown
+18,2023-03-07,bolinao,arnedo,7.7,1,gm,Gabriella Juliane Maala,not-collected,unknown
+19,2023-03-09,bolinao,silaqui,1.4,1,mc,Marielle Carungay,SIL-2,unknown
+20,2023-03-09,bolinao,silaqui,1.4,1,mc,Marielle Carungay,SIL-1,unknown
+21,2023-03-09,bolinao,silaqui,1.4,1,gm,Gabriella Juliane Maala,SIL-6,unknown
+23,2023-03-07,bolinao,balingasay,16,1,cc,Cecilia Conaco,not-collected,unknown
+24,2023-03-09,bolinao,balingasay,16.2,1,cc,Cecilia Conaco,not-collected,unknown
+25,2023-03-07,bolinao,balingasay,12.5,1,cc,Cecilia Conaco,not-collected,unknown
+26,2023-03-03,bolinao,lucero,8.6,1,cc,Cecilia Conaco,not-collected,unknown
+27,2023-03-09,bolinao,balingasay,19,1,cc,Cecilia Conaco,not-collected,unknown
+28,2023-03-07,bolinao,balingasay,23.9,1,cc,Cecilia Conaco,not-collected,unknown
+29,2023-03-07,bolinao,balingasay,10.3,1,cc,Cecilia Conaco,not-collected,unknown
+30,2023-03-09,bolinao,balingasay,21.9,1,cc,Cecilia Conaco,not-collected,unknown
+31,2023-03-07,bolinao,balingasay,12.5,1,cc,Cecilia Conaco,not-collected,unknown
+32,2023-04-26,batangas,sombrero,17.5,1,cc,Cecilia Conaco,not-collected,unknown
+33,2023-03-07,bolinao,balingasay,20.5,1,cc,Cecilia Conaco,not-collected,unknown
+34,2023-03-09,bolinao,silaqui,1.4,1,gm,Gabriella Juliane Maala,not-collected,unknown
+35,2023-03-07,bolinao,balingasay,21.7,1,cc,Cecilia Conaco,not-collected,unknown
+36,2023-03-07,bolinao,balingasay,21.7,1,cc,Cecilia Conaco,not-collected,unknown
+37,2023-03-07,bolinao,balingasay,21.7,1,cc,Cecilia Conaco,not-collected,unknown
+38,2023-03-07,bolinao,balingasay,21.7,1,cc,Cecilia Conaco,not-collected,unknown
+39,2023-03-03,bolinao,lucero,8.6,1,cc,Cecilia Conaco,not-collected,unknown
+40,2023-04-27,batangas,bauan,1.8,1,mc,Marielle Carungay,95,unknown
+43,2023-03-09,bolinao,balingasay,17.2,1,cc,Cecilia Conaco,not-collected,unknown
+44,2023-04-27,batangas,bauan,16.1,1,cc,Cecilia Conaco,105,unknown
+48,2023-04-24,batangas,bauan,18.6,1,cc,Cecilia Conaco,not-collected,unknown
+50,2023-04-24,batangas,bauan,20.5,1,cc,Cecilia Conaco,not-collected,unknown
+51,2023-04-24,batangas,bauan,5,1,cc,Cecilia Conaco,not-collected,unknown
+52,2023-04-26,batangas,sombrero,13.3,1,cc,Cecilia Conaco,not-collected,unknown
+54,2023-04-24,batangas,bauan,9,1,cc,Cecilia Conaco,not-collected,unknown
+55,2023-04-26,batangas,sombrero,35,2,cc,Cecilia Conaco,not-collected,unknown
+58,2023-03-28,bolinao,arnedo,28.4,1,mc,Marielle Carungay,not-collected,unknown
+59,2023-04-28,batangas,bauan,16,1,cc,Cecilia Conaco,135,unknown
+61,2023-04-24,batangas,bauan,18.4,1,cc,Cecilia Conaco,not-collected,unknown
+66,2023-04-28,batangas,bauan,22.3,2,cc,Cecilia Conaco,170,https://drive.google.com/file/d/1AdtoXNg_EJ_w7Yas9Hy-wo1tUZklx19Z/view?usp=drive_link
+67,2023-04-24,batangas,bauan,18.1,1,cc,Cecilia Conaco,not-collected,unknown
