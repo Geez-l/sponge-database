@@ -14,7 +14,6 @@ const Navigation = () => {
           {/* Brand Section */}
           <Navbar.Brand as={Link} href="/" className="nav-brand d-flex align-items-center">
             <div className="nav-logo" aria-label="Sponge Logo" role="img" />
-            {/* Optional title below logo */}
             {/* <div className="nav-title">The Philippine Sponge Guide</div> */}
           </Navbar.Brand>
 
