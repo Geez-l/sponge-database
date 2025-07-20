@@ -4,6 +4,8 @@ import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaSearch } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useSpongeFilters } from '../hooks/useSpongeFilters';
 
 import '../css/result.css'
@@ -46,6 +48,7 @@ const mockData: Sponge[] = [
 export default function ResultPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
+  const pathname = usePathname();
   // const { handleSubmit } = useSpongeFilters();
 
   const selectedColor = 'All';
@@ -56,6 +59,8 @@ export default function ResultPage() {
   //   handleSubmit();
   //   router.push('/result');
   // };
+
+ 
 
   return (
     <div>
@@ -136,7 +141,7 @@ export default function ResultPage() {
               )}
               
               <tr>
-                  <td>32</td>
+                  <td><Link href = "/resultDetails" className={`nav-link ${pathname === '/resultDetails' ? 'active' : ''}`}>32</Link></td>
                   <td>yellow</td>
                   <td>encrusting</td>
                   <td>thickly-encrusting</td>
