@@ -1,0 +1,24 @@
+
+/*==result details header==*/
+
+.resultDetails-content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.header-bg {
+    background-image: url('/assets/resultDetails/OTU_32.jpg');
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    margin: 1rem 0;
+
+}
+
+/*==result details body==*/
+
+.body {
+    margin: 1rem 4rem;
+}
