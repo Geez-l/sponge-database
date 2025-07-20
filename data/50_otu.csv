@@ -1,0 +1,51 @@
+otu_id,functional_form,growth_form,color,surface_texture,oscule_shape,oscule_distribution,ostia,count_no,putative_id
+1,composite-massive,thickly-encrusting,black,"opaque, membranous","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,9,unknown
+2,tabular,"flat, disc-like",grey,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,14,unknown
+3,encrusting,thinly-encrusting,black,"opaque, membranous","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,1,hyrtios
+4,encrusting,thickly-encrusting,blue-green,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,4,unknown
+5,barrel,barrel,red-brown,opaque,"large, terminal, raised","on apex of sponge, confined to distinct pore area (capitum)",not-visible,139,xestospongia
+6,encrusting,thickly-encrusting,blue-green,"opaque, membranous","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,15,unknown
+7,composite-massive,"hollow, bifurcate tubular digits",black,"dense, spiculose, heavily pigmented","large, terminal, raised, on the apex of fistules","on apex of sponge, confined to distinct pore area (capitum)",not-visible,1,unknown
+8,composite-massive,thickly-encrusting,black,"opaque, membranous","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,9,unknown
+10,encrusting,thickly-encrusting,blue-white,"translucent, membranous","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed evenly over entire surface",60,haliclona
+12,stalked,"hollow, single tubular digit",red,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,1,unknown
+13,simple-massive,thickly-encrusting,gray-black,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,5,spongia
+14,composite-massive,thickly-encrusting,pale-brown,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,2,unknown
+15,encrusting,"enlarged basal portion, fistules-protruding",brown,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,4,unknown
+16,encrusting,encrusting-tubular,blue,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,7,unknown
+17,tube,encrusting-tubular,pale-brown,"opaque, flaky","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,9,unknown
+18,encrusting,"enlarged basal portion, fistules-protruding",red,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,7,neopetrosia
+19,fistulate,"hollow, several tubular digits attached to common base",brown,"opaque, thin",large-terminal,mainly on external surface,not-visible,5,spheciospongia cf. vagabunda
+20,composite-massive,"enlarged basal portion, fistules-protruding",orange,opaque,"large, terminal, raised, on the apex of fistules",mainly on external surface,not-visible,3,stylissa
+21,erect-branching,"arborescent, cylindrical digitate branches, complex-branching, repeatedly-bifurcate",yellow,opaque,"large, terminal, raised, on the apex of fistules",mainly on external surface,not-visible,2,unknown
+23,composite-massive,thickly-encrusting,black,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,3,hyrtios 
+24,encrusting,thinly-encrusting,light-blue,translucent,"conspicuous, discrete with a slightly raised membraneous lip, and subectosomal drainage canals radiating away from oscules forming stellate grooves on surface",mainly on external surface,not-visible,3,unknown
+25,encrusting,thinly-encrusting,blue-gray,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,4,unknown
+26,tabular,"enlarged basal portion, fistules-protruding",white,opaque,"large, terminal, raised, on the apex of fistules",mainly on external surface,"minute, dispersed evenly over entire surface",17,phyllospongia-1
+27,encrusting,thinly-encrusting,light-blue,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",22,unknown
+28,composite-massive,"lobate, spherical-bulbous",green,"translucent, membranous","conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over internal surfaces",7,unknown
+29,ball,"lobate, spherical-bulbous",white,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",4,unknown
+30,composite-massive,"lobate,spherical-bulbous",orange-white,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",1,unknown
+31,encrusting,thinly-encrusting,light-yellow,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",2,unknown
+32,encrusting,thickly-encrusting,yellow,opaque,not-visible,not-visible,minute-disperse,1,unknown
+33,encrusting,thickly-encrusting,white,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed evenly over entire surface",3,unknown
+34,composite-massive,thickly-encrusting,orange,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed evenly over entire surface",9,stylissa
+35,simple-erect,club-shaped spiky,white,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",1,unknown
+36,composite-massive,"lobate,spherical-bulbous",yellow,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",2,unknown
+37,tube,"hollow, single tubular digit",brown,opaque,"large,-terminal",on apex of sponge,"minute, dispersed over external surfaces",1,unknown
+38,encrusting,thickly-encrusting,yellow,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed over external surfaces",2,unknown
+39,creeping,"arborescent, flattened digitate branches, complex reticulate branching in one plane",pale-green,"opaque, spiky",not-visible,not-visible,"minute, dispersed over external surfaces",32,gelliodes
+40,creeping,"enlarged basal portion, fistules-protruding",green,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,3,pseudoceratina
+43,encrusting,thinly-encrusting,pale-blue,opaque,not-visible,not-visible,not-visible,2,lendenfeldia-1
+44,composite-massive,thickly-encrusting,pale-red,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,1,unknown
+48,composite-massive,encrusting-tubular,orange,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,5,unknown
+50,creeping,"enlarged basal portion below substrate, fistules-protruding through substrate",orange,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,4,unknown
+51,tabular,"enlarged basal portion below substrate, fistules-protruding through substrate",dirty-yellow,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,22,carteriospongia
+52,composite-massive,encrusting-tubular,orange,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed evenly over entire surface",3,unknown
+54,composite-massive,thickly-encrusting,light-blue,"translucent, membranous","conspicuous, discrete with a slightly raised membraneous lip, and subectosomal drainage canals radiating away from oscules forming stellate grooves on surface",mainly on external surface,not-visible,2,unknown
+55,composite-massive,encrusting-tubular,peach,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,2,unknown
+58,simple-erect,"encrusting-tubular, spiky",white,opaque,"conspicuous, discrete, with a slightly raised membraneous lip",mainly on external surface,not-visible,7,unknown
+59,tabular,thinly-encrusting,light-yellow,opaque,"conspicuous, discrete",mainly on external surface,not-visible,1,unknown
+61,erect-branching,"arborescent, simple branching, spiky",light-orange,opaque,"conspicuous, discrete",mainly on external surface,not-visible,2,unknown
+66,composite-massive,encrusting-tubular,red,opaque,"conspicuous, discrete with a slightly raised membraneous lip",mainly on external surface,"minute, dispersed evenly over entire surface",1,unknown
+67,composite-massive,encrusting-tubular,black,opaque,"conspicuous, discrete",mainly on external surface,"minute, dispersed evenly over entire surface",3,unknown
