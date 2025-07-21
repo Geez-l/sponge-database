@@ -147,7 +147,7 @@ export function useSpongeFilters() {
   const handleReset = () => {
     setSelectedColor('Color');
     setSelectedFunctionalForm('Functional Form');
-    setSelectedClassification('Putative Classification');
+    setSelectedClassification('Classification');
     setSelectedGrowth('Growth Form');
     setSelectedSurface('Surface Texture');
     setSelectedLocation('Location');

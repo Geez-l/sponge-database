@@ -76,8 +76,6 @@ export function useSpongeFilters() {
           otu_id: 1,
           color: selectedColor !== 'Color Dropdown' ? selectedColor : 'Sample Color',
           functional_form: selectedFunctionalForm !== 'Functional Form Dropdown' ? selectedFunctionalForm : 'Sample Form',
-          growth_form: 'Sample Growth Form',
-          surface_texture: 'Sample Texture',
           location_name: 'Sample Location',
           date_collected: '2024-01-01'
         }
@@ -114,6 +112,7 @@ export function useSpongeFilters() {
   return {
     selectedColor,
     selectedFunctionalForm,
+    selectedClassification,
     sponges,
     colors,
     functionalForms,
@@ -121,6 +120,7 @@ export function useSpongeFilters() {
     error,
     handleColorSelect,
     handleFunctionalFormSelect,
+    handleClassification,
     handleReset,
     handleSubmit,
   };
