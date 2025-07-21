@@ -18,7 +18,7 @@ import { FaSearch } from 'react-icons/fa';
 import HomeCards from './components/homeCards'; 
 
 
-/* HOME resources
+/* HOME resourcessss
 1) Dropdowns: https://react-bootstrap.netlify.app/docs/components/dropdowns/
 2) Cards [texts below the home]: https://react-bootstrap.netlify.app/docs/components/cards
  */
