@@ -27,15 +27,15 @@ const Home = () => {
   const {
     selectedColor,
     selectedFunctionalForm,
-    selectedClassification,
+    selectedPutative,
     selectedLocation,
     colors,
     functionalForms,
-    classification,
+    putative,
     location,
     handleColorSelect,
     handleFunctionalFormSelect,
-    handleClassificationSelect,
+    handlePutativeSelect,
     handleLocationSelect,
     handleReset,
     handleSubmit,
@@ -89,7 +89,7 @@ const Home = () => {
               <h4>or search by</h4>
             </div>
 
-            {/* First Row of Dropdowns */}
+            {/* COLOR */}
             <Row className="w-100 mb-2">
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown1">
@@ -110,6 +110,7 @@ const Home = () => {
                 </Dropdown>
               </Col>
 
+              {/* Functional Form */}
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown2">
                   <Dropdown.Toggle variant="success" id="dropdown-form">
@@ -128,26 +129,25 @@ const Home = () => {
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
-
-
             </Row>
 
             {/* Second Row of Dropdowns */}
             <Row className="w-100 mb-4">
 
               <Col md={4} className="mb-2">
-                <Dropdown className="dropDown3">
-                  <Dropdown.Toggle variant="success" id="dropdown-classification">
-                    {selectedClassification}
+                <Dropdown className="dropDown4">
+                  <Dropdown.Toggle variant="success" id="dropdown-putative">
+                    {putative}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    {classification.map((item, index) => (
+                    {putative.map((putative, index) => (
                       <Dropdown.Item
                         key={index}
-                        onClick={() => handleClassificationSelect(item)}
-                        active={selectedClassification === item}
+                        onClick={() => handlePutativeSelect(putative)}
+                        active={selectedPutative === putative}
                       >
-                        {item}
+                        {putative}
+
                       </Dropdown.Item>
                     ))}
                   </Dropdown.Menu>

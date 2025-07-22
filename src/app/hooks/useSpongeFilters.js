@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// not used - to be del soon
 export function useSpongeFilters() {
   const [selectedColor, setSelectedColor] = useState('Color Dropdown');
   const [selectedFunctionalForm, setSelectedFunctionalForm] = useState('Functional Form Dropdown');
@@ -9,6 +10,7 @@ export function useSpongeFilters() {
   const [functionalForms, setFunctionalForms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
 
   const fetchColors = async () => {
     try {
