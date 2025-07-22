@@ -4,6 +4,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table, Tabs, Tab } from 'react-bootstrap';
+import { useParams } from 'next/navigation';
+const { otu_id } = useParams();
 
 import '../css/resultDetails.css'
 
