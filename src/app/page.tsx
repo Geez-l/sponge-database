@@ -42,10 +42,16 @@ const Home = () => {
   } = useSpongeFilters();
 
   const handleSubmitAndNavigate = () => {
-    handleSubmit();
-    router.push('/result');
+    const params = new URLSearchParams();
+    if (selectedColor !== 'Color') params.append('color', selectedColor);
+    if (selectedFunctionalForm !== 'Functional Form') params.append('functional_form', selectedFunctionalForm);
+    if (selectedPutative !== 'Putative') params.append('putative_id', selectedPutative);
+    if (selectedLocation !== 'Location') params.append('location', selectedLocation);
+
+    router.push(`/result?${params.toString()}`);
   };
 
+  // Notes: search field isn't working yet: TBA
   const handleSearch = () => {
     handleSearch();
     router.push('/result');
