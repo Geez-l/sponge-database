@@ -137,7 +137,7 @@ const Home = () => {
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown4">
                   <Dropdown.Toggle variant="success" id="dropdown-putative">
-                    {putative}
+                    {selectedPutative}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     {putative.map((putative, index) => (

@@ -14,4 +14,18 @@ router.get('/test-db', async (req, res) => {
 
 });
 
+router.get('/debug-otu', async (req, res) => {
+    try {
+        const result = await pool.query(`
+      SELECT column_name 
+      FROM information_schema.columns 
+      WHERE table_name = 'otu'
+    `);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Debug OTU table failed:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 module.exports = router;
