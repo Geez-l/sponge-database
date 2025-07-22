@@ -18,7 +18,7 @@ import { FaSearch } from 'react-icons/fa';
 import HomeCards from './components/homeCards'; 
 
 
-/* HOME resources
+/* HOME resourcessss
 1) Dropdowns: https://react-bootstrap.netlify.app/docs/components/dropdowns/
 2) Cards [texts below the home]: https://react-bootstrap.netlify.app/docs/components/cards
  */
@@ -71,7 +71,7 @@ const Home = () => {
               }}
             >
               <div className="search-bar-left-icon">
-                <FaSearch className="search-icon" />
+              <FaSearch className="search-icon" />
                 <input
                   type="text"
                   placeholder="Enter keyword"
@@ -79,12 +79,14 @@ const Home = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="search-input"
                 />
+
+              
               </div>
             </form>
 
             {/* Advanced Search Label */}
             <div className="advancedSearch">
-              <h1>OR SEARCH BY</h1>
+              <h4>or search by</h4>
             </div>
 
             {/* COLOR */}
@@ -127,11 +129,11 @@ const Home = () => {
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
-
             </Row>
 
             {/* Second Row of Dropdowns */}
             <Row className="w-100 mb-4">
+
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown4">
                   <Dropdown.Toggle variant="success" id="dropdown-putative">
@@ -145,6 +147,7 @@ const Home = () => {
                         active={selectedPutative === putative}
                       >
                         {putative}
+
                       </Dropdown.Item>
                     ))}
                   </Dropdown.Menu>
@@ -172,7 +175,7 @@ const Home = () => {
             </Row>
 
             {/* Submit and Reset Buttons */}
-            <Row className="submit-button">
+            <Row className="submit-and-reset">
               <Col md={4} className="mb-2">
                 <div className="resetButton">
                   <button className="btn btn-outline-danger" onClick={handleReset}>
@@ -183,7 +186,7 @@ const Home = () => {
 
               <Col md={4} className="mb-2">
                 <div className="submitButton">
-                  <button className="btn btn-success" onClick={handleSubmitAndNavigate}>
+                  <button className="btn btn-success custom-submit" onClick={handleSubmitAndNavigate}>
                     Submit
                   </button>
                 </div>
@@ -192,13 +195,24 @@ const Home = () => {
           </div>
         </Card>
         <div className='banner-msg'>
-          <h1>DIVE IN AND DISCOVER</h1>
-          <h2> The gateway to the Philippine Marine Sponges</h2>
-          <h3>hello world</h3>
+          <h1>DIVE IN AND <span className='highlight'>DISCOVER</span></h1>
+          <h2> The gateway to the Philippine marine sponges</h2>
         </div>
       </div>
       </main>
       <HomeCards />
+      <div className='footer-container'>
+        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
+        <div className='footer-text'>
+          
+          <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
+          <div className='footer-body'>
+            <p>SAMPLE COUNT: 50 </p> 
+            <p>IMAGE COUNT: 100 </p>
+            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
+          </div>         
+        </div>
+      </div>
     </div>
     
   );
