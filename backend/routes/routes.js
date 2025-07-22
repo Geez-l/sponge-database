@@ -23,11 +23,12 @@ researcher: researcher_id, name, initials
 sample: sample_id, otu_id, date_collected, location_id, depth, dive_no, researcher_id,
 sample_code, skeletal_notes
 */
+
 /*== FUNCRIONAL FORMS ==*/ 
 router.get('/functional_form', async(req, res) => {
   try {
-    const result = await pool.query('Select distinct functional form');
-    res.json(result.rows.map(row => row.functional_form));
+    const result = await pool.query('SELECT DISTINCT functional_form FROM otu');
+    res.json({success:true, data: result.rows.map(row => row.functional_form) });
   } catch (err) {
     console.error('Error fetching functional form',err);
     res.status(500).json({error: 'Failed to fetch functional form'});
@@ -37,28 +38,30 @@ router.get('/functional_form', async(req, res) => {
 /*== COLORS ==*/
 router.get('/colors', async (req, res) => {
   try {
-    const result = await pool.query('Select distinct color');
-    res.json(result.rows.map(row => row.color));
+    const result = await pool.query('SELECT DISTINCT color FROM otu');
+    res.json({success:true, data: result.rows.map(row => row.color) });
   } catch (err) {
     console.error('Error fetching color', err);
     res.status(500).json({error: 'Failed to fetch colors'});
   }
 }); 
+
 /*== PUTATIVE ID ==*/ 
 router.get('/putative_id', async (req, res) => {
   try {
-    const result = await pool.query('Select distinct putative id');
-    res.json(result.rows.map(row => row.putative_id));
+    const result = await pool.query("SELECT DISTINCT putative_id FROM otu WHERE putative_id <> 'unknown'");
+    res.json({success:true, data: result.rows.map(row => row.putative_id) });
   } catch (err) {
-    console.error('Error fetching putative id', err);
-    res.status(500).json({error: 'Failed to fetch putative id'});
+    console.error('Error fetching putative_id', err);
+    res.status(500).json({error: 'Failed to fetch putative_id'});
   }
 }); 
+
 /*== LOCATION ==*/ 
 router.get('/location', async (req, res) => {
   try {
-    const result = await pool.query('Select distinct location');
-    res.json(result.rows.map(row => row.location));
+    const result = await pool.query('SELECT DISTINCT location_name FROM location');
+    res.json({success:true, data: result.rows.map(row => row.location_name) });
   } catch (err) {
     console.error('Error fetching location', err);
     res.status(500).json({error: 'Failed to fetch location'});
@@ -128,4 +131,18 @@ router.get('/samples', async (req, res) => {
   }
 });
 
+
+router.get('/debug-otu', async (req, res) => {
+    try {
+        const result = await pool.query(`
+      SELECT column_name 
+      FROM information_schema.columns 
+      WHERE table_name = 'otu'
+    `);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Debug OTU table failed:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
 module.exports = router;
