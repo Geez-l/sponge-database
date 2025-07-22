@@ -27,21 +27,15 @@ const Home = () => {
   const {
     selectedColor,
     selectedFunctionalForm,
-    selectedClassification,
-    selectedGrowth,
-    selectedSurface,
+    selectedPutative,
     selectedLocation,
     colors,
     functionalForms,
-    classification,
-    growth,
-    surface,
+    putative,
     location,
     handleColorSelect,
     handleFunctionalFormSelect,
-    handleClassificationSelect,
-    handleGrowthSelect,
-    handleSurfaceSelect,
+    handlePutativeSelect,
     handleLocationSelect,
     handleReset,
     handleSubmit,
@@ -93,7 +87,7 @@ const Home = () => {
               <h1>OR SEARCH BY</h1>
             </div>
 
-            {/* First Row of Dropdowns */}
+            {/* COLOR */}
             <Row className="w-100 mb-2">
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown1">
@@ -114,6 +108,7 @@ const Home = () => {
                 </Dropdown>
               </Col>
 
+              {/* Functional Form */}
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown2">
                   <Dropdown.Toggle variant="success" id="dropdown-form">
@@ -133,60 +128,23 @@ const Home = () => {
                 </Dropdown>
               </Col>
 
-              <Col md={4} className="mb-2">
-                <Dropdown className="dropDown3">
-                  <Dropdown.Toggle variant="success" id="dropdown-classification">
-                    {selectedClassification}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {classification.map((item, index) => (
-                      <Dropdown.Item
-                        key={index}
-                        onClick={() => handleClassificationSelect(item)}
-                        active={selectedClassification === item}
-                      >
-                        {item}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
             </Row>
 
             {/* Second Row of Dropdowns */}
             <Row className="w-100 mb-4">
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown4">
-                  <Dropdown.Toggle variant="success" id="dropdown-growth">
-                    {selectedGrowth}
+                  <Dropdown.Toggle variant="success" id="dropdown-putative">
+                    {putative}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    {growth.map((g, index) => (
+                    {putative.map((putative, index) => (
                       <Dropdown.Item
                         key={index}
-                        onClick={() => handleGrowthSelect(g)}
-                        active={selectedGrowth === g}
+                        onClick={() => handlePutativeSelect(putative)}
+                        active={selectedPutative === putative}
                       >
-                        {g}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
-
-              <Col md={4} className="mb-2">
-                <Dropdown className="dropDown5">
-                  <Dropdown.Toggle variant="success" id="dropdown-surface">
-                    {selectedSurface}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {surface.map((s, index) => (
-                      <Dropdown.Item
-                        key={index}
-                        onClick={() => handleSurfaceSelect(s)}
-                        active={selectedSurface === s}
-                      >
-                        {s}
+                        {putative}
                       </Dropdown.Item>
                     ))}
                   </Dropdown.Menu>
