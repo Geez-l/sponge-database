@@ -76,6 +76,14 @@
   margin: 0 7rem 2rem 7rem;
 }
 
+.individual-filter {
+  background-color: #ffc64c;
+  padding: 0.6rem;
+  margin: 0 0.5rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
   .res-tab {
     margin-top: 0;
     margin-bottom: 2rem;

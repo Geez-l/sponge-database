@@ -90,8 +90,11 @@ const filteredSponges = sponges.filter(sponge =>
           </div>
         </div>
         <div className='filters-container'>
-          <p className='text-sm-start'><strong>Selected Filters:</strong></p> Color = {color}, Functional Form = {functionalForm},
-          Putative ID = {putativeID}, Location = {location}
+          <p className='text-sm-start'><strong>Selected Filters:</strong></p>  
+          <span className='individual-filter'>Color = {color}</span>  
+          <span className='individual-filter'>Functional Form = {functionalForm}</span> 
+          <span className='individual-filter'>Putative ID = {putativeID} </span> 
+          <span className='individual-filter'>Location = {location}</span>
         </div>
       </main>
       <main className='result-table'>
