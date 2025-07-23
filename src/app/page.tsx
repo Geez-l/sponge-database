@@ -27,31 +27,31 @@ const Home = () => {
   const {
     selectedColor,
     selectedFunctionalForm,
-    selectedClassification,
-    selectedGrowth,
-    selectedSurface,
+    selectedPutative,
     selectedLocation,
     colors,
     functionalForms,
-    classification,
-    growth,
-    surface,
+    putative,
     location,
     handleColorSelect,
     handleFunctionalFormSelect,
-    handleClassificationSelect,
-    handleGrowthSelect,
-    handleSurfaceSelect,
+    handlePutativeSelect,
     handleLocationSelect,
     handleReset,
     handleSubmit,
   } = useSpongeFilters();
 
   const handleSubmitAndNavigate = () => {
-    handleSubmit();
-    router.push('/result');
+    const params = new URLSearchParams();
+    if (selectedColor !== 'Color') params.append('color', selectedColor);
+    if (selectedFunctionalForm !== 'Functional Form') params.append('functional_form', selectedFunctionalForm);
+    if (selectedPutative !== 'Putative') params.append('putative_id', selectedPutative);
+    if (selectedLocation !== 'Location') params.append('location', selectedLocation);
+
+    router.push(`/result?${params.toString()}`);
   };
 
+  // Notes: search field isn't working yet: TBA
   const handleSearch = () => {
     handleSearch();
     router.push('/result');
@@ -77,7 +77,7 @@ const Home = () => {
               }}
             >
               <div className="search-bar-left-icon">
-                <FaSearch className="search-icon" />
+              <FaSearch className="search-icon" />
                 <input
                   type="text"
                   placeholder="Enter keyword"
@@ -85,15 +85,17 @@ const Home = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="search-input"
                 />
+
+              
               </div>
             </form>
 
             {/* Advanced Search Label */}
             <div className="advancedSearch">
-              <h1>OR SEARCH BY</h1>
+              <h4>or search by</h4>
             </div>
 
-            {/* First Row of Dropdowns */}
+            {/* COLOR */}
             <Row className="w-100 mb-2">
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown1">
@@ -114,6 +116,7 @@ const Home = () => {
                 </Dropdown>
               </Col>
 
+              {/* Functional Form */}
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown2">
                   <Dropdown.Toggle variant="success" id="dropdown-form">
@@ -132,61 +135,25 @@ const Home = () => {
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
-
-              <Col md={4} className="mb-2">
-                <Dropdown className="dropDown3">
-                  <Dropdown.Toggle variant="success" id="dropdown-classification">
-                    {selectedClassification}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {classification.map((item, index) => (
-                      <Dropdown.Item
-                        key={index}
-                        onClick={() => handleClassificationSelect(item)}
-                        active={selectedClassification === item}
-                      >
-                        {item}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
             </Row>
 
             {/* Second Row of Dropdowns */}
             <Row className="w-100 mb-4">
-              <Col md={4} className="mb-2">
-                <Dropdown className="dropDown4">
-                  <Dropdown.Toggle variant="success" id="dropdown-growth">
-                    {selectedGrowth}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {growth.map((g, index) => (
-                      <Dropdown.Item
-                        key={index}
-                        onClick={() => handleGrowthSelect(g)}
-                        active={selectedGrowth === g}
-                      >
-                        {g}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
 
               <Col md={4} className="mb-2">
-                <Dropdown className="dropDown5">
-                  <Dropdown.Toggle variant="success" id="dropdown-surface">
-                    {selectedSurface}
+                <Dropdown className="dropDown4">
+                  <Dropdown.Toggle variant="success" id="dropdown-putative">
+                    {selectedPutative}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    {surface.map((s, index) => (
+                    {putative.map((putative, index) => (
                       <Dropdown.Item
                         key={index}
-                        onClick={() => handleSurfaceSelect(s)}
-                        active={selectedSurface === s}
+                        onClick={() => handlePutativeSelect(putative)}
+                        active={selectedPutative === putative}
                       >
-                        {s}
+                        {putative}
+
                       </Dropdown.Item>
                     ))}
                   </Dropdown.Menu>
@@ -214,7 +181,7 @@ const Home = () => {
             </Row>
 
             {/* Submit and Reset Buttons */}
-            <Row className="submit-button">
+            <Row className="submit-and-reset">
               <Col md={4} className="mb-2">
                 <div className="resetButton">
                   <button className="btn btn-outline-danger" onClick={handleReset}>
@@ -225,7 +192,7 @@ const Home = () => {
 
               <Col md={4} className="mb-2">
                 <div className="submitButton">
-                  <button className="btn btn-success" onClick={handleSubmitAndNavigate}>
+                  <button className="btn btn-success custom-submit" onClick={handleSubmitAndNavigate}>
                     Submit
                   </button>
                 </div>
@@ -234,13 +201,24 @@ const Home = () => {
           </div>
         </Card>
         <div className='banner-msg'>
-          <h1>DIVE IN AND DISCOVER</h1>
-          <h2> The gateway to the Philippine Marine Sponges</h2>
-          <h3>hello world</h3>
+          <h1>DIVE IN AND <span className='highlight'>DISCOVER</span></h1>
+          <h2> The gateway to the Philippine marine sponges</h2>
         </div>
       </div>
       </main>
       <HomeCards />
+      <div className='footer-container'>
+        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
+        <div className='footer-text'>
+          
+          <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
+          <div className='footer-body'>
+            <p>SAMPLE COUNT: 50 </p> 
+            <p>IMAGE COUNT: 100 </p>
+            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
+          </div>         
+        </div>
+      </div>
     </div>
     
   );

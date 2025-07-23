@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// not used - to be del soon
 export function useSpongeFilters() {
   const [selectedColor, setSelectedColor] = useState('Color Dropdown');
   const [selectedFunctionalForm, setSelectedFunctionalForm] = useState('Functional Form Dropdown');
@@ -9,6 +10,7 @@ export function useSpongeFilters() {
   const [functionalForms, setFunctionalForms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
 
   const fetchColors = async () => {
     try {
@@ -76,8 +78,6 @@ export function useSpongeFilters() {
           otu_id: 1,
           color: selectedColor !== 'Color Dropdown' ? selectedColor : 'Sample Color',
           functional_form: selectedFunctionalForm !== 'Functional Form Dropdown' ? selectedFunctionalForm : 'Sample Form',
-          growth_form: 'Sample Growth Form',
-          surface_texture: 'Sample Texture',
           location_name: 'Sample Location',
           date_collected: '2024-01-01'
         }
@@ -114,6 +114,7 @@ export function useSpongeFilters() {
   return {
     selectedColor,
     selectedFunctionalForm,
+    selectedClassification,
     sponges,
     colors,
     functionalForms,
@@ -121,6 +122,7 @@ export function useSpongeFilters() {
     error,
     handleColorSelect,
     handleFunctionalFormSelect,
+    handleClassification,
     handleReset,
     handleSubmit,
   };

@@ -1,15 +1,16 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaSearch } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+// import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSpongeFilters } from '../hooks/useSpongeFilters';
 
 import '../css/result.css'
 
+// Notes: search field isn't working yet: TBA
 
 interface Sponge {
   otu_id: string;
@@ -22,43 +23,44 @@ interface Sponge {
   putative_id: string;
 }
 
-const mockData: Sponge[] = [
-  {
-    otu_id: "1",
-    color: "Red",
-    functional_form: "A",
-    growth_form: "B",
-    surface_texture: "Smooth",
-    location_name: "Bohol",
-    date_collected: "2023-03-15",
-    putative_id: '2'
-  },
-  {
-    otu_id: "2",
-    color: "Blue",
-    functional_form: "C",
-    growth_form: "D",
-    surface_texture: "Rough",
-    location_name: "Palawan",
-    date_collected: "2023-03-18",
-    putative_id: "1"
-  },
-];
 
 export default function ResultPage() {
+  const searchParams = useSearchParams();
+  const [sponges, setSponges] = useState<Sponge[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
   const pathname = usePathname();
-  // const { handleSubmit } = useSpongeFilters();
 
-  const selectedColor = 'All';
-  const selectedFunctionalForm = 'All';
-  const sponges: Sponge[] = mockData;
+  const color = searchParams.get('color') || 'Not Available';
+  const functionalForm = searchParams.get('functional_form') || 'Not available';
+  const putativeID = searchParams.get('putative_id') || 'Not available';
+  const location = searchParams.get('location') || 'Not available';
 
-  // const handleSubmitAndNavigate = () => {
-  //   handleSubmit();
-  //   router.push('/result');
-  // };
+useEffect( () => {
+  const fetchSponges = async () => {
+    const params = new URLSearchParams();
+    if (color !== 'Not Available') params.append('color', color);
+    if (functionalForm !== 'Not available') params.append('functional_form', functionalForm);
+    if (putativeID !== 'Not available') params.append('putative_id', putativeID);
+    if (location !== 'Not available') params.append('location', location);
+
+    try {
+      const response = await fetch(`http://localhost:5000/api/samples?${params}`);
+      const data = await response.json();
+      setSponges(data.data || []);
+    } catch (err) {
+      console.error('Error fetching sponges:',err);
+    }
+  };
+  fetchSponges();
+}, [color, functionalForm, putativeID, location]);
+
+const filteredSponges = sponges.filter(sponge => 
+  Object.values(sponge).some(value =>
+    value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+  )
+);
+
 
  
 
@@ -92,7 +94,7 @@ export default function ResultPage() {
           </div>
         </div>
         <div className='top-container mt-1 '>
-          <p className='text-sm-start'><strong>Selected Filters:</strong></p> Color = {selectedColor}, Functional Form = {selectedFunctionalForm}
+          <p className='text-sm-start'><strong>Selected Filters:</strong></p> Color = {color}, Functional Form = {functionalForm}
         </div>
       </main>
       <main className='result-table mt-5 pt-5'>
@@ -118,8 +120,8 @@ export default function ResultPage() {
               {sponges.length > 0 ? (
                 sponges.map((sponge, index) => (
                   <tr key={index}
-                  style={{cursor:'pointer'}}
-                  onClick={() => router.push(`/resultDetails`)}
+                    style={{cursor:'pointer'}}
+                    onClick={() => router.push(`/resultDetails/${sponge.otu_id}`)}
                   >
                     <td>{sponge.otu_id}</td>
                     <td>{sponge.color}</td>
@@ -127,8 +129,12 @@ export default function ResultPage() {
                     <td>{sponge.growth_form}</td>
                     <td>{sponge.surface_texture}</td>
                     <td>{sponge.location_name || 'N/A'}</td>
-                    <td>{sponge.putative_id}</td>
-                    <td>{sponge.date_collected ? new Date(sponge.date_collected).toLocaleDateString() : 'N/A'}</td>
+                    <td>{sponge.putative_id ? sponge.putative_id.trim() : 'N/A'}</td>
+                    {/* <td>{sponge.date_collected ? new Date(sponge.date_collected).toLocaleDateString() : 'N/A'}</td> */}
+                    <td>{sponge.date_collected && !isNaN(new Date(sponge.date_collected).getTime())
+                    ? new Date(sponge.date_collected).toLocaleDateString()
+                    : sponge.date_collected || 'Not Available'} 
+                    </td>
                   </tr>
                 ))
               ) : (
@@ -137,30 +143,7 @@ export default function ResultPage() {
                     No results found
                   </td>
                 </tr>
-              // temporary example data
               )}
-              
-              <tr>
-                  <td><Link href = "/resultDetails" className={`nav-link ${pathname === '/resultDetails' ? 'active' : ''}`}>32</Link></td>
-                  <td>yellow</td>
-                  <td>encrusting</td>
-                  <td>thickly-encrusting</td>
-                  <td>opaque</td>
-                  <td>Batangas</td>
-                  <td>3</td>
-                  <td>2023-04-26</td>
-              </tr>
-
-              <tr>
-                  <td>36</td>
-                  <td>yellow</td>
-                  <td>composite-massive</td>
-                  <td>lobate, spherical-bulbous</td>
-                  <td>opaque</td>
-                  <td>Bolinao</td>
-                  <td>4</td>
-                  <td>2023-04-26</td>
-              </tr>
             </tbody>
 
           </Table>
