@@ -22,3 +22,11 @@
 .body {
     margin: 1rem 4rem;
 }
+
+/*==Description Tab==*/
+
+.description-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
