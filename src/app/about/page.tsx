@@ -9,7 +9,10 @@ export default function AboutPage() {
       <section className="faq-title">
         <h1>About Us</h1>
       </section>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
       {/* Content block lower on the page */}
       <div className="max-w-4xl mx-auto px-4 py-16 mt-12">
         <p className="text-gray-700 text-lg leading-relaxed">
