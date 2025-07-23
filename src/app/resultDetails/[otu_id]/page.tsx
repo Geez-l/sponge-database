@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tabs, Tab } from 'react-bootstrap';
 import { useParams } from 'next/navigation';
 
-import '../css/resultDetails.css';
+import '../../css/resultDetails.css';
 
 const ResultDetails = () => {
     const { otu_id } = useParams();
