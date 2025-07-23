@@ -6,7 +6,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useRouter, useSearchParams } from 'next/navigation';
 // import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useSpongeFilters } from '../hooks/useSpongeFilters';
+// import { useSpongeFilters } from '../hooks/useSpongeFilters';
 
 import '../css/result.css'
 
@@ -60,9 +60,6 @@ const filteredSponges = sponges.filter(sponge =>
     value.toString().toLowerCase().includes(searchTerm.toLowerCase())
   )
 );
-
-
- 
 
   return (
     <div>
