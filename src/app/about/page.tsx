@@ -10,7 +10,10 @@ export default function AboutPage() {
         <h1>About Us</h1>
       </section>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       {/* Content block lower on the page */}
