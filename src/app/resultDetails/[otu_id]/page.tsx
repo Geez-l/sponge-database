@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tabs, Tab } from 'react-bootstrap';
 import { useParams } from 'next/navigation';
+import { Table } from 'react-bootstrap';
 
 import '../../css/resultDetails.css';
 
@@ -44,21 +45,79 @@ const ResultDetails = () => {
                 <div className="body">
                     <Tabs defaultActiveKey="details" id="details-tab" className="det-tab">
                         <Tab eventKey="details" title="Details">
-                            Content
+                            <div className='description-wrapper'>
+                                <div className='desc-img'>
+                                    <h1>image</h1>
+                                </div>
+                                <div className='details-wrapper'>
+                                    <Table>
+                                        <thead>
+                                            <tr>
+                                                <th>Features</th>
+                                                <th>  </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Functional Form</td>
+                                                <td>FF placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Growth Form</td>
+                                                <td>GF placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Color</td>
+                                                <td>c placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Surface Texture</td>
+                                                <td>st placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Oscule Shape</td>
+                                                <td>os placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Oscule Distribution</td>
+                                                <td>od placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ostia</td>
+                                                <td>o placeholder</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Putative ID</td>
+                                                <td>pid placeholder</td>
+                                            </tr>
+                                        </tbody>
+                                    </Table>
+                                </div>
+                            </div>
+                            
                         </Tab>
 
                         <Tab eventKey="images" title="Images">
-                            {loading ? (
-                                <p>Loading images...</p>
-                            ) : images.length > 0 ? (
-                                <div className="image-grid">
-                                    {images.map((img) => (
-                                        <img key={img.name} src={img.url} alt={img.name} className="otu-img" />
-                                    ))}
+                            <div className='samples-wrapper'>
+                                <div className='sample-image'>
+                                {loading ? (
+                                    <p>Loading images...</p>
+                                ) : images.length > 0 ? (
+                                    <div className="image-grid">
+                                        {images.map((img) => (
+                                            <img key={img.name} src={img.url} alt={img.name} className="otu-img" />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p>No images found</p>
+                                )}
                                 </div>
-                            ) : (
-                                <p>No images found</p>
-                            )}
+
+                                <div className='sample-details'>
+                                    <h3>details details</h3>
+                                </div>
+                            </div>
                         </Tab>
                     </Tabs>
                 </div>
