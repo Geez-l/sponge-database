@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaSearch } from 'react-icons/fa';
 import { useRouter, useSearchParams } from 'next/navigation';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSpongeFilters } from '../hooks/useSpongeFilters';
 
@@ -100,7 +100,6 @@ const filteredSponges = sponges.filter(sponge =>
       <main className='result-table mt-5 pt-5'>
         <div className='res-tab'>
           <h5>Results</h5>
-          
         </div>
         <div className='result-container'>
           <Table striped bordered hover responsive="sm">

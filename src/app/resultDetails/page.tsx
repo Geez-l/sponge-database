@@ -7,7 +7,7 @@ import { Table, Tabs, Tab } from 'react-bootstrap';
 
 import '../css/resultDetails.css'
 
-const ResultDetails = () => {
+const resultDetails = () => {
     return (
         
         <div>
@@ -38,4 +38,4 @@ const ResultDetails = () => {
     );
 };
 
-export default ResultDetails;
+export default resultDetails;

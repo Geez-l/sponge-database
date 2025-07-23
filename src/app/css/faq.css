@@ -1,10 +1,19 @@
 
+.faq-div {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
 .faq-title {
+  position: relative;
   background-color: #48ACBB;
   width:100%;
+  height:auto;
   padding: 4rem 2rem;
   color: white;
   text-align: left;
+  display: flex;
+  top: -2rem !important;
+
 }
 
 .faq-content {
@@ -12,8 +21,8 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 75%;
+  margin: 0 auto !important;
 }
 
 .faq-item {
@@ -32,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     
 }
 
@@ -41,5 +51,17 @@
   padding: 1.5rem;
   display: flex;
   align-items: center;
+  text-align: justify;
 
+}
+
+.source-link {
+  display: inline;
+  vertical-align: baseline;
+  color: #48ACBB;
+  font-weight: 600;
+  white-space: normal;
+  word-break: break-word;
+  line-height: inherit;
+  font-size: inherit;
 }
