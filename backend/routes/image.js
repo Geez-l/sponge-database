@@ -24,7 +24,7 @@ router.get('/images', async (req, res) => {
         // loops 
         for (const folder of subfolders){
             const filesResponse = await drive.files.list({
-                q: `'${folderID}' in parents and name contains '${otu_id}'`,
+                q: `'${folder.id}' in parents and name contains '${otu_id}'`,
                 fields: 'files(id, name)',
 
             });
@@ -40,7 +40,7 @@ router.get('/images', async (req, res) => {
 
        
 
-        res.json({ success: true, data: images });
+        res.json({ success: true, data: allImages });
     } catch (err) {
         console.error('Error fetching images', err);
         res.status(500).json({ error: 'Failed to fetch images' });
