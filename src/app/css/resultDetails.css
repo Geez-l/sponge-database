@@ -101,6 +101,17 @@
     max-width: 30%;
 }
 
+.sample-id {
+    font-weight: 500;
+    color: #4A8EBB;
+}
+
+.sample-date {
+    margin-top: -1rem;
+    font-style: italic;
+}
+
+
 /* === Footer == */
 
 .footer-container {
