@@ -38,6 +38,12 @@ interface spongeImage {
     sample_image_url: string
 }
 
+// Make values sentence case
+function toSentenceCase(text: string): string {
+  if (!text) return '';
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+}
+
 // use useParams() to grab otu_id from the URL
 // use useSearchParams() to grab the location query param
 
@@ -111,7 +117,7 @@ const ResultDetails = () => {
                             <>
                                 <h1>OTU {sponge.otu_id}</h1>
                                 <h5>1 sample count</h5>
-                                <h5 className='loc-element'>{sponge.location_name || 'Location not available'}</h5>
+                                <h5 className='loc-element'>{toSentenceCase(sponge.location_name || 'Location not available')}</h5>
                             </>
                         ) : (
                             <div className='OTU-NA'>
@@ -180,7 +186,7 @@ const ResultDetails = () => {
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Putative ID</td>
-                                                <td>{sponge?.putative_id || 'N/A'}</td>
+                                                <td className='italic-putative'>{toSentenceCase(sponge?.putative_id || 'N/A')}</td>
                                             </tr>
 
                                         </tbody>
@@ -214,11 +220,11 @@ const ResultDetails = () => {
                                         <tbody className='sample-table'>
                                             <tr>
                                                 <td className='table-label'>Site</td>
-                                                <td>{sponge?.site_name || 'N/A'}</td>
+                                                <td>{toSentenceCase(sponge?.site_name || 'N/A')}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Actual Depth</td>
-                                                <td>{sponge?.depth || 'N/A'}</td>
+                                                <td>{sponge?.depth || 'N/A'} m</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Dive Number</td>
