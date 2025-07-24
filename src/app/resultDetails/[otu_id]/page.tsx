@@ -71,10 +71,15 @@ const ResultDetails = () => {
                             <>
                                 <h1>OTU {sponge.otu_id}</h1>
                                 <h5>1 sample count</h5>
-                                <h5>{sponge.location_name || 'Location not available'}</h5>
+                                <h5 className = 'loc-element'>{sponge.location_name || 'Location not available'}</h5>
                             </>
                         ) : (
-                            <h1>OTU Not Available</h1>
+                            <div className='OTU-NA'>
+                                <h1>OTU Not Available</h1>
+                                <h5>X sample count</h5>
+                                <h5 className='loc-element'>Location</h5>
+                            </div>
+                            
                         )}
                     </Card>
                 </div>
