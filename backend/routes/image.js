@@ -1,49 +1,31 @@
 const express = require('express');
 const router = express.Router();
 const { getDriveClient } = require('../utils/drive');
+const pool = require('../backend');
 
-router.get('/images', async (req, res) => {
-    const { otu_id } = req.query;
-    const folderID = '1Cj_OLAdMH3oHkB_8YkvoM5giauqLAklZ';
+router.get('/', async (req, res) => {
+    const {otu_id} = req.query;
+    console.log('Received request for images with otu_id:',otu_id)
 
-    if (!otu_id) {
-        return res.status(400).json({ error: 'Missing required query parameter otu_id' });
+    if (!otu_id){
+        return res.status(400).json({error:'otu id or sample_id is required'});
     }
-
     try {
-        const drive = await getDriveClient();
-        let allImages = [];
+        const query = 'SELECT image_id, otu_image_url, sample_image_url FROM image WHERE related_otu_id = $1';
+        const params = [otu_id];
+        const result = await pool.query(query, params);
 
-        // list subfolders
-        const subfolderResponse = await drive.files.list({
-            q: `'${folderID}' in parents and mimeType = 'application/vnd.google-apps.folder'`,
-            fields: 'files(id,name)',
-        });
+        const images = result.rows.map(row =>({
+            id: row.image_id,
+            otuImageUrl: row.otu_image_url,
+            sampleImageUrl: row.sample_image_url
+        }));
 
-        const subfolders = subfolderResponse.data.files;
-        // loops 
-        for (const folder of subfolders){
-            const filesResponse = await drive.files.list({
-                q: `'${folder.id}' in parents and name contains '${otu_id}'`,
-                fields: 'files(id, name)',
-
-            });
-            const images = filesResponse.data.files.map(file => ({
-                name: file.name,
-                url: `https://drive.google.com/uc?id=${file.id}`,
-                folder: folder.name
-            }));
-
-            allImages = allImages.concat(images);
-
-        }
-
-       
-
-        res.json({ success: true, data: allImages });
+        res.json({success:true, data:images});
     } catch (err) {
         console.error('Error fetching images', err);
-        res.status(500).json({ error: 'Failed to fetch images' });
+        res.status(500).json({error: 'Failed to fetch images'});
+
     }
 });
 
