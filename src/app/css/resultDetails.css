@@ -10,7 +10,6 @@
 
 .header-bg {
     background-color: #48ACBB;
-    width: 100%;
     background-size: cover;
     display: flex;
     position: relative;
@@ -35,12 +34,14 @@
     margin: 0.5rem 0;
 }
 
+
 .loc-element {
   background-color: #ffc64c;
   color: black;
   padding: 0.6rem;
   border-radius: 20px;
   font-size: 1rem;
+  max-width: 6rem; /*adjust if results are available*/
 }
 
 /*==result details body==*/
