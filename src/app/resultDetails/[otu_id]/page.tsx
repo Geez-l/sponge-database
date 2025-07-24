@@ -38,7 +38,7 @@ const ResultDetails = () => {
                     <Card className="header-card">
                         <h1>OTU {otu_id}</h1>
                         <h5>1 sample count</h5>
-                        <h5>Batangas</h5>
+                        <h5><span className='loc-element'>Batangas</span></h5>
                     </Card>
                 </div>
 
