@@ -8,7 +8,7 @@ import { useSearchParams } from 'next/navigation';
 import '../../css/resultDetails.css';
 
 interface Sponge {
-    otu_id: string;
+    otu_id: number;
     color: string;
     functional_form: string;
     growth_form: string;
@@ -50,7 +50,7 @@ const ResultDetails = () => {
             try {
                 const res = await fetch(`http://localhost:5000/api/samples?otu_id=${otu_id}`);
                 const data = await res.json();
-                const spongeData = data.data?.[0]; // assume API returns array
+                const spongeData = data.data?.[0]; 
                 setSponge(spongeData || null);
             } catch (err) {
                 console.error('Error fetching sponge details:', err);
