@@ -71,10 +71,15 @@ const ResultDetails = () => {
                             <>
                                 <h1>OTU {sponge.otu_id}</h1>
                                 <h5>1 sample count</h5>
-                                <h5>{sponge.location_name || 'Location not available'}</h5>
+                                <h5 className = 'loc-element'>{sponge.location_name || 'Location not available'}</h5>
                             </>
                         ) : (
-                            <h1>OTU Not Available</h1>
+                            <div className='OTU-NA'>
+                                <h1>OTU Not Available</h1>
+                                <h5>X sample count</h5>
+                                <h5 className='loc-element'>Location</h5>
+                            </div>
+                            
                         )}
                     </Card>
                 </div>
@@ -106,24 +111,40 @@ const ResultDetails = () => {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Functional Form</td>
+                                                <td className='table-label'>Functional Form</td>
                                                 <td>{sponge?.functional_form || 'N/A'}</td>
                                             </tr>
                                             <tr>
-                                                <td>Growth Form</td>
+                                                <td className='table-label'>Growth Form</td>
                                                 <td>{sponge?.growth_form || 'N/A'}</td>
                                             </tr>
                                             <tr>
-                                                <td>Color</td>
+                                                <td className='table-label'>Color</td>
                                                 <td>{sponge?.color || 'N/A'}</td>
                                             </tr>
                                             <tr>
-                                                <td>Surface Texture</td>
+                                                <td className='table-label'>Surface Texture</td>
                                                 <td>{sponge?.surface_texture || 'N/A'}</td>
                                             </tr>
                                             <tr>
-                                                <td>Putative ID</td>
+                                                <td className='table-label'>Oscule Shape</td>
+                                                <td>osc shape</td>
+                                            </tr>
+                                            <tr>
+                                                <td className='table-label'>Oscule Distribution</td>
+                                                <td>osc distrib</td>
+                                            </tr>
+                                            <tr>
+                                                <td className='table-label'>Ostia</td>
+                                                <td>ostia</td>
+                                            </tr>
+                                            <tr>
+                                                <td className='table-label'>Putative ID</td>
                                                 <td>{sponge?.putative_id || 'N/A'}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className='table-label'>test field</td>
+                                                <td>Curabitur sit amet lacus in augue elementum vestibulum. Duis vitae risus consequat, accumsan nisi at, venenatis diam. Vestibulum a neque vitae augue fermentum posuere a sed sem.</td>
                                             </tr>
                                         </tbody>
                                     </Table>
@@ -145,6 +166,45 @@ const ResultDetails = () => {
                                     ) : (
                                         <p>No images found</p>
                                     )}
+                                </div>
+
+                                <div className='s-details-wrapper'>
+                                    <div className='sample-details-heading'>
+                                        <p>P0XXXXX</p>
+                                        <p>dd-mm-yyyy</p>
+                                    </div>
+                                    <Table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Site</td>
+                                                <td>collection site</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Actual Depth</td>
+                                                <td>XX m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dive Number</td>
+                                                <td>X</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diver</td>
+                                                <td>Firstname Lastname</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Sample Code</td>
+                                                <td>code</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Barcode Sequence</td>
+                                                <td>seq</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </Table>
+
                                 </div>
                             </div>
                         </Tab>

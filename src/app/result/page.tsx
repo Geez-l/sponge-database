@@ -90,10 +90,10 @@ export default function ResultPage() {
           </div>
         </div>
         <div className='filters-container'>
-          <p className='text-sm-start'><strong>Selected Filters:</strong></p>
-          <span className='individual-filter'>Color = {color}</span>
-          <span className='individual-filter'>Functional Form = {functionalForm}</span>
-          <span className='individual-filter'>Putative ID = {putativeID} </span>
+          <p className='text-sm-start'><strong>Selected Filters:</strong></p>  
+          <span className='individual-filter'>Color = {color}</span>  
+          <span className='individual-filter'>Functional Form = {functionalForm}</span> 
+          <span className='individual-filter'>Putative ID = {putativeID} </span> 
           <span className='individual-filter'>Location = {location}</span>
         </div>
       </main>
