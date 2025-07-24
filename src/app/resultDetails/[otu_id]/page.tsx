@@ -111,7 +111,7 @@ const ResultDetails = () => {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Functional Form</td>
+                                                <td >Functional Form</td>
                                                 <td>{sponge?.functional_form || 'N/A'}</td>
                                             </tr>
                                             <tr>

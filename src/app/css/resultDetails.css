@@ -55,7 +55,15 @@
 .description-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
+    gap: 6rem;
+    margin-top: 1rem;
+    justify-content: center;
+    outline-style: dashed; /*remove later!!*/
+}
+
+.desc-image {
+    outline-style: dotted; /*remove later!!*/
+    max-width: 30%;
 }
 
 /* === Footer == */
