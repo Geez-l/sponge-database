@@ -62,7 +62,7 @@ const FAQ = () => {
             <p>
               The functional form was assigned based on the classification system by 
               <a className='source-link' href=" https://www.sciencedirect.com/science/article/pii/S1470160X21004714" target="_blank" rel="noopener noreferrer">
-                Schönberg (2021)
+                 Schönberg (2021)
               </a>. 
               The growth form is based on the descriptions of the researchers at UP MSI based on the observed morphology. 
             </p>

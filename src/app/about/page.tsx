@@ -6,50 +6,29 @@ import '../css/variable.css';
 
 export default function AboutPage() {
   return (
-    <div className="w-full">
-      {/* Top Banner */}
-      <div className="bg-teal-500 py-16">
-        <h1 className="text-white text-4xl font-bold text-center">
-          About Us
-        </h1>
-      </div>
+    <><div className="faq-div">
+      <section className="faq-title">
+        <h1>About Us</h1>
+      </section>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12 space-y-10">
-        {/* Section 1 */}
-        <div className="grid grid-cols-2 gap-8 items-start">
-          <div>
-            <h2 className="text-xl font-semibold text-gray-800">
-              Our Mission
-            </h2>
-          </div>
-          <div className="text-gray-700">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              fermentum sem non velit viverra, ac facilisis elit tincidunt.
-              Integer dapibus, metus a sagittis posuere, risus justo posuere
-              enim, eget posuere leo enim ac lacus.
-            </p>
+      {/* Content block lower on the page */}
+      <div className="max-w-4xl mx-auto px-4 py-16 mt-12">
+        <p className="text-gray-700 text-lg leading-relaxed">
+          The Philippine Sponge Guide is a gateway to exploring Philippine sponges through a user-friendly database. This database is designed to keep track of sponge records and organize the classification, characteristics, and metadata from the UP Marine Science Institute. 
+        </p>
+      </div>
+      
+    </div><div className='footer-container'>
+        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
+        <div className='footer-text'>
+
+          <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
+          <div className='footer-body'>
+            <p>SAMPLE COUNT: 50 </p>
+            <p>IMAGE COUNT: 100 </p>
+            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
           </div>
         </div>
-
-        {/* Section 2 */}
-        <div className="grid grid-cols-2 gap-8 items-start">
-          <div>
-            <h2 className="text-xl font-semibold text-gray-800">
-              Our Vision
-            </h2>
-          </div>
-          <div className="text-gray-700">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              ultrices tincidunt justo, in rutrum lacus. Suspendisse potenti.
-              Aliquam erat volutpat. Morbi lacinia risus a mauris feugiat, ut
-              tempor nunc sollicitudin.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      </div></>
   );
-}
+};
