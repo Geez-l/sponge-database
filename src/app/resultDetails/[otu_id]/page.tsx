@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tabs, Tab, Table } from 'react-bootstrap';
-import { useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import '../../css/resultDetails.css';
 
+// sample details
 interface Sponge {
     otu_id: number;
     color: string;
@@ -14,18 +15,51 @@ interface Sponge {
     growth_form: string;
     surface_texture: string;
     location_name?: string;
+    site_name?: string;
     date_collected?: string;
     putative_id: string;
+    oscule_shape?: string;
+    oscule_distribution?: string;
+    ostia?: string;
+    // otu_image_url?: string;
+    // sample_image_url?: string;
+    // image_id?: number;
+    dive_no?: number;
+    depth?: number;
+    barcode_sequences?: string;
+    sample_code?: string;
+    researcher_name?: string
 }
 
+//image details
+interface spongeImage {
+    image_id: number;
+    otu_image_url: string;
+    sample_image_url: string
+}
+
+// use useParams() to grab otu_id from the URL
+// use useSearchParams() to grab the location query param
+
 const ResultDetails = () => {
-    const searchParams = useSearchParams();
+    const params = useParams();
+    const [hasMounted, setHasMounted] = useState(false);
+
     const [sponge, setSponge] = useState<Sponge | null>(null);
-    const [images, setImages] = useState<{ name: string; url: string }[]>([]);
+    const [images, setImages] = useState<spongeImage[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const otu_id = searchParams.get('otu_id') || 'Not Available';
-    const location = searchParams.get('location') || 'Not Available';
+    const otu_id = params.otu_id || 'Not Available';
+
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (!hasMounted || otu_id === 'Not Available') return;
+        setLoading(true);
+    }, [hasMounted, otu_id]);
+
 
     useEffect(() => {
         async function fetchImages() {
@@ -46,11 +80,13 @@ const ResultDetails = () => {
     }, [otu_id]);
 
     useEffect(() => {
-        async function fetchSpongeDetails() {
+        if (!hasMounted || otu_id === 'Not Available') return;
+
+        const fetchSpongeDetails = async () => { 
             try {
-                const res = await fetch(`http://localhost:5000/api/samples?otu_id=${otu_id}`);
+                const res = await fetch(`http://localhost:5000/api/samples/${otu_id}`);
                 const data = await res.json();
-                const spongeData = data.data?.[0]; 
+                const spongeData = data.data;
                 setSponge(spongeData || null);
             } catch (err) {
                 console.error('Error fetching sponge details:', err);
@@ -60,7 +96,11 @@ const ResultDetails = () => {
         if (otu_id !== 'Not Available') {
             fetchSpongeDetails();
         }
-    }, [otu_id]);
+    }, [hasMounted, otu_id]);
+
+    if (!hasMounted) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div>
@@ -71,7 +111,7 @@ const ResultDetails = () => {
                             <>
                                 <h1>OTU {sponge.otu_id}</h1>
                                 <h5>1 sample count</h5>
-                                <h5 className = 'loc-element'>{sponge.location_name || 'Location not available'}</h5>
+                                <h5 className='loc-element'>{sponge.location_name || 'Location not available'}</h5>
                             </>
                         ) : (
                             <div className='OTU-NA'>
@@ -79,7 +119,7 @@ const ResultDetails = () => {
                                 <h5>X sample count</h5>
                                 <h5 className='loc-element'>Location</h5>
                             </div>
-                            
+
                         )}
                     </Card>
                 </div>
@@ -94,7 +134,7 @@ const ResultDetails = () => {
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
                                             {images.map((img) => (
-                                                <img key={img.name} src={img.url} alt={img.name} className="otu-img" />
+                                                <img key={img.image_id} src={img.otu_image_url} alt={"OTU Image"} className="otu-img" />
                                             ))}
                                         </div>
                                     ) : (
@@ -128,15 +168,15 @@ const ResultDetails = () => {
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Oscule Shape</td>
-                                                <td>osc shape</td>
+                                                <td>{sponge?.oscule_shape || 'N/A'}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Oscule Distribution</td>
-                                                <td>osc distrib</td>
+                                                <td>{sponge?.oscule_distribution || 'N/A'}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Ostia</td>
-                                                <td>ostia</td>
+                                                <td>{sponge?.ostia || 'N/A'}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Putative ID</td>
@@ -157,7 +197,7 @@ const ResultDetails = () => {
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
                                             {images.map((img) => (
-                                                <img key={img.name} src={img.url} alt={img.name} className="sample-img" />
+                                                <img key={img.image_id} src={img.sample_image_url} alt={"Sample Image"} className="sample-img" />
                                             ))}
                                         </div>
                                     ) : (
@@ -174,29 +214,29 @@ const ResultDetails = () => {
                                         <tbody className='sample-table'>
                                             <tr>
                                                 <td className='table-label'>Site</td>
-                                                <td>collection site</td>
+                                                <td>{sponge?.site_name || 'N/A'}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Actual Depth</td>
-                                                <td>XX m</td>
+                                                <td>{sponge?.depth || 'N/A'}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Dive Number</td>
-                                                <td>X</td>
+                                                <td>{sponge?.dive_no || 'N/A'}</td>
                                             </tr>
                                             <tr>
                                                 <td className='table-label'>Diver</td>
-                                                <td>Firstname Lastname</td>
+                                                <td>{sponge?.researcher_name || 'N/A'}</td>
                                             </tr>
 
                                             <tr>
                                                 <td className='table-label'>Sample Code</td>
-                                                <td>code</td>
+                                                <td>{sponge?.sample_code || 'N/A'}</td>
                                             </tr>
 
                                             <tr>
                                                 <td className='table-label'>Barcode Sequence</td>
-                                                <td>seq</td>
+                                                <td>{sponge?.barcode_sequences || 'N/A'}</td>
                                             </tr>
 
                                         </tbody>
@@ -208,19 +248,19 @@ const ResultDetails = () => {
                     </Tabs>
                 </div>
             </main>
-        
-        <div className='footer-container'>
-            <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
-            <div className='footer-text'>
-          
-                <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
-                <div className='footer-body'>
-                    <p>SAMPLE COUNT: 50 </p> 
-                    <p>IMAGE COUNT: 100 </p>
-                    <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
-                </div>         
+
+            <div className='footer-container'>
+                <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
+                <div className='footer-text'>
+
+                    <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
+                    <div className='footer-body'>
+                        <p>SAMPLE COUNT: 50 </p>
+                        <p>IMAGE COUNT: 100 </p>
+                        <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     );
 };
