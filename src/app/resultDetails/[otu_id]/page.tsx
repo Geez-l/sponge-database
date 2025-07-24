@@ -142,10 +142,7 @@ const ResultDetails = () => {
                                                 <td className='table-label'>Putative ID</td>
                                                 <td>{sponge?.putative_id || 'N/A'}</td>
                                             </tr>
-                                            <tr>
-                                                <td className='table-label'>test field</td>
-                                                <td>Curabitur sit amet lacus in augue elementum vestibulum. Duis vitae risus consequat, accumsan nisi at, venenatis diam. Vestibulum a neque vitae augue fermentum posuere a sed sem.</td>
-                                            </tr>
+
                                         </tbody>
                                     </Table>
                                 </div>
@@ -170,35 +167,35 @@ const ResultDetails = () => {
 
                                 <div className='s-details-wrapper'>
                                     <div className='sample-details-heading'>
-                                        <p>P0XXXXX</p>
-                                        <p>dd-mm-yyyy</p>
+                                        <p className='sample-id'>P0XXXXX</p>
+                                        <p className='sample-date'>dd-mm-yyyy</p>
                                     </div>
                                     <Table>
-                                        <tbody>
+                                        <tbody className='sample-table'>
                                             <tr>
-                                                <td>Site</td>
+                                                <td className='table-label'>Site</td>
                                                 <td>collection site</td>
                                             </tr>
                                             <tr>
-                                                <td>Actual Depth</td>
+                                                <td className='table-label'>Actual Depth</td>
                                                 <td>XX m</td>
                                             </tr>
                                             <tr>
-                                                <td>Dive Number</td>
+                                                <td className='table-label'>Dive Number</td>
                                                 <td>X</td>
                                             </tr>
                                             <tr>
-                                                <td>Diver</td>
+                                                <td className='table-label'>Diver</td>
                                                 <td>Firstname Lastname</td>
                                             </tr>
 
                                             <tr>
-                                                <td>Sample Code</td>
+                                                <td className='table-label'>Sample Code</td>
                                                 <td>code</td>
                                             </tr>
 
                                             <tr>
-                                                <td>Barcode Sequence</td>
+                                                <td className='table-label'>Barcode Sequence</td>
                                                 <td>seq</td>
                                             </tr>
 
