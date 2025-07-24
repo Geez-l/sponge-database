@@ -23,6 +23,13 @@ interface Sponge {
   putative_id: string;
 }
 
+// Make values sentence case
+function toSentenceCase(text: string): string {
+  if (!text) return '';
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+}
+
+
 
 export default function ResultPage() {
   const searchParams = useSearchParams();
@@ -127,8 +134,8 @@ export default function ResultPage() {
                     <td>{sponge.functional_form}</td>
                     <td>{sponge.growth_form}</td>
                     <td>{sponge.surface_texture}</td>
-                    <td>{sponge.location_name || 'N/A'}</td>
-                    <td>{sponge.putative_id ? sponge.putative_id.trim() : 'N/A'}</td>
+                    <td>{toSentenceCase(sponge.location_name || 'N/A')}</td>
+                    <td className='italic-putative'>{toSentenceCase(sponge.putative_id ? sponge.putative_id.trim() : 'N/A')}</td>
                     {/* <td>{sponge.date_collected ? new Date(sponge.date_collected).toLocaleDateString() : 'N/A'}</td> */}
                     <td>{sponge.date_collected && !isNaN(new Date(sponge.date_collected).getTime())
                       ? new Date(sponge.date_collected).toLocaleDateString()

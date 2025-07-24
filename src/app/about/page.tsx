@@ -8,9 +8,12 @@ export default function AboutPage() {
   return (
     <div className='page-wrapper'>
     <div className="faq-div">
-      <section className="faq-title">
-        <h1>About Us</h1>
-      </section>
+      <div className='about-bg'>
+        <section className="faq-title">
+          <h1>About Us</h1>
+        </section>
+      </div>
+
 
       {/* Content block lower on the page */}
       <div className="max-w-4xl px-4 py-16 mt-12">
