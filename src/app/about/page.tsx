@@ -1,20 +1,59 @@
 import React from 'react';
+<<<<<<< HEAD
 import '../css/faq.css';
+=======
+import '../css/about.css';
+
+>>>>>>> main
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/variable.css';
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className='page-wrapper'>
+    <div className="faq-div">
       <section className="faq-title">
         <h1>About Us</h1>
       </section>
+
       {/* Content block lower on the page */}
-      <div className="max-w-4xl mx-auto px-4 py-16 mt-12">
+      <div className="max-w-4xl px-4 py-16 mt-12">
         <p className="text-gray-700 text-lg leading-relaxed">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          The Philippine Sponge Guide represents ongoing and continuing efforts to document sponge biodiversity in the archipelago. It is a collaborative effort among dedicated researchers and supporting institutions. This initiative is made possible through the  Marine Science Institute of the University of the Philippines Diliman with support from the Department of Science and Technology – Philippine Council for Agriculture, Aquatic, and Natural Resources Research and Development (DOST-PCAARRD) through the Coastal Acidification and Mesophotic Coral Ecosystems Programs.
         </p>
+          Database design and implementation by the Philippine Genome Center Diliman Core Facility for Bioinformatics and the Marine Molecular Laboratory of the Marine Science Institute, University of the Philippines Diliman.
+                    <br />
+          <br />
+          (logos)
+          <br />
+          <br />
+          <span style={{ fontWeight: 'bold' }}>Photographers and field collectors</span>        
+          <br />
+          • Cecilia Conaco
+          <br />
+          • Patrick Cabaitan
+          <br />
+          • Marielle Ann Carungay
+          <br />
+          • Gabriella Juliane Maala
+          <br />
+          • Vanessa Joy 
+          <br />
+          • Francis Gideon Tagnong
       </div>
-    </div>
+    </div><div className='footer-container'>
+
+        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
+        <div className='footer-text'>
+
+          <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
+          <div className='footer-body'>
+            <p>SAMPLE COUNT: 50 </p>
+            <p>IMAGE COUNT: 100 </p>
+            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
+          </div>
+        </div>
+      </div>
+      </div>
   );
-}
+};

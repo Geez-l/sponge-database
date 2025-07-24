@@ -4,16 +4,16 @@ import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaSearch } from 'react-icons/fa';
 import { useRouter, useSearchParams } from 'next/navigation';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useSpongeFilters } from '../hooks/useSpongeFilters';
+// import { useSpongeFilters } from '../hooks/useSpongeFilters';
 
 import '../css/result.css'
 
-// Notes: search field isn't working yet: TBA
+// Notes: search field isn't working yet: TBU
 
 interface Sponge {
-  otu_id: string;
+  otu_id: number;
   color: string;
   functional_form: string;
   growth_form: string;
@@ -36,41 +36,37 @@ export default function ResultPage() {
   const putativeID = searchParams.get('putative_id') || 'Not available';
   const location = searchParams.get('location') || 'Not available';
 
-useEffect( () => {
-  const fetchSponges = async () => {
-    const params = new URLSearchParams();
-    if (color !== 'Not Available') params.append('color', color);
-    if (functionalForm !== 'Not available') params.append('functional_form', functionalForm);
-    if (putativeID !== 'Not available') params.append('putative_id', putativeID);
-    if (location !== 'Not available') params.append('location', location);
+  useEffect(() => {
+    const fetchSponges = async () => {
+      const params = new URLSearchParams();
+      if (color !== 'Not Available') params.append('color', color);
+      if (functionalForm !== 'Not available') params.append('functional_form', functionalForm);
+      if (putativeID !== 'Not available') params.append('putative_id', putativeID);
+      if (location !== 'Not available') params.append('location', location);
 
-    try {
-      const response = await fetch(`http://localhost:5000/api/samples?${params}`);
-      const data = await response.json();
-      setSponges(data.data || []);
-    } catch (err) {
-      console.error('Error fetching sponges:',err);
-    }
-  };
-  fetchSponges();
-}, [color, functionalForm, putativeID, location]);
+      try {
+        const response = await fetch(`http://localhost:5000/api/samples?${params}`);
+        const data = await response.json();
+        setSponges(data.data || []);
+      } catch (err) {
+        console.error('Error fetching sponges:', err);
+      }
+    };
+    fetchSponges();
+  }, [color, functionalForm, putativeID, location]);
 
-const filteredSponges = sponges.filter(sponge => 
-  Object.values(sponge).some(value =>
-    value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-  )
-);
-
-
- 
+  const filteredSponges = sponges.filter(sponge =>
+    Object.values(sponge).some(value =>
+      value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
 
   return (
     <div>
-      <main className='result-header mt-5 pt-5'>
-        <div className='header-sample pt-5'>
-          {/* <p className="text-center">OTU List</p> */}
+      <main className='result-header'>
+        <div className='header-sample'>
           <h1>
-            <span className='otu'>OTU</span> <span className='list'>List</span>
+            OTU List
           </h1>
           <div className="container-fluid d-flex justify-content-end ">
             <form
@@ -93,14 +89,17 @@ const filteredSponges = sponges.filter(sponge =>
             </form>
           </div>
         </div>
-        <div className='top-container mt-1 '>
-          <p className='text-sm-start'><strong>Selected Filters:</strong></p> Color = {color}, Functional Form = {functionalForm}
+        <div className='filters-container'>
+          <p className='text-sm-start'><strong>Selected Filters:</strong></p>  
+          <span className='individual-filter'>Color = {color}</span>  
+          <span className='individual-filter'>Functional Form = {functionalForm}</span> 
+          <span className='individual-filter'>Putative ID = {putativeID} </span> 
+          <span className='individual-filter'>Location = {location}</span>
         </div>
       </main>
-      <main className='result-table mt-5 pt-5'>
+      <main className='result-table'>
         <div className='res-tab'>
           <h5>Results</h5>
-          
         </div>
         <div className='result-container'>
           <Table striped bordered hover responsive="sm">
@@ -120,7 +119,7 @@ const filteredSponges = sponges.filter(sponge =>
               {sponges.length > 0 ? (
                 sponges.map((sponge, index) => (
                   <tr key={index}
-                    style={{cursor:'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => router.push(`/resultDetails/${sponge.otu_id}`)}
                   >
                     <td>{sponge.otu_id}</td>
@@ -132,8 +131,8 @@ const filteredSponges = sponges.filter(sponge =>
                     <td>{sponge.putative_id ? sponge.putative_id.trim() : 'N/A'}</td>
                     {/* <td>{sponge.date_collected ? new Date(sponge.date_collected).toLocaleDateString() : 'N/A'}</td> */}
                     <td>{sponge.date_collected && !isNaN(new Date(sponge.date_collected).getTime())
-                    ? new Date(sponge.date_collected).toLocaleDateString()
-                    : sponge.date_collected || 'Not Available'} 
+                      ? new Date(sponge.date_collected).toLocaleDateString()
+                      : sponge.date_collected || 'Not Available'}
                     </td>
                   </tr>
                 ))
@@ -149,6 +148,19 @@ const filteredSponges = sponges.filter(sponge =>
           </Table>
         </div>
       </main>
+
+      <div className='footer-container'>
+        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
+        <div className='footer-text'>
+
+          <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
+          <div className='footer-body'>
+            <p>SAMPLE COUNT: 50 </p>
+            <p>IMAGE COUNT: 100 </p>
+            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

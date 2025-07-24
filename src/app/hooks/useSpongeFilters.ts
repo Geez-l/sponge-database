@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export function useSpongeFilters() {
   const [selectedColor, setSelectedColor] = useState('Color');
   const [selectedFunctionalForm, setSelectedFunctionalForm] = useState('Functional Form');
-  const [selectedPutative, setSelectedPutative] = useState('Putative');
+  const [selectedPutative, setSelectedPutative] = useState('Putative ID');
   const [selectedLocation, setSelectedLocation] = useState('Location');
 
   const [sponges, setSponges] = useState<any[]>([]);
@@ -112,7 +112,7 @@ export function useSpongeFilters() {
   const handleReset = () => {
     setSelectedColor('Color');
     setSelectedFunctionalForm('Functional Form');
-    setSelectedPutative('Putative');
+    setSelectedPutative('Putative ID');
     setSelectedLocation('Location');
     setSponges([]);
   };

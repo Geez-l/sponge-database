@@ -1,4 +1,11 @@
 
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .faq-div {
   padding: 0 !important;
   margin-top: 0 !important;
@@ -8,7 +15,7 @@
   background-color: #48ACBB;
   width:100%;
   height:auto;
-  padding: 4rem 4rem;
+  padding: 3rem 4rem;
   color: white;
   text-align: left;
   display: flex;
@@ -66,6 +73,10 @@
   font-size: inherit;
 }
 
+.max-w-4xl {
+    margin: auto 15rem;
+}
+
 /* === Footer == */
 
 .footer-container {
@@ -74,6 +85,7 @@
     background-color: #48ACBB;
     margin-bottom: 0 !important;
     padding-bottom: 0;
+    margin-top: 3rem;
 }
 
 .footer-logos {

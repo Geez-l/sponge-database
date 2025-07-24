@@ -3,7 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const routes = require('./routes/routes');
+const imageRoutes = require('./routes/image');
 // const spongeRoutes = require
+const sampleRoutes = require('./routes/samples');
 
 
 const app = express();
@@ -15,6 +17,8 @@ app.use(express.json());
 
 // use routes defined in routes folder
 app.use('/api', routes);
+app.use('/api/images', imageRoutes)
+app.use('/api/samples', sampleRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

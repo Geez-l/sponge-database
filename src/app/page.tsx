@@ -140,25 +140,25 @@ const Home = () => {
             {/* Second Row of Dropdowns */}
             <Row className="w-100 mb-4">
 
-              <Col md={4} className="mb-2">
-                <Dropdown className="dropDown4">
-                  <Dropdown.Toggle variant="success" id="dropdown-putative">
-                    {selectedPutative}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {putative.map((putative, index) => (
-                      <Dropdown.Item
-                        key={index}
-                        onClick={() => handlePutativeSelect(putative)}
-                        active={selectedPutative === putative}
-                      >
-                        {putative}
+                <Col md={4} className="mb-2">
+                  <Dropdown className="dropDown4">
+                    <Dropdown.Toggle variant="success" id="dropdown-putative">
+                      {selectedPutative}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {putative.map((putative, index) => (
+                        <Dropdown.Item
+                          key={index}
+                          onClick={() => handlePutativeSelect(putative)}
+                          active={selectedPutative === putative}
+                        >
+                          {putative}
 
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
 
               <Col md={4} className="mb-2">
                 <Dropdown className="dropDown6">
