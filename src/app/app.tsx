@@ -11,7 +11,7 @@ import {
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // MAIN PAGES
-import Home from './components/home';
+// import Home from './components/home';
 // import result from './components/result';
 
 const App = () => {
