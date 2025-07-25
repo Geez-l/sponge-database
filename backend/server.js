@@ -6,6 +6,7 @@ const routes = require('./routes/routes');
 const imageRoutes = require('./routes/image');
 // const spongeRoutes = require
 const sampleRoutes = require('./routes/samples');
+const searchRoutes = require('./routes/search');
 
 
 const app = express();
@@ -18,7 +19,9 @@ app.use(express.json());
 // use routes defined in routes folder
 app.use('/api', routes);
 app.use('/api/images', imageRoutes)
+app.use('/api/samples/search', searchRoutes);
 app.use('/api/samples', sampleRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
