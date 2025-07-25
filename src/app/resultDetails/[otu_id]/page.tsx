@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tabs, Tab, Table } from 'react-bootstrap';
 import { useParams } from 'next/navigation';
+import { Button } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
 
 import '../../css/resultDetails.css';
 
@@ -54,6 +56,8 @@ const ResultDetails = () => {
     const [sponge, setSponge] = useState<Sponge | null>(null);
     const [images, setImages] = useState<spongeImage[]>([]);
     const [loading, setLoading] = useState(true);
+
+    const router = useRouter();
 
     const otu_id = params.otu_id || 'Not Available';
 
@@ -252,6 +256,12 @@ const ResultDetails = () => {
                             </div>
                         </Tab>
                     </Tabs>
+                    <div className='backbtn-container'>
+                        <Button className='custom-backbtn' onClick={() => router.back()}>
+                            ← Back to search results
+                        </Button>
+
+                    </div>
                 </div>
             </main>
 

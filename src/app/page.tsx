@@ -16,6 +16,14 @@ import { FaSearch } from 'react-icons/fa';
 
 import HomeCards from './components/homeCards';
 
+
+// Make values sentence case
+function toSentenceCase(text: string): string {
+  if (!text) return '';
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+}
+
+
 const Home = () => {
   const router = useRouter();
   const {
@@ -129,10 +137,10 @@ const Home = () => {
                       {putative.map((p, index) => (
                         <Dropdown.Item
                           key={index}
-                          onClick={() => handlePutativeSelect(p)}
-                          active={selectedPutative === p}
+                          onClick={() => handlePutativeSelect(toSentenceCase(p))}
+                          active={selectedPutative === toSentenceCase(p)}
                         >
-                          {p}
+                          {toSentenceCase(p)}
                         </Dropdown.Item>
                       ))}
                     </Dropdown.Menu>
@@ -148,10 +156,10 @@ const Home = () => {
                       {location.map((loc, index) => (
                         <Dropdown.Item
                           key={index}
-                          onClick={() => handleLocationSelect(loc)}
-                          active={selectedLocation === loc}
+                          onClick={() => handleLocationSelect(toSentenceCase(loc))}
+                          active={selectedLocation === toSentenceCase(loc)}
                         >
-                          {loc}
+                          {toSentenceCase(loc)}
                         </Dropdown.Item>
                       ))}
                     </Dropdown.Menu>

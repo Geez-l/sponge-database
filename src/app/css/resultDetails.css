@@ -114,6 +114,28 @@
 }
 
 
+/* === Back Button == */ 
+.backbtn-container {
+    margin: 1rem auto;
+}
+
+.custom-backbtn {
+    color: #000;
+    background-color: #fff;
+    border-color: #4A8EBB;
+    border-radius: 20px;
+}
+
+.custom-backbtn:hover {
+    color: #fff;
+    background-color: #4A8EBB;
+}
+
+.custom-backbtn:active {
+    color: #fff;
+    background-color:#4A8EBB;
+}
+
 /* === Footer == */
 
 .footer-container {
