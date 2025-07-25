@@ -100,8 +100,8 @@ export default function ResultPage() {
           <p className='text-sm-start'><strong>Selected Filters:</strong></p>  
           <span className='individual-filter'>Color = {color}</span>  
           <span className='individual-filter'>Functional Form = {functionalForm}</span> 
-          <span className='individual-filter'>Putative ID = {putativeID} </span> 
-          <span className='individual-filter'>Location = {location}</span>
+          <span className='individual-filter'>Putative ID = {toSentenceCase(putativeID)} </span> 
+          <span className='individual-filter'>Location = {toSentenceCase(location)}</span>
         </div>
       </main>
       <main className='result-table'>
