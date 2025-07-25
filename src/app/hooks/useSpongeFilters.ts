@@ -1,4 +1,6 @@
 'use client';
+import { useRouter } from 'next/navigation';
+
 import { useState, useEffect } from 'react';
 
 export function useSpongeFilters() {
@@ -14,6 +16,8 @@ export function useSpongeFilters() {
   const [location, setLocation] = useState<string[]>([]);
   
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const router = useRouter();
 
   // verified & valid request to fetch colors
   const fetchColors = async () => {
@@ -121,6 +125,33 @@ export function useSpongeFilters() {
     fetchSponges();
   };
 
+  const handleSubmitAndNavigate = () => {
+    const params = new URLSearchParams();
+
+    if (searchTerm && searchTerm.trim().toLowerCase() !== '') {
+      params.append('search', searchTerm.trim().toLowerCase());
+    }
+
+    if (selectedColor && selectedColor !== 'Color') {
+      params.append('color', selectedColor.trim().toLowerCase());
+    }
+
+    if (selectedFunctionalForm && selectedFunctionalForm !== 'Functional Form') {
+      params.append('functional_form', selectedFunctionalForm.trim().toLowerCase());
+    }
+
+    if (selectedPutative && selectedPutative !== 'Putative ID') {
+      params.append('putative_id', selectedPutative.trim().toLowerCase());
+    }
+
+    if (selectedLocation && selectedLocation !== 'Location') {
+      params.append('location', selectedLocation.trim().toLowerCase());
+    }
+
+    console.log('Navigating to:', `/result?${params.toString()}`);
+    router.push(`/result?${params.toString()}`);
+  };
+
   return {
     selectedColor,
     selectedFunctionalForm,
@@ -138,5 +169,7 @@ export function useSpongeFilters() {
     handleLocationSelect,
     handleReset,
     handleSubmit,
+    handleSubmitAndNavigate,
+    setSelectedColor,
   };
 }
