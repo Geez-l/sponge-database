@@ -152,6 +152,15 @@ export function useSpongeFilters() {
     router.push(`/result?${params.toString()}`);
   };
 
+  const handleFetchGlobal = async () => {
+    if (!searchTerm.trim()) return;
+
+    const url = `http://localhost:5000/api/samples/search?search=${encodeURIComponent(searchTerm)}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    setSponges(data.data || []);
+  };
+
   return {
     selectedColor,
     selectedFunctionalForm,
@@ -163,6 +172,8 @@ export function useSpongeFilters() {
     putative,
     location,
     loading,
+    searchTerm,
+    setSearchTerm,
     handleColorSelect,
     handleFunctionalFormSelect,
     handlePutativeSelect,
@@ -170,6 +181,7 @@ export function useSpongeFilters() {
     handleReset,
     handleSubmit,
     handleSubmitAndNavigate,
-    setSelectedColor,
+    handleFetchGlobal,
+    setSelectedColor
   };
 }

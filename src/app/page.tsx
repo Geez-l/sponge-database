@@ -19,6 +19,8 @@ import HomeCards from './components/homeCards';
 const Home = () => {
   const router = useRouter();
   const {
+    searchTerm,
+    setSearchTerm,
     selectedColor,
     selectedFunctionalForm,
     selectedPutative,
@@ -32,11 +34,12 @@ const Home = () => {
     handlePutativeSelect,
     handleLocationSelect,
     handleReset,
-    handleSubmit, // to be updated w/ search
-    handleSubmitAndNavigate
+    // handleSubmit, // to be updated w/ search
+    handleSubmitAndNavigate,
+    handleFetchGlobal,
   } = useSpongeFilters();
 
-  const [searchTerm, setSearchTerm] = React.useState('');
+  // const [searchTerm, setSearchTerm] = React.useState('');
 
 
 
@@ -53,6 +56,7 @@ const Home = () => {
                 className="search-bar-wrapper"
                 onSubmit={(e) => {
                   e.preventDefault();
+                  // handleFetchGlobal();
                   handleSubmitAndNavigate();
                 }}
               >
