@@ -3,17 +3,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../backend');
 
-/* PG
-barcode: barcode_id, sample_id, barcode_sequence
-image: image_id, related_otu_id, related_sample_id, sample_image_url,
-    otu_image_url
-location: location_id, location_name, site_name
-otu: otu_id, functional_form, growth_form, color, surface_texture, oscule_shape,
-    oscule_distribution, ostia, count_no, putative_id
-researcher: researcher_id, name, initials
-sample: sample_id, otu_id, date_collected, location_id, depth, dive_no, researcher_id,
-    sample_code, skeletal_notes
-    */
 router.get('/:otu_id', async (req, res) => {
     const { otu_id } = req.params;
 

@@ -38,6 +38,15 @@ export default function ResultPage() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const fetchGlobal = async () => {
+    if (!searchTerm.trim()) return;
+
+    const url = `http://localhost:5000/api/samples/search?search=${encodeURIComponent(searchTerm)}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    setSponges(data.data || []);
+  };
+
   const color = searchParams.get('color') || 'Not Available';
   const functionalForm = searchParams.get('functional_form') || 'Not available';
   const putativeID = searchParams.get('putative_id') || 'Not available';
@@ -68,6 +77,8 @@ export default function ResultPage() {
     )
   );
 
+
+
   return (
     <div>
       <main className='result-header'>
@@ -81,6 +92,7 @@ export default function ResultPage() {
               onSubmit={e => {
                 e.preventDefault();
                 // handleSubmitAndNavigate();
+                fetchGlobal();
               }}
             >
               <div className="search-bar-left-icon">
