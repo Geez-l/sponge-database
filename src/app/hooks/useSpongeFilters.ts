@@ -153,13 +153,15 @@ export function useSpongeFilters() {
   };
 
   const handleFetchGlobal = async () => {
-    if (!searchTerm.trim()) return;
+    const trimmedSearch = searchTerm.trim();
+    if (!trimmedSearch) return;
 
-    const url = `http://localhost:5000/api/samples/search?search=${encodeURIComponent(searchTerm)}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    setSponges(data.data || []);
+    const params = new URLSearchParams();
+    params.append('search', trimmedSearch.toLowerCase());
+
+    router.push(`/result?${params.toString()}`);
   };
+
 
   return {
     selectedColor,
