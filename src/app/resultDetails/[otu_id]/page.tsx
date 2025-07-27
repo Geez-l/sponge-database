@@ -49,6 +49,21 @@ function toSentenceCase(text: string): string {
 // use useParams() to grab otu_id from the URL
 // use useSearchParams() to grab the location query param
 
+const getDirectDownloadURL = (driveLink: string | undefined | null): string | null => {
+    // const fileID = driveLink.match(/\/d\/(.*?)\/view/)?.[1];
+    if (!driveLink || typeof driveLink !== 'string') {
+        console.warn('Error displaying image', driveLink);
+        return null;
+        
+    }
+    const fileID = driveLink.match(/\/d\/(.*?)\/view/)?.[1];
+    if (!fileID) {
+        console.warn('Invalid link');
+        return null;
+    }
+    return `https://drive.google.com/uc?export=view&id=${fileID}`;
+};
+
 const ResultDetails = () => {
     const params = useParams();
     const [hasMounted, setHasMounted] = useState(false);
@@ -144,7 +159,9 @@ const ResultDetails = () => {
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
                                             {images.map((img, index) => (
-                                                <img key={img.image_id} src={img.otu_image_url} alt={"OTU Image"} className="otu-img" />
+                                                <img
+                                                key={img.image_id}
+                                                src={getDirectDownloadURL(img.otu_image_url) ?? '../../assets/logo.png'} alt={"OTU Image"} className="otu-img" />
                                             ))}
                                         </div>
                                     ) : (
@@ -198,7 +215,8 @@ const ResultDetails = () => {
                                 </div>
                             </div>
                         </Tab>
-
+                                    {/* solution to img: get img id
+                                    https://www.ayrshare.com/how-to-get-direct-download-urls-from-google-drive/ */}
                         <Tab eventKey="images" title="Images">
                             <div className="samples-wrapper">
                                 <div className="sample-image">
