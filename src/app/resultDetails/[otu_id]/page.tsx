@@ -143,7 +143,7 @@ const ResultDetails = () => {
                                         <p>Loading images...</p>
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
-                                            {images.map((img) => (
+                                            {images.map((img, index) => (
                                                 <img key={img.image_id} src={img.otu_image_url} alt={"OTU Image"} className="otu-img" />
                                             ))}
                                         </div>
