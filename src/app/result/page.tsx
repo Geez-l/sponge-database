@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaSearch } from 'react-icons/fa';
+import { Button } from 'react-bootstrap';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Footer from '../components/footer';
 import '../css/result.css';
 
 interface Sponge {
@@ -83,6 +85,20 @@ export default function ResultPage() {
     )
   );
 
+  // For button to full otu list
+    const hasSearchOrFilters =
+      searchParams.get('search') ||
+      color !== 'Not available' ||
+      location !== 'Not available' ||
+      functionalForm !== 'Not available' ||
+      putativeID !== 'Not available';
+
+  const handleResetToUnfiltered = () => {
+    setSearchTerm('');
+    router.replace('/result'); 
+  };
+
+
   return (
     <div>
       <main className='result-header'>
@@ -103,6 +119,13 @@ export default function ResultPage() {
             </form>
           </div>
         </div>
+        <div className='backbtn-container'>
+          {hasSearchOrFilters && (<Button onClick={handleResetToUnfiltered} className="back-btn">
+            ← View full OTU list
+            </Button>
+          )}
+        </div>
+
         <div className='filters-container'>
           <p className='text-sm-start'><strong>Selected Filters:</strong></p>
           <span className='individual-filter'>Color = {color}</span>
@@ -110,6 +133,8 @@ export default function ResultPage() {
           <span className='individual-filter'>Putative ID = {toSentenceCase(putativeID)}</span>
           <span className='individual-filter'>Location = {toSentenceCase(location)}</span>
         </div>
+
+        
       </main>
 
       <main className='result-table'>
@@ -162,19 +187,7 @@ export default function ResultPage() {
         </div>
       </main>
 
-      <div className='footer-container'>
-        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos' />
-        <div className='footer-text'>
-          <p className='footer-copyright'>
-            © 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.
-          </p>
-          <div className='footer-body'>
-            <p>SAMPLE COUNT: 50</p>
-            <p>IMAGE COUNT: 100</p>
-            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
-          </div>
-        </div>
-      </div>
+     <Footer />         
     </div>
   );
 }
