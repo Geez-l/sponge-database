@@ -64,8 +64,8 @@ const Home = () => {
                 className="search-bar-wrapper"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  // handleFetchGlobal();
-                  handleSubmitAndNavigate();
+                  handleFetchGlobal();
+                  // handleSubmitAndNavigate();
                 }}
               >
                 <div className="search-bar-left-icon">
