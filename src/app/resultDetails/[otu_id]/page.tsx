@@ -161,7 +161,7 @@ const ResultDetails = () => {
                                             {images.map((img, index) => (
                                                 <img
                                                 key={img.image_id}
-                                                src={getDirectDownloadURL(img.otu_image_url) ?? '../../assets/logo.png'} alt={"OTU Image"} className="otu-img" />
+                                                src={getDirectDownloadURL(img.otu_image_url) ?? '/logo.png'} alt={"OTU Image"} className="otu-img" />
                                             ))}
                                         </div>
                                     ) : (
