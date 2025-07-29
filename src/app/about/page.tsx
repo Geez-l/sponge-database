@@ -1,10 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import '../css/faq.css';
-=======
 import '../css/about.css';
-
->>>>>>> main
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/variable.css';
 
@@ -37,7 +32,7 @@ export default function AboutPage() {
           <br />
           • Gabriella Juliane Maala
           <br />
-          • Vanessa Joy 
+          • Vanessa Joy Diamante
           <br />
           • Francis Gideon Tagnong
       </div>
