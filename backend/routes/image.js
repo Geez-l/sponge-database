@@ -1,6 +1,6 @@
+'use client';
 const express = require('express');
 const router = express.Router();
-const { getDriveClient } = require('../utils/drive');
 const pool = require('../backend');
 
 router.get('/', async (req, res) => {
@@ -11,14 +11,22 @@ router.get('/', async (req, res) => {
         return res.status(400).json({error:'otu id or sample_id is required'});
     }
     try {
-        const query = 'SELECT image_id, otu_image_url, sample_image_url FROM image WHERE related_otu_id = $1';
+        const query = `SELECT
+        otu_id, otu_image_url, sample_image_url, otu_img_fname, sample_img_fname
+        FROM image
+        WHERE otu_id = $1`;
+
         const params = [otu_id];
         const result = await pool.query(query, params);
 
+        const base = "https://frckjzkmelttjzkabepe.supabase.co/storage/v1/object/public/sponge";
+
         const images = result.rows.map(row =>({
-            id: row.image_id,
-            otuImageUrl: row.otu_image_url,
-            sampleImageUrl: row.sample_image_url
+            id: row.otu_id,
+            otuImageUrl: row.otu_image_url || `${base}/otu/${row.otu_img_fname}`,
+            // otuImageName: `${base}/otu/${row.otu_img_fname}`,
+            sampleImageUrl: row.sample_image_url || `${base}/sample/${row.sample_img_fname}`
+            // sampleImageName: `${base}/sample/${row.sample_img_fname}`
         }));
 
         res.json({success:true, data:images});

@@ -10,6 +10,8 @@ import Footer from '../../components/footer';
 
 import '../../css/resultDetails.css';
 
+// https://supabase.com/docs/guides/storage/serving/image-transformations
+
 // sample details
 interface Sponge {
     otu_id: number;
@@ -36,9 +38,9 @@ interface Sponge {
 
 //image details
 interface spongeImage {
-    image_id: number;
-    otu_image_url: string;
-    sample_image_url: string
+    otu_id: number;
+    otuImageUrl: string;
+    sampleImageUrl: string
 }
 
 // Make values sentence case
@@ -49,6 +51,7 @@ function toSentenceCase(text: string): string {
 
 // use useParams() to grab otu_id from the URL
 // use useSearchParams() to grab the location query param
+
 
 const ResultDetails = () => {
     const params = useParams();
@@ -144,8 +147,10 @@ const ResultDetails = () => {
                                         <p>Loading images...</p>
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
-                                            {images.map((img) => (
-                                                <img key={img.image_id} src={img.otu_image_url} alt={"OTU Image"} className="otu-img" />
+                                            {images.map((img, index) => (
+                                                <img
+                                                key={img.otu_id || index}
+                                                    src={img.otuImageUrl || '/assets/resultDetails/logo.png'} alt={"OTU Image"} className="otu-img" />
                                             ))}
                                         </div>
                                     ) : (
@@ -207,8 +212,9 @@ const ResultDetails = () => {
                                         <p>Loading images...</p>
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
-                                            {images.map((img) => (
-                                                <img key={img.image_id} src={img.sample_image_url} alt={"Sample Image"} className="sample-img" />
+                                            {images.map((img, index) => (
+                                                <img key={img.otu_id || index}
+                                                    src={img.sampleImageUrl || '/assets/resultDetails/logo.png'} alt={"Sample Image"} className="sample-img" />
                                             ))}
                                         </div>
                                     ) : (

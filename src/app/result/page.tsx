@@ -170,9 +170,10 @@ export default function ResultPage() {
                     <td>{toSentenceCase(sponge.location_name || 'N/A')}</td>
                     <td className='italic-putative'>{toSentenceCase(sponge.putative_id?.trim() || 'N/A')}</td>
                     <td>{sponge.date_collected && !isNaN(new Date(sponge.date_collected).getTime())
-                      ? new Date(sponge.date_collected).toLocaleDateString()
+                      ? new Date(sponge.date_collected).toISOString().slice(0, 10)
                       : sponge.date_collected || 'Not Available'}
                     </td>
+                    {/* console.log('Sponge:', sponge); */}
                   </tr>
                 ))
               ) : (

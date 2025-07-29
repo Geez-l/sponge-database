@@ -93,7 +93,8 @@ router.get('/samples', async (req, res) => {
       o.growth_form,
       o.functional_form,
       o.surface_texture,
-      o.putative_id
+      o.putative_id,
+      s.date_collected
     FROM sample s
     JOIN otu o ON s.otu_id = o.otu_id
     JOIN location l ON s.location_id = l.location_id
