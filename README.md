@@ -6,7 +6,7 @@
 ## 📌 Introduction
 
 **Purpose:**  
-The purpose of this website is to implement a searchable database website of the different sponges gathered in the Philippines. This is an internship project of the Bioinformatics Training and Internship Program in collaboration with the Marine Science Institute.
+The purpose of this website is to implement a searchable database website of the different sponges gathered in the Philippines. This is an internship project of the Bioinformatics Training and Internship Program in collaboration with the University of the Philippines Marine Science Institute (MSI).
 
 **Target Audience:**  
 Researchers, students, and enthusiasts who are interested in acquiring knowledge about the different sponges present in the country.
@@ -208,6 +208,28 @@ git checkout -b feature/home-page
 4. Click **Merge Pull Request**
 5. Optionally, click **Close** to finish the pull request
 
+---
+
+## People Involved
+
+This section displays the people involved in the project including the interns, mentors and collaborators.
+
+👨🏻‍💻 Developers
+- The interns:
+**Frontend Developer** - Revien Rodriguez
+**Backend Developer** - Gliezel Ann Pajarilla
+**Documentation & Quality Assurance** - Elishia Janelle Ocson
+
+👨‍🏫 Mentors
+- Philippine Genomics Information and Resource Hub (PHILOMICS)
+**Bioinformatics Data Analyst** - Dan Jethro Masacupan
+**HPC Administrator** - Joshua Gregor Dizon
+
+
+👩🏻‍🔬 Collaborators
+- UP Marine Science Institute (MSI)
+**Cecilia Conaco, PhD**
+**Vanessa Joy Diamante** 
 ---
 
 ## 📚 Additional Resources
