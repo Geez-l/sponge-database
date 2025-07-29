@@ -223,8 +223,12 @@ const ResultDetails = () => {
 
                                 <div className='s-details-wrapper'>
                                     <div className='sample-details-heading'>
-                                        <p className='sample-id'>P0XXXXX</p>
-                                        <p className='sample-date'>dd-mm-yyyy</p>
+                                        <p className='sample-id'>P0XXXXX\</p>
+                                        {/* <p className='sample-date'>{sponge?.date_collected || 'N/A'}</p> */}
+                                        <p className='sample-date'>{sponge?.date_collected && !isNaN(new Date(sponge?.date_collected).getTime())
+                                            ? new Date(sponge.date_collected).toISOString().slice(0, 10)
+                                            : sponge?.date_collected || 'Not Available'}</p>
+                                        
                                     </div>
                                     <Table>
                                         <tbody className='sample-table'>
