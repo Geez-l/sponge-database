@@ -1,29 +1,24 @@
-'use client';
-import React from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Card from 'react-bootstrap/Card';
+"use client";
+import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useRouter } from "next/navigation";
+import { FaSearch } from "react-icons/fa";
+import "./css/home.css";
+import "./css/variable.css";
 
-import './css/home.css';
-import './css/variable.css';
-
-import { useSpongeFilters } from './hooks/useSpongeFilters';
-import { useRouter } from 'next/navigation';
-import { Button } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa';
-
-import HomeCards from './components/homeCards';
-import Footer from './components/footer';
-
+import { useSpongeFilters } from "./hooks/useSpongeFilters";
+import HomeCards from "./components/homeCards";
+import Footer from "./components/footer";
 
 // Make values sentence case
 function toSentenceCase(text: string): string {
-  if (!text) return '';
+  if (!text) return "";
   return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }
-
 
 const Home = () => {
   const router = useRouter();
@@ -43,14 +38,9 @@ const Home = () => {
     handlePutativeSelect,
     handleLocationSelect,
     handleReset,
-    // handleSubmit, // to be updated w/ search
     handleSubmitAndNavigate,
     handleFetchGlobal,
   } = useSpongeFilters();
-
-  // const [searchTerm, setSearchTerm] = React.useState('');
-
-
 
   return (
     <div>
@@ -59,7 +49,6 @@ const Home = () => {
           <div className="home-text"></div>
           <Card className="sponge-card">
             <div className="search-container">
-
               {/* Search Form */}
               <form
                 className="search-bar-wrapper"
@@ -91,7 +80,7 @@ const Home = () => {
                 <Col md={4}>
                   <Dropdown className="dropDown1">
                     <Dropdown.Toggle variant="success">
-                      {selectedColor || 'Color'}
+                      {selectedColor || "Color"}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {colors.map((color, index) => (
@@ -110,7 +99,7 @@ const Home = () => {
                 <Col md={4}>
                   <Dropdown className="dropDown2">
                     <Dropdown.Toggle variant="success">
-                      {selectedFunctionalForm || 'Functional Form'}
+                      {selectedFunctionalForm || "Functional Form"}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {functionalForms.map((form, index) => (
@@ -132,13 +121,15 @@ const Home = () => {
                 <Col md={4}>
                   <Dropdown className="dropDown4">
                     <Dropdown.Toggle variant="success">
-                      {selectedPutative || 'Putative ID'}
+                      {selectedPutative || "Putative ID"}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {putative.map((p, index) => (
                         <Dropdown.Item
                           key={index}
-                          onClick={() => handlePutativeSelect(toSentenceCase(p))}
+                          onClick={() =>
+                            handlePutativeSelect(toSentenceCase(p))
+                          }
                           active={selectedPutative === toSentenceCase(p)}
                         >
                           {toSentenceCase(p)}
@@ -151,13 +142,15 @@ const Home = () => {
                 <Col md={4}>
                   <Dropdown className="dropDown6">
                     <Dropdown.Toggle variant="success">
-                      {selectedLocation || 'Location'}
+                      {selectedLocation || "Location"}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {location.map((loc, index) => (
                         <Dropdown.Item
                           key={index}
-                          onClick={() => handleLocationSelect(toSentenceCase(loc))}
+                          onClick={() =>
+                            handleLocationSelect(toSentenceCase(loc))
+                          }
                           active={selectedLocation === toSentenceCase(loc)}
                         >
                           {toSentenceCase(loc)}
@@ -171,22 +164,29 @@ const Home = () => {
               {/* Submit & Reset */}
               <Row className="submit-and-reset">
                 <Col md={4}>
-                  <button className="btn btn-outline-danger" onClick={handleReset}>
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={handleReset}
+                  >
                     Reset
                   </button>
                 </Col>
                 <Col md={4}>
-                  <button className="btn btn-success custom-submit" onClick={handleSubmitAndNavigate}>
+                  <button
+                    className="btn btn-success custom-submit"
+                    onClick={handleSubmitAndNavigate}
+                  >
                     Submit
                   </button>
                 </Col>
               </Row>
-
             </div>
           </Card>
 
-          <div className='banner-msg'>
-            <h1>DIVE IN AND <span className='highlight'>DISCOVER</span></h1>
+          <div className="banner-msg">
+            <h1>
+              DIVE IN AND <span className="highlight">DISCOVER</span>
+            </h1>
             <h2>The gateway to the Philippine marine sponges</h2>
           </div>
         </div>
@@ -194,7 +194,7 @@ const Home = () => {
 
       <HomeCards />
 
-      <Footer />          
+      <Footer />
     </div>
   );
 };

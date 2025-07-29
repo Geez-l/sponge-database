@@ -1,18 +1,21 @@
-const express = require('express');
+/* Handling searching in the search bar*/
+
+"use client";
+const express = require("express");
 const router = express.Router();
-const { getDriveClient } = require('../utils/drive');
-const pool = require('../backend');
+const { getDriveClient } = require("../utils/drive");
+const pool = require("../backend");
 
-  router.get('/', async (req, res) => {
-    const { search, limit = 50, offset = 0 } = req.query;
+router.get("/", async (req, res) => {
+  const { search, limit = 50, offset = 0 } = req.query;
 
-    if (!search) {
-        return res.status(400).json({ error: 'Search keyword is required' });
-    }
+  if (!search) {
+    return res.status(400).json({ error: "Search keyword is required" });
+  }
 
-    const searchTerm = `%${search}%`;
+  const searchTerm = `%${search}%`;
 
-    const query = `
+  const query = `
     SELECT
       s.sample_id,
       o.otu_id,
@@ -45,14 +48,13 @@ const pool = require('../backend');
     LIMIT $2 OFFSET $3
   `;
 
-    try {
-        const result = await pool.query(query, [searchTerm, limit, offset]);
-        res.json({ success: true, data: result.rows });
-    } catch (err) {
-        console.error('Error during global search:', err);
-        res.status(500).json({ error: 'Failed to perform global search' });
-    }
+  try {
+    const result = await pool.query(query, [searchTerm, limit, offset]);
+    res.json({ success: true, data: result.rows });
+  } catch (err) {
+    console.error("Error during global search:", err);
+    res.status(500).json({ error: "Failed to perform global search" });
+  }
 });
-
 
 module.exports = router;
