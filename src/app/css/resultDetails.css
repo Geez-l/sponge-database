@@ -62,8 +62,20 @@
 }
 
 .desc-image {
-    max-width: 30%;
-    flex: 2;
+    /* top: 30%; */
+    position: sticky;
+    width: 100%;
+    max-width: 500px;
+    /* flex: 2; */
+    flex-shrink: 0;
+    height: auto;
+    overflow: hidden;
+}
+
+.desc-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 /*=== OTU Information ===*/
@@ -101,6 +113,23 @@
 
 .s-details-wrapper {
     max-width: 30%;
+}
+
+.sample-image {
+    /* top: 30%; */
+    position: sticky;
+    width: 100%;
+    max-width: 500px;
+    /* flex: 2; */
+    flex-shrink: 0;
+    height: auto;
+    overflow: hidden;
+}
+
+.sample-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .sample-id {
