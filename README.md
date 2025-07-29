@@ -210,7 +210,7 @@ git checkout -b feature/home-page
 
 ---
 
-## People Involved
+## 👥 People Involved
 
 This section displays the people involved in the project including the interns, mentors and collaborators.
 
