@@ -216,20 +216,20 @@ This section displays the people involved in the project including the interns, 
 
 👨🏻‍💻 Developers
 - The interns:
-**Frontend Developer** - Revien Rodriguez
-**Backend Developer** - Gliezel Ann Pajarilla
-**Documentation & Quality Assurance** - Elishia Janelle Ocson
+- **Frontend Developer** - Revien Rodriguez
+- **Backend Developer** - Gliezel Ann Pajarilla
+- **Documentation & Quality Assurance** - Elishia Janelle Ocson
 
 👨‍🏫 Mentors
 - Philippine Genomics Information and Resource Hub (PHILOMICS)
-**Bioinformatics Data Analyst** - Dan Jethro Masacupan
-**HPC Administrator** - Joshua Gregor Dizon
+- **Bioinformatics Data Analyst** - Dan Jethro Masacupan
+- **HPC Administrator** - Joshua Gregor Dizon
 
 
 👩🏻‍🔬 Collaborators
 - UP Marine Science Institute (MSI)
-**Cecilia Conaco, PhD**
-**Vanessa Joy Diamante** 
+- **Cecilia Conaco, PhD**
+- **Vanessa Joy Diamante** 
 ---
 
 ## 📚 Additional Resources
