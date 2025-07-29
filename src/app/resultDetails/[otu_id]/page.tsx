@@ -9,6 +9,8 @@ import { useRouter } from 'next/navigation';
 
 import '../../css/resultDetails.css';
 
+// https://supabase.com/docs/guides/storage/serving/image-transformations
+
 // sample details
 interface Sponge {
     otu_id: number;
@@ -35,9 +37,9 @@ interface Sponge {
 
 //image details
 interface spongeImage {
-    image_id: number;
-    otu_image_url: string;
-    sample_image_url: string
+    otu_id: number;
+    otuImageUrl: string;
+    sampleImageUrl: string
 }
 
 // Make values sentence case
@@ -49,20 +51,6 @@ function toSentenceCase(text: string): string {
 // use useParams() to grab otu_id from the URL
 // use useSearchParams() to grab the location query param
 
-const getDirectDownloadURL = (driveLink: string | undefined | null): string | null => {
-    // const fileID = driveLink.match(/\/d\/(.*?)\/view/)?.[1];
-    if (!driveLink || typeof driveLink !== 'string') {
-        console.warn('Error displaying image', driveLink);
-        return null;
-        
-    }
-    const fileID = driveLink.match(/\/d\/(.*?)\/view/)?.[1];
-    if (!fileID) {
-        console.warn('Invalid link');
-        return null;
-    }
-    return `https://drive.google.com/uc?export=view&id=${fileID}`;
-};
 
 const ResultDetails = () => {
     const params = useParams();
@@ -160,8 +148,8 @@ const ResultDetails = () => {
                                         <div className="image-grid">
                                             {images.map((img, index) => (
                                                 <img
-                                                key={img.image_id}
-                                                src={getDirectDownloadURL(img.otu_image_url) ?? '/logo.png'} alt={"OTU Image"} className="otu-img" />
+                                                key={img.otu_id || index}
+                                                    src={img.otuImageUrl || '/assets/resultDetails/logo.png'} alt={"OTU Image"} className="otu-img" />
                                             ))}
                                         </div>
                                     ) : (
@@ -215,8 +203,7 @@ const ResultDetails = () => {
                                 </div>
                             </div>
                         </Tab>
-                                    {/* solution to img: get img id
-                                    https://www.ayrshare.com/how-to-get-direct-download-urls-from-google-drive/ */}
+
                         <Tab eventKey="images" title="Images">
                             <div className="samples-wrapper">
                                 <div className="sample-image">
@@ -224,8 +211,9 @@ const ResultDetails = () => {
                                         <p>Loading images...</p>
                                     ) : images.length > 0 ? (
                                         <div className="image-grid">
-                                            {images.map((img) => (
-                                                <img key={img.image_id} src={img.sample_image_url} alt={"Sample Image"} className="sample-img" />
+                                            {images.map((img, index) => (
+                                                <img key={img.otu_id || index}
+                                                    src={img.sampleImageUrl || '/assets/resultDetails/logo.png'} alt={"Sample Image"} className="sample-img" />
                                             ))}
                                         </div>
                                     ) : (
