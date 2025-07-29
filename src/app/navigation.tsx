@@ -14,12 +14,13 @@ const Navigation = () => {
           {/* Brand Section */}
           <Navbar.Brand as={Link} href="/" className="nav-brand d-flex align-items-center">
             <div className="nav-logo" aria-label="Sponge Logo" role="img" />
-            {/* <div className="nav-title">The Philippine Sponge Guide</div> */}
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav" className="justify-content-end">
             <Nav className="nav-links-right">
+
+              {/* Navigation Links using next/link for client-side navigation */}            
               <Link href="/" className={`nav-link ${pathname === '/' ? 'active' : ''}`}>
                 Home
               </Link>
@@ -37,7 +38,7 @@ const Navigation = () => {
         </Container>
       </Navbar>
     </header>
-    
+
   );
 };
 
