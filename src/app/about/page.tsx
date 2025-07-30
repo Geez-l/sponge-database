@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/about.css';
 import Footer from '../components/footer';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/variable.css';
 
@@ -20,15 +19,27 @@ export default function AboutPage() {
       {/* Content block lower on the page */}
       <div className="max-w-4xl px-4 py-16 mt-12">
         <p className="text-gray-700 text-lg leading-relaxed">
-          The Philippine Sponge Guide is a gateway to exploring Philippine sponges through a user-friendly database. This database is designed to keep track of sponge records and organize the classification, characteristics, and metadata from the UP Marine Science Institute. 
+          The Philippine Sponge Guide represents ongoing and continuing efforts to document sponge biodiversity in the archipelago. It is a collaborative effort among dedicated researchers and supporting institutions. This initiative is made possible through the  Marine Science Institute of the University of the Philippines Diliman with support from the Department of Science and Technology – Philippine Council for Agriculture, Aquatic, and Natural Resources Research and Development (DOST-PCAARRD) through the Coastal Acidification and Mesophotic Coral Ecosystems Programs.
         </p>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget auctor libero. Donec vestibulum purus sit amet mattis egestas. Vestibulum sagittis tortor ut mauris tempor tincidunt. Praesent malesuada augue rhoncus semper hendrerit. 
-          Curabitur aliquam porttitor nisl eget bibendum. Mauris ultricies luctus leo, consequat consectetur purus maximus sit amet. 
-          Duis vulputate enim sed dui porta, at tincidunt nulla feugiat. Donec bibendum, orci non faucibus iaculis, lacus ligula consectetur libero, non blandit eros tortor vel augue. Mauris viverra viverra maximus. 
-          Sed vel velit sit amet risus vestibulum interdum.
-        </p>
+          Database design and implementation by the Philippine Genome Center Diliman Core Facility for Bioinformatics and the Marine Molecular Laboratory of the Marine Science Institute, University of the Philippines Diliman.
+                    <br />
+          <br />
+          (logos)
+          <br />
+          <br />
+          <span style={{ fontWeight: 'bold' }}>Photographers and field collectors</span>        
+          <br />
+          • Cecilia Conaco
+          <br />
+          • Patrick Cabaitan
+          <br />
+          • Marielle Ann Carungay
+          <br />
+          • Gabriella Juliane Maala
+          <br />
+          • Vanessa Joy Diamante
+          <br />
+          • Francis Gideon Tagnong
       </div>
       
     </div>
