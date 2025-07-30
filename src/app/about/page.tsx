@@ -16,7 +16,7 @@ export default function AboutPage() {
         </div>
 
         <div className="about-title">
-          <h1 className="text-center">The Philippine Sponge Guide</h1>
+          <h1 className="text-center">THE PHILIPPINE SPONGE GUIDE</h1>
           <div className="about-divider"></div>
         </div>
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
           <h1>People Involved</h1>
 
           {/* MSI Project Leaders */}
-          <h3 className="team-section-title">MSI Project Leaders</h3>
+          <h3 className="team-section-title">UP MSI Project Leaders</h3>
           <div className="msi-people">
             <div className="project-leads">
               {heads.map((person, i) => (
@@ -81,7 +81,7 @@ export default function AboutPage() {
           </div>
 
           {/* PGC - Philomics */}
-          <h3 className="team-section-title">PGC - Philomics Mentors</h3>
+          <h3 className="team-section-title">PGC-CFB Mentors</h3>
           <div className="pgc-people">
             <div className="team-list">
               {mentors.map((mentor, i) => (
@@ -95,7 +95,7 @@ export default function AboutPage() {
           </div>
 
           {/* PGC - Interns */}
-          <h3 className="team-section-title">PGC - Bioinformatics Interns</h3>
+          <h3 className="team-section-title">PGC-CFB BITP 2025 Interns</h3>
           <div className="pgc-interns">
             <div className="team-list">
               {interns.map((intern, i) => (

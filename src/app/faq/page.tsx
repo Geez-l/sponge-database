@@ -10,7 +10,7 @@ const FAQ = () => {
   return (
     <div className="faq-div">
       <section className="faq-title">
-        <h1>Frequently Asked Questionss</h1>
+        <h1>Frequently Asked Questions</h1>
       </section>
 
       <main className="faq-content">
