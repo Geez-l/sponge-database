@@ -51,6 +51,7 @@ const HomeCards = () => (
       <Card.Body>
         <Card.Title className='card-heading'><span className='title-bar'>|</span> About Philippine Marine Sponges</Card.Title>
         <div className='card-subpart'>
+
           <Card.Subtitle className='card-subheading'>What are marine sponges?</Card.Subtitle>
           <Card.Text className='card-body-text'>
             Sponges are known to be simple invertebrate animals that reside in aquatic environments. 
@@ -68,11 +69,11 @@ const HomeCards = () => (
             removing bacteria and pollutants from their environment. This function supports the health of coral reefs 
             and other marine habitats (NOAA, 2024). Additionally, sponges provide shelter for various marine creatures, 
             from algae to small invertebrates. By doing all this, sponges help keep the reef ecosystem balanced.
-
           </Card.Text>
         </div>
 
         <div className='card-subpart'>
+
           <Card.Subtitle className='card-subheading'>Why is this database important?</Card.Subtitle>
           <Card.Text className='card-body-text'>
             This database is more than just a collection of sponge records, 
@@ -102,7 +103,6 @@ const HomeCards = () => (
           <br />
           <br />
           University of Hawaiʻi at Mānoa. (n.d.). Phylum Porifera. Exploring Our Fluid Earth. https://manoa.hawaii.edu/exploringourfluidearth/biological/invertebrates/phylum-porifera
-
         </Card.Text>
       </Card.Body>
     </Card>
