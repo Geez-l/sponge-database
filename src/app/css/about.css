@@ -89,6 +89,14 @@
 }
 
 .max-w-4xl {
-    margin: auto 15rem;
+    margin: 2rem 15rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-us-logos {
+  height: 20rem;
+  margin-left: 0 !important;
+  
 }
 
