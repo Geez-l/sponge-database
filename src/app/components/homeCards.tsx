@@ -51,23 +51,35 @@ const HomeCards = () => (
       <Card.Body>
         <Card.Title className='card-heading'><span className='title-bar'>|</span> About Philippine Marine Sponges</Card.Title>
         <div className='card-subpart'>
-          <Card.Subtitle className='card-subheading'>What are Sponges?</Card.Subtitle>
+
+          <Card.Subtitle className='card-subheading'>What are marine sponges?</Card.Subtitle>
           <Card.Text className='card-body-text'>
-            Sponges are known to be simple invertebrate animals that reside in aquatic environments. They are categorized as simple yet remarkable organisms that play an important role in the marine ecosystem. Sponges belong to the phylum Porifera, which includes some of the most primitive multicellular animals on Earth. Unlike other marine species, sponges lack true tissues and organs as their bodies are specialized cells for life functions such as filter feeding, respiration, and reproduction (University of Hawaiʻi at Mānoa, n.d.). 
+            Sponges are known to be simple invertebrate animals that reside in aquatic environments. 
+            They are categorized as simple yet remarkable organisms that play an important role in the marine ecosystem. 
+            Sponges belong to the phylum Porifera, which includes some of the most primitive multicellular animals on Earth. 
+            Unlike other marine species, sponges lack true tissues and organs as their bodies are specialized cells for life functions 
+            such as filter feeding, respiration, and reproduction (University of Hawaiʻi at Mānoa, n.d.). 
           </Card.Text>
         </div>
         
         <div className='card-subpart'>
-          <Card.Subtitle className='card-subheading'>Why Sponges Matter?</Card.Subtitle>
+          <Card.Subtitle className='card-subheading'>Why sponges matter</Card.Subtitle>
           <Card.Text className='card-body-text'>
-            Sponges are known for filter feeding, which pumps water through their bodies, removing bacteria and pollutants from their environment. This function supports the health of coral reefs and other marine habitats (NOAA, 2024). Additionally, sponges provide shelter for various marine creatures, from algae to small invertebrates. By doing all this, sponges help keep the reef ecosystem balanced.
+            Sponges are known for filter feeding, which pumps water through their bodies, 
+            removing bacteria and pollutants from their environment. This function supports the health of coral reefs 
+            and other marine habitats (NOAA, 2024). Additionally, sponges provide shelter for various marine creatures, 
+            from algae to small invertebrates. By doing all this, sponges help keep the reef ecosystem balanced.
           </Card.Text>
         </div>
 
         <div className='card-subpart'>
-          <Card.Subtitle className='card-subheading'>Why Philippine Sponge Guide?</Card.Subtitle>
+
+          <Card.Subtitle className='card-subheading'>Why is this database important?</Card.Subtitle>
           <Card.Text className='card-body-text'>
-            This database is more than just a collection of sponge records, but a step towards biodiversity conservation and citizen science. This database hopes to make marine biodiversity records more accessible and empower researchers, students, and local communities to take part in protecting the Philippine marine life. 
+            This database is more than just a collection of sponge records, 
+            but a step towards biodiversity conservation and citizen science. 
+            This database hopes to make marine biodiversity records more accessible and empower researchers, students, 
+            and local communities to take part in protecting the Philippine marine life. 
           </Card.Text>
         </div>
       </Card.Body>
