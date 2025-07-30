@@ -16,6 +16,7 @@ export function useSpongeFilters() {
 
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showWarning, setShowWarning] = useState(false); //for modal
   const router = useRouter();
 
   // http request to fetch colors
@@ -126,7 +127,19 @@ export function useSpongeFilters() {
   };
 
   const handleSubmitAndNavigate = () => {
+    const trimmedSearch = searchTerm.trim();
     const params = new URLSearchParams();
+    const noDrodpdownsSelected =
+      selectedColor === "Color" &&
+      selectedFunctionalForm === "Functional Form" &&
+      selectedPutative === "Putative ID" &&
+      selectedLocation === "Location";
+    
+    
+    if (noDrodpdownsSelected && trimmedSearch === "") {
+      setShowWarning(true);
+      return;
+    }
 
     if (searchTerm && searchTerm.trim().toLowerCase() !== "") {
       params.append("search", searchTerm.trim().toLowerCase());
@@ -158,12 +171,23 @@ export function useSpongeFilters() {
     router.push(`/result?${params.toString()}`);
   };
 
+  /*for popup modal */
+  const handleConfirmUnfiltered = () => {
+    setShowWarning(false);
+    router.push("/result");
+  };
+
+  const handleCancelUnfiltered = () => setShowWarning(false);
+
   {
     /*Global search in the home search bar */
   }
   const handleFetchGlobal = async () => {
     const trimmedSearch = searchTerm.trim();
-    if (!trimmedSearch) return;
+    if (!trimmedSearch) {
+      handleSubmitAndNavigate();
+      return;
+    }
 
     const params = new URLSearchParams();
     params.append("search", trimmedSearch.toLowerCase());
@@ -183,6 +207,7 @@ export function useSpongeFilters() {
     location,
     loading,
     searchTerm,
+    showWarning, 
     setSearchTerm,
     handleColorSelect,
     handleFunctionalFormSelect,
@@ -192,6 +217,8 @@ export function useSpongeFilters() {
     handleSubmit,
     handleSubmitAndNavigate,
     handleFetchGlobal,
+    handleConfirmUnfiltered,
+    handleCancelUnfiltered,
     setSelectedColor,
   };
 }

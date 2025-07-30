@@ -1,0 +1,35 @@
+/* === Footer == */
+
+.footer-container {
+    position: relative;
+    width: 100%;
+    background-color: #48ACBB;
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+}
+
+.footer-logos {
+    height: 6rem;
+    width: 12rem;
+    margin-left: 7rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.footer-text {
+    color: #fff;
+    margin: 0rem 7rem;
+    padding-bottom: 3rem;
+}
+
+.footer-copyright {
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+
+.footer-body p{
+    font-size: small;
+    padding-top: 0.2rem;
+    padding-bottom: 0;
+    margin: 0 !important;
+}
