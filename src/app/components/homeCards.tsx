@@ -28,10 +28,11 @@ const HomeCards = () => (
       <Card.Body>
         <Card.Title className='card-heading'><span className='title-bar'>|</span> How to Search Our Database</Card.Title>
         <Card.Text className='card-body-text'>
-          Images in the Philippine Sponge Database may be searched using the attributes below:
+          Our database contains information on Philippine sponges collected by the UP Marine Science Institute. 
+          You can search for sponge attributes by typing your query in the search bar above or using the dropdown buttons in any combination:
           <br />
           <br />
-          • Operational Taxonomic Unit Identification (OTU ID)
+          • Color
           <br />
           • Location
           <br />
@@ -39,6 +40,9 @@ const HomeCards = () => (
           <br />
           • Putative Identification
           <br />
+          <br />
+          To browse our full list of Operational Taxonomic Units (OTUs), navigate to the full OTU List page or submit a blank query. 
+          For more information, visit our Frequently Asked Questions (FAQs) page and About Us page.
         </Card.Text>
       </Card.Body>
     </Card>
