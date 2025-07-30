@@ -70,6 +70,7 @@
     flex-shrink: 0;
     height: auto;
     overflow: hidden;
+    padding: 1rem 0;
 }
 
 .desc-image img {
@@ -82,13 +83,15 @@
 
 .details-wrapper {
     max-width: 50%;
-    padding: auto, 0;
+    padding: 0 !important;
+
 }
 
 
 .details-wrapper tbody td {
     padding: 0.7rem;
 }
+
 
 .table-label {
     background-color: #eeecec !important;

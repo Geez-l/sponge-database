@@ -206,7 +206,7 @@ const ResultDetails = () => {
               </div>
             </Tab>
 
-            <Tab eventKey="images" title="Images">
+            <Tab eventKey="images" title="Samples">
               <div className="samples-wrapper">
                 <div className="sample-image">
                   {loading ? (
