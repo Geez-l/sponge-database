@@ -1,25 +1,19 @@
-
-.page-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
 .about-bg {
-    position: relative;
-    width: 100%;
-    background-image: url('/assets/about-us/about-banner.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-    margin-top: -2rem !important;
-    margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  background-image: url('/assets/about-us/PA103759.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 0;
+  margin-top: -2rem !important;
+  margin-bottom: 2rem;
 }
-
 
 .faq-div {
   padding: 0 !important;
@@ -89,14 +83,183 @@
 }
 
 .max-w-4xl {
-    margin: 2rem 15rem;
-    display: flex;
-    flex-direction: row;
+    margin: auto 15rem;
 }
 
-.about-us-logos {
-  height: 20rem;
-  margin-left: 0 !important;
-  
+
+.about-content-wrapper {
+  max-width: 70%;
+  margin: 10 auto;
+  padding: 5rem;
 }
 
+.about-intro-block {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-img {
+  flex: 1 1 300px;
+  background-image: url('/assets/about-us/PA103759.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: start;
+  height: 270px;
+  /* width: 800px; */
+  top:30%;
+}
+
+.intro-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+  align-content: justify;;
+}
+
+.people-involved {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.people-involved h2 {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.project-lead,
+.project-colead,
+.divers,
+.pgc-people,
+.pgc-interns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-leads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.org-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.2s ease;
+}
+
+.org-card:hover {
+  transform: translateY(-5px);
+}
+
+.org-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.org-card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.2rem;
+  color: #0077b6;
+}
+
+.org-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #555;
+}
+
+.footer-container {
+    position: relative;
+    width: 100%;
+    background-color: #48ACBB;
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+    margin-top: 3rem;
+}
+
+.footer-logos {
+    height: 6rem;
+    width: 12rem;
+    margin-left: 7rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.footer-text {
+    color: #fff;
+    margin: 0rem 7rem;
+    padding-bottom: 3rem;
+}
+
+.footer-copyright {
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+
+.footer-body p{
+    font-size: small;
+    padding-top: 0.2rem;
+    padding-bottom: 0;
+    margin: 0 !important;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;      
+  justify-content: center; 
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.team-section-title {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  color: #0077b6;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .about-intro-block {
+    flex-direction: column;
+  }
+
+  .container-img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .org-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-list {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .org-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
