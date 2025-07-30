@@ -68,39 +68,6 @@
 
 }
 
-.question-box {
-    flex: 1;
-    background-color: #eeecec;
-    padding: 1.5rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-}
-
-
-.answer {
-  flex: 1;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-
-}
-
-.source-link {
-  display: inline;
-  vertical-align: baseline;
-  color: #48ACBB;
-  font-weight: 600;
-  white-space: normal;
-  word-break: break-word;
-  line-height: inherit;
-  font-size: inherit;
-}
-
 .max-w-4xl {
     margin: auto 15rem;
 }
