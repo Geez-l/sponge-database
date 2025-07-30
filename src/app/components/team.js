@@ -1,6 +1,6 @@
 export const divers = [
   {
-    name: "Cecilia Conaco",
+    name: "Cecilia Conaco, PhD",
     role: "MSI",
     image: "/assets/about-us/PA103759.jpg",
   },
