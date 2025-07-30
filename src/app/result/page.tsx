@@ -146,7 +146,17 @@ export default function ResultPage() {
           <span className="individual-filter">
             Location = {toSentenceCase(location)}
           </span>
+        
+        {searchParam && (
+          <div className="query-display-container">
+            <p className="query-display">
+              Input query: <strong>"{searchParam}"</strong>
+            </p>
+          </div>
+
+        )}
         </div>
+       
       </main>
 
       <main className="result-table">
