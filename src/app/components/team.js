@@ -59,7 +59,7 @@ export const mentors = [
 
 export const interns = [
   {
-    name: "Elishia Janelle Ocson",
+    name: "Elisha Janelle Ocson",
     role: "Documentation and Quality Assurance",
     image: "/assets/about-us/PA103759.jpg",
   },
