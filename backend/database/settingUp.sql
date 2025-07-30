@@ -1,3 +1,9 @@
+
+-- =========================================
+-- Initial Database Setup Script
+--==========================================
+
+
 -- =========================================
 -- 1. Ensure pgcrypto extension is enabled
 -- =========================================
@@ -130,3 +136,95 @@ CREATE TABLE sample_staging (
     barcode_sequences TEXT
 );
 
+
+-- =========================================
+-- 12. Insert into sample using FK resolution
+-- =========================================
+INSERT INTO sample (
+    otu_id, date_collected, location_id, depth, dive_no,
+    researcher_id, sample_code, barcode_sequences
+)
+SELECT 
+    s.otu_id,
+    s.date_collected,
+    l.location_id,
+    s.depth,
+    s.dive_no,
+    r.researcher_id,
+    s.sample_code,
+    s.barcode_sequences
+FROM sample_staging s
+JOIN location l ON s.location_name = l.location_name AND s.site_name = l.site_name
+JOIN researcher r ON s.initials = r.initials AND s.name = r.name;
+
+-- =========================================
+-- Execute after creating the tables
+-- =========================================
+
+-- =========================================
+-- 11.1 Insert unique locations into location table
+-- =========================================
+INSERT INTO location(location_name, site_name)
+SELECT DISTINCT location_name, site_name FROM sample_staging
+ON CONFLICT ON CONSTRAINT unique_location_site DO NOTHING;
+
+-- =========================================
+-- 11.2 Insert unique researchers into researcher table
+-- =========================================
+INSERT INTO researcher(name, initials)
+SELECT DISTINCT name, initials FROM sample_staging
+ON CONFLICT ON CONSTRAINT unique_researcher DO NOTHING;
+
+-- =========================================
+-- 12. Insert data into sample table from the staging
+-- =========================================
+
+INSERT INTO sample (
+    otu_id, date_collected, location_id, depth, dive_no,
+    researcher_id, sample_code, barcode_sequences
+)
+SELECT 
+    s.otu_id,
+    s.date_collected,
+    l.location_id,
+    s.depth,
+    s.dive_no,
+    r.researcher_id,
+    s.sample_code,
+    s.barcode_sequences
+FROM sample_staging s
+JOIN location l ON s.location_name = l.location_name AND s.site_name = l.site_name
+JOIN researcher r ON s.initials = r.initials AND s.name = r.name;
+
+-- =========================================
+-- 13. Inserting the barcode sequence
+-- =========================================
+
+INSERT INTO barcode (sample_id, barcode_sequence)
+SELECT sam.sample_id, s.barcode_sequences
+FROM sample_staging s
+JOIN sample sam ON 
+    sam.sample_code = s.sample_code
+    AND sam.date_collected = s.date_collected
+WHERE s.barcode_sequences IS NOT NULL AND s.barcode_sequences <> '';
+
+
+-- =========================================
+-- 14. Creating the image table with the otu id and respective urls
+-- =========================================
+
+CREATE TABLE image (
+    otu_id INTEGER,
+    otu_image_url TEXT,
+    sample_image_url TEXT,
+    otu_img_fname TEXT,
+    sample_img_fname TEXT
+);
+
+
+-- =====================================================================
+-- Note : the queries above were designed to ensure that the database --
+-- was set up correctly with necessary constraints and relationships. --
+-- Additionally, some queries were run separately and compiled in one --
+-- single file for documentation purposes.                            --
+-- =====================================================================

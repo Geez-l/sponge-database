@@ -1,5 +1,8 @@
+'use client';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+
+/*Information about how to search the database and information about Philippine Marine Sponges*/
 
 const HomeCards = () => (
   <div className='home-text-content'>

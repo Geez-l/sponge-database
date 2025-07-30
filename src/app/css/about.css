@@ -6,20 +6,35 @@
     padding-bottom: 0 !important;
 }
 
+.about-bg {
+    position: relative;
+    width: 100%;
+    background-image: url('/assets/about-us/about-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    margin-top: -2rem !important;
+    margin-bottom: 2rem;
+}
+
+
 .faq-div {
   padding: 0 !important;
   margin-top: 0 !important;
 }
 .faq-title {
   position: relative;
-  background-color: #48ACBB;
+  background:transparent;
   width:100%;
   height:auto;
   padding: 3rem 4rem;
   color: white;
   text-align: left;
   display: flex;
-  top: -2rem !important;
+  top: 0 !important;
 
 }
 
@@ -78,7 +93,6 @@
 }
 
 /* === Footer == */
-
 .footer-container {
     position: relative;
     width: 100%;

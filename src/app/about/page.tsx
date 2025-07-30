@@ -1,15 +1,20 @@
 import React from 'react';
 import '../css/about.css';
+import Footer from '../components/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/variable.css';
+
 
 export default function AboutPage() {
   return (
     <div className='page-wrapper'>
     <div className="faq-div">
-      <section className="faq-title">
-        <h1>About Us</h1>
-      </section>
+      <div className='about-bg'>
+        <section className="faq-title">
+          <h1>About Us</h1>
+        </section>
+      </div>
+
 
       {/* Content block lower on the page */}
       <div className="max-w-4xl px-4 py-16 mt-12">
@@ -36,19 +41,9 @@ export default function AboutPage() {
           <br />
           • Francis Gideon Tagnong
       </div>
-    </div><div className='footer-container'>
-
-        <img src={'/assets/footer/footer-logos.svg'} className='footer-logos'></img>
-        <div className='footer-text'>
-
-          <p className='footer-copyright'>© 2025 Philippine Genome Center and UP Marine Science Institute. All rights reserved.</p>
-          <div className='footer-body'>
-            <p>SAMPLE COUNT: 50 </p>
-            <p>IMAGE COUNT: 100 </p>
-            <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
-          </div>
-        </div>
-      </div>
-      </div>
+      
+    </div>
+      <Footer />
+    </div>
   );
 };

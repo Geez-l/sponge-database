@@ -63,6 +63,7 @@
   .search-input {
     padding: 15px 55px;
     background: #ffffff;
+    color:#000000;
     border-radius: 40px;
     font-size: 1.00rem;
     margin-right: 2rem;
@@ -79,6 +80,28 @@
   margin: 0 0.5rem;
   border-radius: 20px;
   font-weight: 500;
+}
+
+.backbtn-container {
+  margin-left: 7rem;
+  margin-bottom: 3rem;
+}
+
+.back-btn {
+  color:#000000;
+  background-color: #ffffff;
+  border-color: #4A8EBB;
+  border-radius: 20px;
+}
+
+.back-btn:hover {
+  color: #fff;
+  background-color: #4A8EBB;
+}
+
+.back-btn:active {
+  color: #fff;
+  background-color: #4A8EBB;
 }
 
   .res-tab {
@@ -109,6 +132,10 @@
     overflow: hidden;
     white-space: nowrap;
     max-width: 200px;
+}
+
+.italic-putative {
+  font-style: italic;
 }
 
 
