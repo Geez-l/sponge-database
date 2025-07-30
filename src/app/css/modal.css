@@ -1,0 +1,21 @@
+
+
+.cancel-btn {
+    color:black;
+    background-color: #fff;
+    border-color: #4A8EBB;
+    border-radius: 20px;
+    margin: auto 0.5rem;
+}
+
+.ok-btn {
+    color: #fff;
+    background-color: #4A8EBB;
+    border-radius: 20px;
+}
+
+.ok-btn:hover {
+    color: #000;
+    background-color: #FFC64C;
+    border-color: #FFC64C;
+}
