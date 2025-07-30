@@ -7,12 +7,14 @@ import Row from "react-bootstrap/Row";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/navigation";
 import { FaSearch } from "react-icons/fa";
+import { useState } from 'react';
 import "./css/home.css";
 import "./css/variable.css";
 
 import { useSpongeFilters } from "./hooks/useSpongeFilters";
 import HomeCards from "./components/homeCards";
 import Footer from "./components/footer";
+import WarningModal from "./components/modal";
 
 // Make values sentence case
 function toSentenceCase(text: string): string {
@@ -33,6 +35,7 @@ const Home = () => {
     functionalForms,
     putative,
     location,
+    showWarning,
     handleColorSelect,
     handleFunctionalFormSelect,
     handlePutativeSelect,
@@ -40,7 +43,10 @@ const Home = () => {
     handleReset,
     handleSubmitAndNavigate,
     handleFetchGlobal,
+    handleCancelUnfiltered,
+    handleConfirmUnfiltered,
   } = useSpongeFilters();
+
 
   return (
     <div>
@@ -172,12 +178,19 @@ const Home = () => {
                   </button>
                 </Col>
                 <Col md={4}>
-                  <button
-                    className="btn btn-success custom-submit"
-                    onClick={handleSubmitAndNavigate}
-                  >
-                    Submit
-                  </button>
+                      <button
+                        className="btn btn-success custom-submit"
+                        onClick={handleSubmitAndNavigate}
+                      >
+                        Submit
+                      </button>
+
+                    <WarningModal
+                      show={showWarning}
+                      onConfirm={handleConfirmUnfiltered}
+                      onCancel={handleCancelUnfiltered}
+                    />
+
                 </Col>
               </Row>
             </div>

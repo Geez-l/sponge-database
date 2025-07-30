@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import '../css/footer.css';
 
 /*Footer for the sponge website */
 const Footer = () => (
