@@ -15,19 +15,18 @@
           </Card.Title>
           <Card.Text className="card-body-text">
             Our database contains information on Philippine sponges collected by
-            the UP Marine Science Institute. You can search for sponge attributes
-            by typing your query in the search bar above or using the dropdown
-            buttons in any combination:
+            the UP Marine Science Institute. You can search for sponge
+            attributes by typing your query in the search bar above or using the
+            dropdown buttons in any combination:
             <br />
             <br />
             <ul>
-              "Color - color of the sponge e.g. yellow, blue-green, etc.",
-              "Location - where the sponge was collected e.g. Bohol, Batangas,
-              etc", 
-              "Functional Form (Schonberg, 2021) - form based on the functional form ",
-              "Putative Identification - identification based on the Carribean Sponge Guide"
+              <li> Color - color of the sponge e.g. yellow, blue-green, etc.</li>
+              <li> Location - where the sponge was collected e.g. Bohol, Batangas,etc"</li>
+              <li/>"Functional Form (Schonberg, 2021) - form based on the
+              functional form ", "Putative Identification - identification based
+              on the Carribean Sponge Guide"
             </ul>
-        
             To browse our full list of Operational Taxonomic Units (OTUs),
             navigate to the full OTU List page or submit a blank query. For more
             information, visit our Frequently Asked Questions (FAQs) page and
@@ -47,14 +46,14 @@
             </Card.Subtitle>
             <Card.Text className="card-body-text">
               Sponges are known to be simple invertebrate animals that reside in
-              aquatic environments. They are categorized as simple yet remarkable
-              organisms that play an important role in the marine ecosystem.
-              Sponges belong to the phylum Porifera, which includes some of the
-              most primitive multicellular animals on Earth. Unlike other marine
-              species, sponges lack true tissues and organs as their bodies are
-              specialized cells for life functions such as filter feeding,
-              respiration, and reproduction (University of Hawaiʻi at Mānoa,
-              n.d.).
+              aquatic environments. They are categorized as simple yet
+              remarkable organisms that play an important role in the marine
+              ecosystem. Sponges belong to the phylum Porifera, which includes
+              some of the most primitive multicellular animals on Earth. Unlike
+              other marine species, sponges lack true tissues and organs as
+              their bodies are specialized cells for life functions such as
+              filter feeding, respiration, and reproduction (University of
+              Hawaiʻi at Mānoa, n.d.).
             </Card.Text>
           </div>
 
@@ -78,18 +77,18 @@
               Why is this database important?
             </Card.Subtitle>
             <Card.Text className="card-body-text">
-              This database is more than just a collection of sponge records, but
-              a step towards biodiversity conservation and citizen science. This
-              database hopes to make marine biodiversity records more accessible
-              and empower researchers, students, and local communities to take
-              part in protecting the Philippine marine life.
+              This database is more than just a collection of sponge records,
+              but a step towards biodiversity conservation and citizen science.
+              This database hopes to make marine biodiversity records more
+              accessible and empower researchers, students, and local
+              communities to take part in protecting the Philippine marine life.
             </Card.Text>
           </div>
         </Card.Body>
       </Card>
 
       {/* References Card*/}
-  <Card className="refs">
+      <Card className="refs">
         <Card.Body>
           <Card.Title className="card-heading">
             <span className="title-bar">|</span> References
@@ -100,8 +99,9 @@
             J.N.A.; Kelly, M.; Klautau, M.; Lim, S.C.; Manconi, R.; Morrow, C.;
             Pinheiro, U.; Pisera, A.B.; Ríos, P.; Rützler, K.; Schönberg, C.;
             Turner, T.; Vacelet, J.; van Soest, R.W.M.; Xavier, J. (2025). World
-            Porifera Database. Accessed at https://www.marinespecies.org/porifera
-            on 2025-07-24. doi:10.14284/359
+            Porifera Database. Accessed at
+            https://www.marinespecies.org/porifera on 2025-07-24.
+            doi:10.14284/359
             <br />
             <br />
             Hooper, J. and Van Soest, R. (2002) Systema Porifera. A Guide to the
@@ -113,18 +113,17 @@
             https://oceanservice.noaa.gov/facts/sponge.html
             <br />
             <br />
-            Schonberg, C. 2021. No taxonomy needed: Sponge functional morphologies
-            inform about environmental conditions. Ecological Indicators. 129.
-            107806. 10.1016/j.ecolind.2021.107806.
+            Schonberg, C. 2021. No taxonomy needed: Sponge functional
+            morphologies inform about environmental conditions. Ecological
+            Indicators. 129. 107806. 10.1016/j.ecolind.2021.107806.
             <br />
             <br />
-            University of Hawaiʻi at Mānoa. (n.d.). Phylum Porifera. Exploring Our
-            Fluid Earth.
+            University of Hawaiʻi at Mānoa. (n.d.). Phylum Porifera. Exploring
+            Our Fluid Earth.
             https://manoa.hawaii.edu/exploringourfluidearth/biological/invertebrates/phylum-porifera
           </Card.Text>
-        </Card.Body>  
-      </Card> 
-
+        </Card.Body>
+      </Card>
     </div>
   );
 

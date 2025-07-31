@@ -1,7 +1,9 @@
 import React from "react";
 import "../css/about.css";
 import Footer from "../components/footer";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Image from "next/image";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "../layout.css";
 import "../css/variable.css";
 import { heads, divers, mentors, interns } from "../components/team";
 
@@ -56,9 +58,11 @@ export default function AboutPage() {
             <div className="project-leads">
               {heads.map((person, i) => (
                 <div className="org-card" key={i}>
-                  <img src={person.image} alt={person.name} />
+                  <Image
+                  src={person.image} alt={person.name} />
                   <h3>{person.name}</h3>
                   <p>{person.role}</p>
+                  
                 </div>
               ))}
             </div>
@@ -72,7 +76,8 @@ export default function AboutPage() {
             <div className="team-list">
               {divers.map((diver, i) => (
                 <div className="org-card" key={i}>
-                  <img src={diver.image} alt={diver.name} />
+                  <Image
+                  src={diver.image} alt={diver.name} />
                   <h3>{diver.name}</h3>
                   <p>{diver.role}</p>
                 </div>
@@ -86,7 +91,8 @@ export default function AboutPage() {
             <div className="team-list">
               {mentors.map((mentor, i) => (
                 <div className="org-card" key={i}>
-                  <img src={mentor.image} alt={mentor.name} />
+                  <Image
+                  src={mentor.image} alt={mentor.name} />
                   <h3>{mentor.name}</h3>
                   <p>{mentor.role}</p>
                 </div>
@@ -100,7 +106,8 @@ export default function AboutPage() {
             <div className="team-list">
               {interns.map((intern, i) => (
                 <div className="org-card" key={i}>
-                  <img src={intern.image} alt={intern.name} />
+                  <Image
+                  src={intern.image} alt={intern.name} />
                   <h3>{intern.name}</h3>
                   <p>{intern.role}</p>
                 </div>
