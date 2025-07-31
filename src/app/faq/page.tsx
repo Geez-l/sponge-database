@@ -1,5 +1,6 @@
 'use client';
 import React from "react";
+import DOMPurify from "dompurify";
 import "../css/faq.css";
 import Footer from "../components/footer";
 import "../css/variable.css";
@@ -25,13 +26,13 @@ const FAQ = () => {
                 {item.a &&
                   (Array.isArray(item.a)
                     ? item.a.map((para: string, index: number) => (
-                        <p key={index} dangerouslySetInnerHTML={{ __html: para }} />
+                        <p key={index} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(para)}} />
                       ))
-                    : <p dangerouslySetInnerHTML={{ __html: item.a }} />)}
+                    : <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.a)}} />)}
                 {item.list && (
                   <ul>
                     {item.list.map((li: string, index: number) => (
-                      <li key={index} dangerouslySetInnerHTML={{ __html: li }} />
+                      <li key={index} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(li) }} />
                     ))}
                   </ul>
                 )}
