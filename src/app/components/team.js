@@ -1,3 +1,4 @@
+/*Note: change .js to ts */
 export const divers = [
   {
     name: "Cecilia Conaco, PhD",
