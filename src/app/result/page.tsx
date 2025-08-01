@@ -176,7 +176,7 @@ export default function ResultPage() {
                 <th>Surface Texture</th>
                 <th>Sample Location</th>
                 <th>Putative ID</th>
-                <th>Date Collected</th>
+                <th>Date Surveyed</th>
               </tr>
             </thead>
             <tbody>
