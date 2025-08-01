@@ -13,6 +13,7 @@ const FAQ = () => {
       <section className="faq-title">
         <h1>Frequently Asked Questions</h1>
       </section>
+      
 
       <main className="faq-content">
         {faqData.map((item, idx) => (
