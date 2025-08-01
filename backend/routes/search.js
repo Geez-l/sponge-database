@@ -1,6 +1,4 @@
 /* Handling searching in the search bar*/
-
-"use client";
 const express = require("express");
 const router = express.Router();
 const { getDriveClient } = require("../utils/drive");

@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState} from "react";
-import DOMPurify from "dompurify";
+import React from "react";
 import "../css/faq.css";
 import Footer from "../components/footer";
 import "../css/variable.css";
@@ -9,15 +8,6 @@ import { Card } from "react-bootstrap";
 
 /*Frequently asked questions */
 const FAQ = () => {
-  const [isClient, setIsClient] = React.useState(false);
-  const [DOMPurify, setDOMPurify] = useState<any>(null);
-
-  useEffect(() => {
-    setIsClient(true);
-    import("dompurify").then((module) => setDOMPurify(module.default));
-  }, []);
-  if (!isClient || !DOMPurify) return null;
-
   return (
     <div className="faq-div">
       <section className="faq-title">
@@ -34,14 +24,12 @@ const FAQ = () => {
               <Card.Body className="faq-body">
                 {item.a &&
                   (Array.isArray(item.a)
-                    ? item.a.map((para: string, index: number) => (
-                        <p key={index} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(para)}} />
-                      ))
-                    : <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.a)}} />)}
+                    ? item.a.map((para, index) => <p key={index}>{para}</p>)
+                    : <p>{item.a}</p>)}
                 {item.list && (
                   <ul>
-                    {item.list.map((li: string, index: number) => (
-                      <li key={index} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(li) }} />
+                    {item.list.map((li, index) => (
+                      <li key={index}>{li}</li>
                     ))}
                   </ul>
                 )}
@@ -56,20 +44,12 @@ const FAQ = () => {
           </h4>
           <ul>
             {references.map((ref, index) => {
-              const htmlString = `
-                ${ref.authors}. <i>${ref.title}</i>${
-                ref.journal ? `, ${ref.journal}` : ""
-              }. ${
-                ref.url
-                  ? `<a class="source-link" href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.url}</a>`
-                  : ""
-              }${ref.doi ? `, DOI: ${ref.doi}` : ""}${
-                ref.accessed ? ` (accessed ${ref.accessed})` : ""
-              }.
-              `;
-              return (
-                <li key={index} dangerouslySetInnerHTML={{ __html: htmlString }} />
-              );
+              const refText = `${ref.authors}. ${ref.title}` +
+                (ref.journal ? `, ${ref.journal}` : "") +
+                (ref.url ? `, ${ref.url}` : "") +
+                (ref.doi ? `, DOI: ${ref.doi}` : "") +
+                (ref.accessed ? ` (accessed ${ref.accessed})` : "") + ".";
+              return <li key={index}>{refText}</li>;
             })}
           </ul>
         </section>

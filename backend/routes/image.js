@@ -1,6 +1,4 @@
 /* Handling of image routes in the backend from the supabase storage */
-
-"use client";
 const express = require("express");
 const router = express.Router();
 const pool = require("../backend");
