@@ -1,6 +1,4 @@
 /* Handling of information in the results details page with respective otu & sample information*/
-
-"use client";
 const express = require("express");
 const router = express.Router();
 const pool = require("../backend");

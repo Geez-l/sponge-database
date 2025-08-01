@@ -1,9 +1,9 @@
+"use client";
 import React from "react";
 import "../css/about.css";
 import Footer from "../components/footer";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "../layout.css";
 import "../css/variable.css";
 import { heads, divers, mentors, interns } from "../components/team";
 
@@ -52,17 +52,21 @@ export default function AboutPage() {
         <section className="people-involved">
           <h1>People Involved</h1>
 
-          {/* MSI Project Leaders */}
+          {/* UP MSI Project Leaders */}
           <h3 className="team-section-title">UP MSI Project Leaders</h3>
           <div className="msi-people">
             <div className="project-leads">
               {heads.map((person, i) => (
                 <div className="org-card" key={i}>
                   <Image
-                  src={person.image} alt={person.name} />
+                    src={person.image}
+                    alt={person.name}
+                    width={200}
+                    height={200}
+                    className="org-img"
+                  />
                   <h3>{person.name}</h3>
                   <p>{person.role}</p>
-                  
                 </div>
               ))}
             </div>
@@ -77,7 +81,12 @@ export default function AboutPage() {
               {divers.map((diver, i) => (
                 <div className="org-card" key={i}>
                   <Image
-                  src={diver.image} alt={diver.name} />
+                    src={diver.image}
+                    alt={diver.name}
+                    width={200}
+                    height={200}
+                    className="org-img"
+                  />
                   <h3>{diver.name}</h3>
                   <p>{diver.role}</p>
                 </div>
@@ -85,14 +94,19 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* PGC - Philomics */}
+          {/* Mentors */}
           <h3 className="team-section-title">PGC-CFB Mentors</h3>
           <div className="pgc-people">
             <div className="team-list">
               {mentors.map((mentor, i) => (
                 <div className="org-card" key={i}>
                   <Image
-                  src={mentor.image} alt={mentor.name} />
+                    src={mentor.image}
+                    alt={mentor.name}
+                    width={200}
+                    height={200}
+                    className="org-img"
+                  />
                   <h3>{mentor.name}</h3>
                   <p>{mentor.role}</p>
                 </div>
@@ -100,14 +114,19 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* PGC - Interns */}
+          {/* Interns */}
           <h3 className="team-section-title">PGC-CFB BITP 2025 Interns</h3>
           <div className="pgc-interns">
             <div className="team-list">
               {interns.map((intern, i) => (
                 <div className="org-card" key={i}>
                   <Image
-                  src={intern.image} alt={intern.name} />
+                    src={intern.image}
+                    alt={intern.name}
+                    width={200}
+                    height={200}
+                    className="org-img"
+                  />
                   <h3>{intern.name}</h3>
                   <p>{intern.role}</p>
                 </div>
@@ -120,4 +139,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
