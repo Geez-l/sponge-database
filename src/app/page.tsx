@@ -1,13 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/navigation";
 import { FaSearch } from "react-icons/fa";
-import { useState } from 'react';
 import "./css/home.css";
 import "./css/variable.css";
 
@@ -15,12 +13,8 @@ import { useSpongeFilters } from "./hooks/useSpongeFilters";
 import HomeCards from "./components/homeCards";
 import Footer from "./components/footer";
 import WarningModal from "./components/modal";
-
-// Make values sentence case
-function toSentenceCase(text: string): string {
-  if (!text) return "";
-  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-}
+import Layout from "./layout";
+import { toSentenceCase } from "./helpers/sentenceCase";
 
 const Home = () => {
   const router = useRouter();
@@ -47,7 +41,6 @@ const Home = () => {
     handleConfirmUnfiltered,
   } = useSpongeFilters();
 
-
   return (
     <div>
       <main className="home-content">
@@ -61,7 +54,6 @@ const Home = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
                   handleFetchGlobal();
-                  // handleSubmitAndNavigate();
                 }}
               >
                 <div className="search-bar-left-icon">
@@ -178,19 +170,18 @@ const Home = () => {
                   </button>
                 </Col>
                 <Col md={4}>
-                      <button
-                        className="btn btn-success custom-submit"
-                        onClick={handleSubmitAndNavigate}
-                      >
-                        Submit
-                      </button>
+                  <button
+                    className="btn btn-success custom-submit"
+                    onClick={handleSubmitAndNavigate}
+                  >
+                    Submit
+                  </button>
 
-                    <WarningModal
-                      show={showWarning}
-                      onConfirm={handleConfirmUnfiltered}
-                      onCancel={handleCancelUnfiltered}
-                    />
-
+                  <WarningModal
+                    show={showWarning}
+                    onConfirm={handleConfirmUnfiltered}
+                    onCancel={handleCancelUnfiltered}
+                  />
                 </Col>
               </Row>
             </div>

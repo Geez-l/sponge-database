@@ -1,11 +1,17 @@
 "use client";
 import React from "react";
 import '../css/footer.css';
+import Image from "next/image";
 
 /*Footer for the sponge website */
 const Footer = () => (
   <div className="footer-container">
-    <img src={"/assets/footer/footer-logos.svg"} className="footer-logos" />
+    <Image
+     src="/assets/footer/footer-logos.svg"
+     alt="Footer Logo"
+     width={100}
+     height={40}
+     className="footer-logos" />
     <div className="footer-text">
       <p className="footer-copyright">
         © 2025 Philippine Genome Center and UP Marine Science Institute. All

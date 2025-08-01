@@ -6,6 +6,7 @@ import { Tabs, Tab, Table } from "react-bootstrap";
 import { useParams } from "next/navigation";
 import { Button } from "react-bootstrap";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import Footer from "../../components/footer";
 
 import "../../css/resultDetails.css";
@@ -143,7 +144,7 @@ const ResultDetails = () => {
                   ) : images.length > 0 ? (
                     <div className="image-grid">
                       {images.map((img, index) => (
-                        <img
+                        <Image
                           key={img.otu_id || index}
                           src={
                             img.otuImageUrl || "/assets/resultDetails/logo.png"
@@ -214,7 +215,7 @@ const ResultDetails = () => {
                   ) : images.length > 0 ? (
                     <div className="image-grid">
                       {images.map((img, index) => (
-                        <img
+                        <Image
                           key={img.otu_id || index}
                           src={
                             img.sampleImageUrl ||

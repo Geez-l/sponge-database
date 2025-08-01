@@ -1,11 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+// export const dynamic = "force-dynamic";
+import React, { useEffect, useState, Suspense} from "react";
 import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaSearch } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 import { useRouter, useSearchParams } from "next/navigation";
 import Footer from "../components/footer";
+import Loading from "../helpers/loading";
 import "../css/result.css";
 
 interface Sponge {
