@@ -2,8 +2,8 @@ import React from "react";
 import "../css/about.css";
 import Footer from "../components/footer";
 import Image from "next/image";
-// import "bootstrap/dist/css/bootstrap.min.css";
-import "../layout.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "../layout.css";
 import "../css/variable.css";
 import { heads, divers, mentors, interns } from "../components/team";
 

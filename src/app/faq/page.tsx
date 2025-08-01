@@ -1,5 +1,5 @@
-'use client';
-import React from "react";
+"use client";
+import React, { useEffect, useState} from "react";
 import DOMPurify from "dompurify";
 import "../css/faq.css";
 import Footer from "../components/footer";
@@ -9,6 +9,15 @@ import { Card } from "react-bootstrap";
 
 /*Frequently asked questions */
 const FAQ = () => {
+  const [isClient, setIsClient] = React.useState(false);
+  const [DOMPurify, setDOMPurify] = useState<any>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+    import("dompurify").then((module) => setDOMPurify(module.default));
+  }, []);
+  if (!isClient || !DOMPurify) return null;
+
   return (
     <div className="faq-div">
       <section className="faq-title">

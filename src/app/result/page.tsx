@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 // export const dynamic = "force-dynamic";
 import React, { useEffect, useState, Suspense} from "react";
 import { Table } from "react-bootstrap";
