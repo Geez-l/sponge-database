@@ -95,8 +95,9 @@ export default function ResultPage() {
 
   // For button to full otu list
   const hasSearchOrFilters =
-    searchParams.get("search") ||
-    color !== "Not available" ||
+    searchParam !== "" ||
+    !searchTerm ||
+    color !== "Not available" ||  
     location !== "Not available" ||
     functionalForm !== "Not available" ||
     putativeID !== "Not available";

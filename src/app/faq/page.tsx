@@ -24,12 +24,12 @@ const FAQ = () => {
               <Card.Body className="faq-body">
                 {item.a &&
                   (Array.isArray(item.a)
-                    ? item.a.map((para, index) => <p key={index}>{para}</p>)
-                    : <p>{item.a}</p>)}
+                    ? item.a.map((para, index) => <p key={index} dangerouslySetInnerHTML={{ __html: para }} />)
+                    : <p dangerouslySetInnerHTML={{ __html: item.a }} />)}
                 {item.list && (
                   <ul>
                     {item.list.map((li, index) => (
-                      <li key={index}>{li}</li>
+                      <li key={index} dangerouslySetInnerHTML={{ __html: li }} />
                     ))}
                   </ul>
                 )}

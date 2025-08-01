@@ -175,7 +175,7 @@ export default function ResultDetailsClient({
                     <tbody>
                       <tr>
                         <td>Site</td>
-                        <td>{toSentenceCase(sponge.site_name || "N/A")}</td>
+                        <td>{toSentenceCase(sponge.site_name || "N/A")}, {toSentenceCase(sponge.location_name || "N/A")}</td>
                       </tr>
                       <tr>
                         <td>Actual Depth</td>
