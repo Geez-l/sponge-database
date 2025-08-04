@@ -195,7 +195,19 @@ export default function ResultDetailsClient({
                       </tr>
                       <tr>
                         <td>Barcode Sequence</td>
-                        <td>{sponge.barcode_sequences || "N/A"}</td>
+                        <td>
+                          {sponge.otu_id === 66 && sponge.barcode_sequences ? (
+                            <a href={sponge.barcode_sequences}
+                            target="_blank"
+                            rel="nooperner noreferrer"
+                            className="barcode-link"
+                            >
+                              28S rRNA C2-D2 Domains
+                            </a>
+                          ) : ("N/A")
+                          }
+
+                        </td>
                       </tr>
                     </tbody>
                   </Table>
