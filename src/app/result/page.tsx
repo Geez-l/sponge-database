@@ -33,7 +33,7 @@ export default function ResultPage() {
   const [searchTerm, setSearchTerm] = useState(searchParam);
   const router = useRouter();
 
-  const color = searchParams.get("color") || "Not Available";
+  const color = searchParams.get("color") || "Not available";
   const functionalForm = searchParams.get("functional_form") || "Not available";
   const putativeID = searchParams.get("putative_id") || "Not available";
   const location = searchParams.get("location") || "Not available";
@@ -56,7 +56,7 @@ export default function ResultPage() {
         }
       } else {
         const params = new URLSearchParams();
-        if (color !== "Not Available") params.append("color", color);
+        if (color !== "Not available") params.append("color", color);
         if (functionalForm !== "Not available")
           params.append("functional_form", functionalForm);
         if (putativeID !== "Not available")
@@ -93,13 +93,23 @@ export default function ResultPage() {
     )
   );
 
+console.log("SearchParam:", `"${searchParam}"`); console.log("Searchterm:", `"${searchTerm}"`);
+console.log("Color:", color);
+console.log("Location:", location);
+console.log("FunctionalForm:", functionalForm);
+console.log("PutativeID:", putativeID);
+
+
   // For button to full otu list
   const hasSearchOrFilters =
-    searchParams.get("search") ||
-    color !== "Not available" ||
+    searchParam.trim() !== "" || 
+    searchTerm.trim() !== ""||
+    color !== "Not available" ||  
     location !== "Not available" ||
     functionalForm !== "Not available" ||
     putativeID !== "Not available";
+
+console.log("hasSearchOrFilters:", hasSearchOrFilters);
 
   const handleResetToUnfiltered = () => {
     setSearchTerm("");

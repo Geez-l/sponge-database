@@ -23,9 +23,9 @@
             <ul>
               <li> Color - color of the sponge e.g. yellow, blue-green, etc.</li>
               <li> Location - where the sponge was collected e.g. Bohol, Batangas,etc"</li>
-              <li/>"Functional Form (Schonberg, 2021) - form based on the
-              functional form ", "Putative Identification - identification based
-              on the Carribean Sponge Guide"
+              <li>Functional Form  - morphology based on the functional form as described by Schonberg (2021)</li>
+              <li>Putative Identification - presumed taxonomic classification of the sponge</li>
+              
             </ul>
             To browse our full list of Operational Taxonomic Units (OTUs),
             navigate to the full OTU List page or submit a blank query. For more
@@ -113,7 +113,7 @@
             https://oceanservice.noaa.gov/facts/sponge.html
             <br />
             <br />
-            Schonberg, C. 2021. No taxonomy needed: Sponge functional
+            Schonberg, C. (2021). No taxonomy needed: Sponge functional
             morphologies inform about environmental conditions. Ecological
             Indicators. 129. 107806. 10.1016/j.ecolind.2021.107806.
             <br />
