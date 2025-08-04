@@ -1,5 +1,3 @@
-// app/resultDetails/[otu_id]/page.tsx
-
 import ResultDetailsClient from "./ResultDetailsClient";
 import Footer from "../../components/footer";
 import "../../css/resultDetails.css";
