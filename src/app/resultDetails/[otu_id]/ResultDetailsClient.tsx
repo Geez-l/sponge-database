@@ -6,12 +6,13 @@ import Image from "next/image";
 import Footer from "../../components/footer";
 import { useRouter } from "next/navigation";
 import "../../css/resultDetails.css";
+import {toSentenceCase} from "../../helpers/sentenceCase";
 
 interface Sponge {
   oscule_shape: string;
   oscule_distribution: string;
   ostia: string;
-  date_collected: string | null;
+  date_collected?: string;
   depth: string;
   dive_no: string;
   researcher_name: string;
@@ -31,6 +32,8 @@ interface ImageData {
   otu_id: number;
   otuImageUrl: string;
   sampleImageUrl: string;
+  otu_img_fname: string;
+  sample_img_fname: string;
 }
 
 export default function ResultDetailsClient({
@@ -42,9 +45,7 @@ export default function ResultDetailsClient({
 }) {
   const router = useRouter();
 
-  const toSentenceCase = (text: string): string =>
-    text ? text.charAt(0).toUpperCase() + text.slice(1).toLowerCase() : "";
-
+  // Function for formatting date {not working}
   const formatDate = (dateString: string | null) => {
     if (!dateString) return "Not Available";
     const date = new Date(dateString);
@@ -52,6 +53,13 @@ export default function ResultDetailsClient({
       ? "Not Available"
       : date.toISOString().slice(0, 10);
   };
+  const extractFilename = (url: string): string => {
+    if (!url) return "POXXXXXX";
+
+    const parts = url.split("/");
+    return parts[parts.length - 1] || "POXXXXXX";
+  }
+
 
   return (
     <div>
@@ -165,17 +173,31 @@ export default function ResultDetailsClient({
                 <div className="s-details-wrapper">
                   <div className="sample-details-heading">
                     <p className="sample-id">
-                      {sponge.sample_code || "P0XXXXX"}
+                      {images.length > 0
+                        ? extractFilename(
+                            images[0].sample_img_fname ||
+                              images[0].sampleImageUrl
+                          )
+                        : "POXXXXXX"}
+                      {/* {ImageData.sample_img_fname || "P0XXXXX"} */}
                     </p>
                     <p className="sample-date">
-                      {formatDate(sponge.date_collected)}
+                      {sponge.date_collected &&
+                      !isNaN(new Date(sponge.date_collected).getTime())
+                        ? new Date(sponge.date_collected)
+                            .toISOString()
+                            .slice(0, 10)
+                        : sponge.date_collected || "Not Available"}
                     </p>
                   </div>
                   <Table>
                     <tbody>
                       <tr>
                         <td>Site</td>
-                        <td>{toSentenceCase(sponge.site_name || "N/A")}, {toSentenceCase(sponge.location_name || "N/A")}</td>
+                        <td>
+                          {toSentenceCase(sponge.site_name || "N/A")},{" "}
+                          {toSentenceCase(sponge.location_name || "N/A")}
+                        </td>
                       </tr>
                       <tr>
                         <td>Actual Depth</td>
@@ -197,16 +219,17 @@ export default function ResultDetailsClient({
                         <td>Barcode Sequence</td>
                         <td>
                           {sponge.otu_id === 66 && sponge.barcode_sequences ? (
-                            <a href={sponge.barcode_sequences}
-                            target="_blank"
-                            rel="nooperner noreferrer"
-                            className="barcode-link"
+                            <a
+                              href={sponge.barcode_sequences}
+                              target="_blank"
+                              rel="nooperner noreferrer"
+                              className="barcode-link"
                             >
                               28S rRNA C2-D2 Domains
                             </a>
-                          ) : ("N/A")
-                          }
-
+                          ) : (
+                            "N/A"
+                          )}
                         </td>
                       </tr>
                     </tbody>
