@@ -9,6 +9,8 @@ import { heads, divers, mentors, interns } from "../components/team";
 
 export default function AboutPage() {
   return (
+
+    /* ABOUT PAGE MAIN HEADER */
     <div className="page-wrapper">
       <div className="faq-div">
         <div className="about-bg">
@@ -16,7 +18,8 @@ export default function AboutPage() {
             <h1 className="about-us">About Us</h1>
           </section>
         </div>
-
+    
+        {/* GENERAL PROJECT DESCRIPTION */}
         <div className="about-title">
           <h1 className="text-center">THE PHILIPPINE SPONGE GUIDE</h1>
           <div className="about-divider"></div>
