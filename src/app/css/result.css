@@ -70,6 +70,8 @@
     border-color:#ffffff;
   }
 
+/*==Filters and Display of Searchbox Query==*/
+
 .filters-container {
   margin: 0 7rem 2rem 7rem;
 }
@@ -90,6 +92,8 @@
   font-size: 1.1rem;
   font-style: italic;
 }
+
+/*==Back Button==*/
 
 .backbtn-container {
   margin-left: 7rem;
@@ -112,6 +116,8 @@
   color: #fff;
   background-color: #4A8EBB;
 }
+
+/*==Result Table==*/
 
   .res-tab {
     margin-top: 0;
