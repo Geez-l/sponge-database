@@ -20,7 +20,7 @@ const Footer = () => (
       <div className="footer-body">
         <p>SAMPLE COUNT: 50</p>
         <p>IMAGE COUNT: 100</p>
-        <p>DATABASE LAST UPDATED: 01-08-2025 00:00</p>
+        <p>DATABASE LAST UPDATED: 08-08-2025 00:00</p>
       </div>
     </div>
   </div>
