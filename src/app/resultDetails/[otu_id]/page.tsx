@@ -29,15 +29,24 @@ interface ImageData {
 }
 
 async function getSpongeData(otu_id: string) {
-  const base = process.env.API_URL ?? "http://localhost:5000";
+  // const base = process.env.API_URL ?? "http://localhost:5000";
+  const API_BASE_URL = "https://sponge-database-production.up.railway.app/api";
 
   try {
-    const spongeRes = await fetch(`${base}/api/samples/${otu_id}`, {
-      cache: "no-store",
-    });
-    const imageRes = await fetch(`${base}/api/images?otu_id=${otu_id}`, {
-      cache: "no-store",
-    });
+    // const spongeRes = await fetch(`${base}/api/samples/${otu_id}`, {
+    //   cache: "no-store",
+    // });
+      const spongeRes = await fetch(`${API_BASE_URL}/samples/${otu_id}`, {
+        cache: "no-store",
+      });
+    
+    
+    // const imageRes = await fetch(`${base}/api/images?otu_id=${otu_id}`, {
+    //   cache: "no-store",
+    // });
+      const imageRes = await fetch(`${API_BASE_URL}/images?otu_id=${otu_id}`, {
+        cache: "no-store",
+      });
 
     if (!spongeRes.ok || !imageRes.ok) {
       throw new Error("Failed to fetch data");

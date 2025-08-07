@@ -2,6 +2,9 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
+// railway
+const API_BASE_URL = "https://sponge-database-production.up.railway.app/api";
+
 export function useSpongeFilters() {
   const [selectedColor, setSelectedColor] = useState("Color");
   const [selectedFunctionalForm, setSelectedFunctionalForm] = useState("Functional Form");
@@ -22,7 +25,8 @@ export function useSpongeFilters() {
   // http request to fetch colors
   const fetchColors = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/colors");
+      // const response = await fetch("http://localhost:5000/api/colors");
+      const response = await fetch(`${API_BASE_URL}/colors`);
       const data = await response.json();
       setColors(data.data);
     } catch (error) {
@@ -33,7 +37,8 @@ export function useSpongeFilters() {
   // http request to fetch functional forms
   const fetchFunctionalForms = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/functional_form");
+      // const response = await fetch("http://localhost:5000/api/functional_form");
+      const response = await fetch(`${API_BASE_URL}/functional_form`);
       const data = await response.json();
       setFunctionalForms(data.data);
     } catch (error) {
@@ -44,7 +49,8 @@ export function useSpongeFilters() {
   // http request to fetch putative ids
   const fetchPutative = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/putative_id");
+      // const response = await fetch("http://localhost:5000/api/putative_id");
+      const response = await fetch(`${API_BASE_URL}/putative_id`);
       const data = await response.json();
       setPutative(data.data);
     } catch (error) {
@@ -55,7 +61,8 @@ export function useSpongeFilters() {
   // http request to fetch location
   const fetchLocation = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/location");
+      // const response = await fetch("http://localhost:5000/api/location");
+      const response = await fetch(`${API_BASE_URL}/location`);
       const data = await response.json();
       setLocation(data.data);
     } catch (error) {
@@ -86,9 +93,8 @@ export function useSpongeFilters() {
       if (selectedLocation !== "Location") {
         params.append("location", selectedLocation);
       }
-      const response = await fetch(
-        `http://localhost:5000/api/samples?${params}`
-      );
+      // const response = await fetch(// `http://localhost:5000/api/samples?${params}`);
+      const response = await fetch(`${API_BASE_URL}/samples?${params}`);
       const data = await response.json();
       setSponges(data.data || []);
     } catch (error) {

@@ -38,14 +38,20 @@ export default function ResultPage() {
   const putativeID = searchParams.get("putative_id") || "Not available";
   const location = searchParams.get("location") || "Not available";
 
+  const API_BASE_URL = "https://sponge-database-production.up.railway.app/api";
+
   // Fetch data based on either search or filters
   useEffect(() => {
     const fetchSponges = async () => {
       const search = searchParams.get("search");
 
       if (search) {
-        try {
-          const url = `http://localhost:5000/api/samples/search?search=${encodeURIComponent(
+        // try {
+        //   const url = `http://localhost:5000/api/samples/search?search=${encodeURIComponent(
+        //     search
+        //   )}`;
+          try {
+          const url = `${API_BASE_URL}/samples/search?search=${encodeURIComponent(
             search
           )}`;
           const res = await fetch(url);
@@ -64,8 +70,11 @@ export default function ResultPage() {
         if (location !== "Not available") params.append("location", location);
 
         try {
+          // const response = await fetch(
+          //   `http://localhost:5000/api/samples?${params}`
+          // );
           const response = await fetch(
-            `http://localhost:5000/api/samples?${params}`
+            `${API_BASE_URL}/samples?${params}`
           );
           const data = await response.json();
           setSponges(data.data || []);
