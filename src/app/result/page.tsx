@@ -48,8 +48,8 @@ export default function ResultPage() {
           const url = `http://localhost:5000/api/samples/search?search=${encodeURIComponent(
             search
           )}`;
-          const res = await fetch(url);
-          const data = await res.json();
+          const response = await fetch(url);
+          const data = await response.json();
           setSponges(data.data || []);
         } catch (err) {
           console.error("Global search error:", err);
